@@ -22,10 +22,10 @@ getting connected with a confidential resource, just ask.
 </div>
 
 <div class="callout callout--warn" markdown="1">
-Dr. Harvey is a [Responsible Employee](https://hdapp.ucdavis.edu/responsible-employee).
-She must report potential violations of University policy related to sexual
-harassment, sexual violence, discrimination, or harassment that are brought to
-her attention. If you need a **confidential** resource, several are listed below. Please verify their confidentiality yourself, before sharing.
+The PI is a [Responsible Employee](https://hdapp.ucdavis.edu/responsible-employee) under university policy.
+The PI must report potential violations of University policy related to sexual
+harassment, sexual violence, discrimination, or harassment brought to
+their attention. If you need a **confidential** resource, several are listed below. Please verify their confidentiality yourself, before sharing.
 </div>
 
 ## Get support
@@ -59,4 +59,4 @@ These channels are not confidential; a report may prompt University action. For 
 - [Report hate & bias: confidential resources](https://reporthateandbias.ucdavis.edu/confidential-resources)
 - [Get support: sexual violence & harassment](https://sexualviolence.ucdavis.edu/get-support)
 
-Know a resource that should be on this page? [Tell Christina]({{ '/contact/' | relative_url }}) and we'll add it.
+Know a resource that should be on this page? [Contact us]({{ '/contact/' | relative_url }}) and we'll add it.

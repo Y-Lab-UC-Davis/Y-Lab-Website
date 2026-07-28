@@ -4,26 +4,10 @@
 #  funders live in funders.yml, individual academic collaborators live in
 #  people.yml under `affiliates`).
 #
-#  Each entry: name, sub (short descriptor), photo (square image in
-#  assets/img/partners/), url. Add one by copying a block.
+#  EXAMPLE ENTRY:
+#
+#  - name: Partner Organization Name
+#    sub: Short descriptor of partnership.
+#    photo: /assets/img/partners/partner_logo.jpg
+#    url: https://example.org
 # ─────────────────────────────────────────────────────────────
-
-- name: California Raptor Center
-  sub: Raptor rehabilitation center.
-  photo: /assets/img/partners/crc.jpg
-  url: https://crc.vetmed.ucdavis.edu
-
-- name: California Hawking Club
-  sub: Licensed general and master falconers. 
-  photo: /assets/img/partners/chc.jpg
-  url: https://www.calhawkingclub.org
-
-- name: Museum of Wildlife and Fish Biology
-  sub: Registered and certified vertebrate museum.
-  photo: /assets/img/partners/mwfb.jpg
-  url: https://mwfb.ucdavis.edu
-
-- name: UC Davis One Health Institute
-  sub: Institute at the interface of animals, people, plants, and the environment.
-  photo: /assets/img/partners/ohi.jpg
-  url: https://ohi.vetmed.ucdavis.edu

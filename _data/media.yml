@@ -1,8 +1,11 @@
 # ─────────────────────────────────────────────────────────────
-#  WATCH & LISTEN, videos, podcasts, and interactive media about the lab.
+#  MEDIA
+#  Videos, podcasts, and interactive media items for /news/
+#
 #  Shown on the News page, separate from written press coverage. These are
 #  LINKS OUT (no embeds), so the page stays fast and cookie-free.
 #
+# 
 #    kind : video | podcast | radio | model
 #
 #  THUMBNAIL CARD vs COMPACT ROW:
@@ -14,73 +17,14 @@
 #  OPTIONAL, per entry (like the press archive):
 #    doi : "10.xxxx/…"  → adds a blue "📄 Paper" link to the peer-reviewed source
 #    tag : "Award"       → adds a reason chip: Center · Award · Funding · Profile · Feature
-#  An entry shows at most one chip; `doi` wins if both are set.
+# 
+#  EXAMPLE ENTRY:
 #
-#  Keep newest first.
+#  - title: "Lab Research Feature"
+#    kind: video # video | podcast | radio | model
+#    source: "News Outlet Name"
+#    year: 2026
+#    url: "https://www.youtube.com/watch?v=example"
+#    featured: true
+#    tag: "Feature"
 # ─────────────────────────────────────────────────────────────
-
-- title: "How the way red-tailed hawks adapt could change rehab efforts and aircraft design"
-  kind: radio
-  source: "NPR · Ari Daniel"
-  year: 2026
-  url: "https://www.npr.org/2026/07/08/nx-s1-5877620/how-the-way-red-tailed-hawks-adapt-could-change-rehab-efforts-and-aircraft-design"
-  doi: "10.1098/rsif.2025.1082"
-
-- title: "Bird flight research advances drone tech"
-  kind: video
-  source: "FOX40 News"
-  year: 2026
-  url: "https://www.youtube.com/watch?v=fz4SfRr6xvA"
-  featured: true
-  tag: "Feature" 
-
-- title: "The Condor Chat, October 2024"
-  kind: video
-  source: "Ventana Wildlife Society"
-  year: 2024
-  url: "https://www.youtube.com/watch?v=TUVUjut9Z-A"
-  featured: true
-  tag: "Profile" 
-
-- title: "Bio-informed flight with Christina Harvey and Michelle Hawkins"
-  kind: podcast
-  source: "Comstock's Talks"
-  year: 2024
-  url: "https://www.comstocksmag.com/podcast/bio-informed-flight-christina-harvey-and-michelle-hawkins"
-  tag: "Feature" 
-
-- title: "Try the hard things and see what happens"
-  kind: podcast
-  source: "The Engineer Whisperer · S2 E3"
-  year: 2024
-  url: "https://podcasters.spotify.com/pod/show/andrea-clough/episodes/S2--Episode-3--Christina-Harvey--Try-The-Hard-Things-And-See-What-Happens-e2fmtva"
-  tag: "Profile" 
-
-- title: "Evolution of bird maneuverability and lessons for UAV design"
-  kind: video
-  source: "Michigan Engineering"
-  year: 2022
-  url: "https://www.youtube.com/watch?v=gKnuEEUKAFg"
-  doi: "10.1038/s41586-022-04477-8"
-  featured: true
-
-- title: "Bird-inspired drone wings, digital twins & tracking microplastics from space"
-  kind: podcast
-  source: "The Next Byte · Ep. 23"
-  year: 2021
-  url: "https://the-next-byte-wevolver.simplecast.com/episodes/23-bird-inspired-drone-wings-scaling-digital-twins-microplastic-tracking-from-space"
-  doi: "10.1098/rsif.2021.0132"
-
-- title: "Wing-morphing drone, interactive 3D model"
-  kind: model
-  source: "Sketchfab"
-  year: 2021
-  url: "https://sketchfab.com/3d-models/3d-wing-morphing-drone-373a7bc4544e4b26b2f24388d855f8c5"
-  doi: "10.1098/rsif.2021.0132"
-
-- title: "Gull 'wing morphing' could be the future of airplane tech"
-  kind: video
-  source: "Amaze Lab"
-  year: 2019
-  url: "https://www.youtube.com/watch?v=qU86n3Xmrs0"
-  doi: "10.1098/rsif.2018.0641"

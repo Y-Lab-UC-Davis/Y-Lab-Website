@@ -1,5 +1,7 @@
 # ─────────────────────────────────────────────────────────────
 #  PEOPLE
+#  Groups defined below drive the /people/ directory page.
+#  Supported Group IDs: pi, postdoc, phd, msc, undergrad, alumni, affiliates.
 #
 #  PHOTO (optional). Two ways, both end with a file in assets/img/people/:
 #    • Easiest: drop an already-small square JPG straight into
@@ -21,125 +23,61 @@
 #  last word of `name` by default (so "Alfonso Martínez-Carmena" → sorts under M).
 #  If that guess is wrong for someone (e.g. a two-word surname with no hyphen),
 #  add a `last:` line with the surname to sort by, e.g.  last: "van Dijk".
+# 
+#  MEMBER TEMPLATE EXAMPLE:
+#
+#  groups:
+#    - id: pi
+#      title: Principal Investigator
+#      members:
+#        - name: Dr. Jane Doe
+#          aliases: ["Jane Doe"]
+#          role: Assistant Professor · Lab Director
+#          pronouns: she/her
+#          field: "Mechanical Engineering"
+#          start: 2026
+#          photo: /assets/img/people/jane-doe.jpg # Optional, place in assets/img/people/
+#          email: jdoe@university.edu
+#          website: https://example.com
+#          scholar: https://scholar.google.com
+#          orcid: 0000-0000-0000-0000
+#          linkedin: https://www.linkedin.com/in/janedoe
+#          github: https://github.com/janedoe
+#          note: Brief description or research focus.
+#          awards:
+#            - "NSF CAREER Award"
+#
+#    - id: phd
+#      title: PhD Researchers
+#      members:
+#        - name: Alex Smith
+#          role: PhD Student
+#          pronouns: they/them
+#          field: "Aerospace Engineering"
+#          start: 2026
+#          email: asmith@university.edu
+# 
+#  alumni:
+#    title: Alumni
+#    members:
+#        - { name: Benjamin Tai-Brownlee, role: "Undergraduate Researcher (first in lab)", start: 2022, now: "Boeing" }
+# 
+# ─────────────────────────────────────────────────────────────
 # ─────────────────────────────────────────────────────────────
 
 groups:
   - id: pi
     title: Principal Investigator
-    members:
-      - name: Dr. Christina Harvey
-        aliases: ["Dr. Harvey"]
-        role: Assistant Professor · BIRD Lab Director · CALI Director
-        pronouns: she/her
-        field: "Mechanical Engineering, Zoology, Aerospace Engineering"
-        start: 2022
-        photo: /assets/img/people/christina-harvey.jpg
-        email: harvey@ucdavis.edu
-        website: https://mae.ucdavis.edu/people/christina-harvey
-        scholar: https://scholar.google.com/citations?hl=en&user=_uRCRPgAAAAJ
-        orcid: 0000-0002-2830-0844
-        linkedin: https://www.linkedin.com/in/Christina-A-Harvey
-        note: >-
-          Mechanical & Aerospace Engineering and Animal Behavior. 2023 Packard
-          Fellow. PhD Aerospace Engineering (Michigan), MSc Zoology (UBC),
-          BEng Mechanical Engineering (McGill).
+    members: 
 
   - id: postdoc
     title: Postdoctoral Scholars
-    members:
-      - name: Dr. Alfonso Martínez-Carmena
-        aliases: ["Dr. Alfonso Martínez"]
-        role: Postdoctoral Scholar
-        pronouns: he/him
-        field: "Aerospace Engineering"
-        start: 2023
-        photo: /assets/img/people/alfonso-martinez.jpg
-        email: alfmartinez@ucdavis.edu
-        orcid: 0000-0002-5593-9002
-        website: https://www.ardmoth.org/
-        linkedin: https://uk.linkedin.com/in/amartinezc
-        note: Photogrammetry · Raptor perching behavior.
+    members: 
 
   - id: phd
     title: PhD Researchers
     members:
-      - name: Kaleb Bordner
-        role: PhD Candidate
-        pronouns: he/him
-        field: "Aerospace Engineering"
-        start: 2023
-        photo: /assets/img/people/kaleb-bordner.jpg
-        email: kkbordner@ucdavis.edu
-        scholar: https://scholar.google.com/citations?user=8-F5ePIAAAAJ&hl=en&authuser=1
-        orcid: 0009-0005-9105-1130
-        linkedin: https://www.linkedin.com/in/kaleb-bordner-0b45b78a/
-        github: https://github.com/woodentoken
-        note: Bird-informed morphing tail flight dynamics & control.
-        awards:
-          - "ORAU Fellowship"
-      - name: Francisco Jackson
-        role: PhD Candidate
-        pronouns: he/him
-        field: "Physics"
-        start: 2023
-        photo: /assets/img/people/francisco-jackson.jpg
-        email: fajackson@ucdavis.edu
-        linkedin: http://www.linkedin.com/in/francisco-agustus-jackson-ucd-undergrad-b90ba7194
-        note: Aerodynamics of bird perching.
-        awards:
-          - "ORAU Fellowship"
-      - name: Huanglun (Adam) Zhu
-        aliases: ["Adam Zhu"]
-        role: PhD Researcher
-        pronouns: he/him
-        field: "Mech + Aero Engineering"
-        start: 2023
-        photo: /assets/img/people/huanglun-zhu.jpg
-        email: lszhu@ucdavis.edu
-        orcid: 0009-0003-8318-3657
-        linkedin: https://www.linkedin.com/in/adam-zhu-huanglun/
-        note: Nares-inspired pressure sensing for formation flight.
-      - name: Alex Fillman
-        role: PhD Researcher
-        pronouns: she/her
-        field: "Mech + Aero Engineering"
-        start: 2024
-        photo: /assets/img/people/alex-fillman.jpg
-        email: alfillman@ucdavis.edu
-        linkedin: http://linkedin.com/in/alex-fillman
-        note: Range-of-motion quantification.
-        awards:
-          - "Maury Hull Fellowship"
-          - "N&M Sarigul-Klijn Award"
-      - name: Faiza Alvi
-        role: PhD Researcher
-        pronouns: she/her
-        field: "Mech + Aero Engineering"
-        start: 2024
-        photo: /assets/img/people/faiza-alvi.jpg
-        email: falvi@ucdavis.edu
-        orcid: 0000-0001-9396-1668
-        linkedin: https://www.linkedin.com/in/faizaalvi/
-        note: Avian airfoil geometry and aerodynamics.
-        awards:
-          - "Cota-Robles Fellowship"
-      - name: Cooper Cook
-        role: PhD Researcher
-        pronouns: he/him
-        field: "Mech + Aero Engineering"
-        start: 2024
-        photo: /assets/img/people/cooper-cook.jpg
-        email: ctcook@ucdavis.edu
-        orcid: 0009-0000-5656-4620
-        note: Morphing aerodynamics · Photogrammetry.
-      - name: Joshua Booth
-        role: PhD Researcher
-        pronouns: he/him
-        field: "Mech + Aero Engineering"
-        start: 2024
-        photo: /assets/img/people/joshua-booth.jpg
-        email: jmbooth@ucdavis.edu
-        note: Maneuverability & agility in morphing-wing dynamics.
+      
   # Master's students. Kept here (empty) on purpose so a submitted "MSc Student"
   # auto-files into it. While empty it shows nothing on the site; members appear
   # as soon as one is added. Keep `members: []` (an empty list) while empty — the
@@ -147,79 +85,12 @@ groups:
   # list when it adds the first person.
   - id: msc
     title: Master's Students
-    members: []
+    members: 
 
   - id: undergrad
     title: Undergraduate Researchers
     members:
-      - name: Ava Lewis
-        role: Undergraduate Researcher
-        start: 2023
-        pronouns: she/her
-        field: "Mech + Aero Engineering"
-        photo: /assets/img/people/ava-lewis.jpg
-        awards:
-          - "AIAA Rising Star in Aerospace"
-      - name: Narihide Fujita
-        role: Undergraduate Researcher
-        start: 2025
-        pronouns: he/him
-        field: "Mech + Aero Engineering"
-        photo: /assets/img/people/narihide-fujita.jpg
-      - name: Haotian Zhang
-        role: Undergraduate Researcher
-        start: 2026
-        pronouns: he/him
-        field: "Computer Science"
-        photo: /assets/img/people/haotian-zhang.jpg
-      - name: Ryuya Iwase
-        role: Undergraduate Researcher
-        start: 2026
-        pronouns: he/him
-        field: "Mech + Aero Engineering"
-        photo: /assets/img/people/ryuya-iwase.jpg
-      - name: Wyatt Liu
-        role: Undergraduate Researcher
-        start: 2026
-        field: "Mechanical and Aerospace Engineering"
-        photo: /assets/img/people/wyatt-liu.png
-        pronouns: he/him
-      - name: Prabhat Karthikeyan
-        role: Undergraduate Researcher
-        start: 2026
-        pronouns: he/him
-        field: "Mech + Aero Engineering"
-        photo: /assets/img/people/prabhat-karthikeyan.jpg
-      - name: Haelie Tweet
-        role: Undergraduate Researcher
-        start: 2026
-        pronouns: she/her
-        field: "Mech + Aero Engineering"
-        photo: /assets/img/people/haelie-tweet.jpg
-      - name: Zak Conte
-        role: Undergraduate Researcher
-        start: 2026
-        pronouns: he/him
-        field: "Mech + Aero Engineering"
-        photo: /assets/img/people/zak-conte.jpg
-      - name: Elliot Crowder
-        role: Visiting Undergraduate Researcher · Sacramento City College
-        start: 2026
-        pronouns: he/him
-        field: "Computer Science"
-        photo: /assets/img/people/elliot-crowder.jpg
-      - name: Emiliano Godinez
-        role: Visiting Undergraduate Researcher · Folsom Lake College
-        start: 2026
-        pronouns: he/him
-        field: "Mechanical Engineering"
-        photo: /assets/img/people/emiliano-godinez.jpg
-      - name: Adam Halford
-        role: Visiting Undergraduate Researcher · West Point Academy
-        start: 2026
-        pronouns: he/him
-        field: "Mechanical Engineering"
-        photo: /assets/img/people/adam-halford.jpg
+
 
   # Visiting researchers (non-undergraduate). Kept here (empty) on purpose so a
   # submitted "Visiting Researcher" auto-files into it. While empty it shows
@@ -228,7 +99,7 @@ groups:
   # Keep `members: []` (an empty list) while empty so the site build stays happy.
   - id: visiting
     title: Visiting Researchers
-    members: []
+    members: 
 
 # Individual collaborators and affiliated researchers outside the core group.
 # (Partner *organizations*, CRC, CHC, the museum, live in collaborators.yml
@@ -239,7 +110,7 @@ affiliates:
   # Dr. Michelle Hawkins shows there as a CALI co-director. The section is hidden
   # on the People page while this list is empty (guarded in people.html). Add
   # members back here to restore the People-page Collaborators section.
-  members: []
+  members: 
 
 # Past members.
 #  TO RETIRE SOMEONE: cut their whole block from `groups` above (from its
@@ -254,26 +125,3 @@ affiliates:
 alumni:
   title: Alumni
   members:
-      - { name: Benjamin Tai-Brownlee, role: "Undergraduate Researcher (first in lab)", start: 2022, now: "Boeing" }
-      - { name: Rowan Glenn, role: "Undergraduate Researcher", start: 2022, now: "Northwood" }
-      - { name: Tejas Lotay, role: "Undergraduate Researcher", start: 2023, now: "NASA Ames" }
-      - { name: Lucas Dahlke, role: "Undergraduate Researcher", start: 2023, now: "UCLA" }
-      - { name: Bryan Tiang, role: "Undergraduate Researcher", start: 2023, now: "Stanford University" }
-      - { name: Jackie The, role: "Undergraduate Researcher", start: 2023, now: "Industry" }
-      - { name: Alex Kerlee, role: "Undergraduate Researcher", start: 2023, now: "Wisk" }
-      - { name: Ellie Hintzman, role: "Undergraduate Researcher", start: 2024, now: "Industry" }
-      - { name: Logan Reuter, role: "Undergraduate Researcher", start: 2024, now: "Ultima Genomics" }
-      - { name: Stevi Dunn, role: "Undergraduate Researcher", start: 2024, now: "Lucid" }
-      - { name: Gaurav Dhirar, role: "Undergraduate Researcher", start: 2024, now: "Academia" }
-      - { name: Isa Khalak, role: "Undergraduate Researcher", start: 2024, now: "UC Davis" }
-      - { name: Susie Benner, role: "Undergraduate Researcher", start: 2024, now: "UC Davis" }
-      - { name: Adrian Chan, role: "Undergraduate Researcher", start: 2025, now: "Stanford University" }
-      - { name: Kiran Weston, role: "Visiting Student · University of Oxford", start: 2023, now: "Newton Consulting" }
-      - { name: Francesca Ciocca, role: "Visiting Student · UBC", start: 2023, now: "Industry" }
-      - { name: Mija Jovchevska, role: "Visiting Researcher (JEB ECR Fellow)", start: 2024, now: "CU Boulder" }
-      - name: Jiayi Li
-        role: Undergraduate Researcher
-        start: 2025
-        pronouns: she/her
-        field: "Mech + Aero Engineering"
-        photo: /assets/img/people/jiayi-li.jpg

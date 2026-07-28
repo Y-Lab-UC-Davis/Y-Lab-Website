@@ -2,12 +2,20 @@
 layout: page
 title: People
 eyebrow: Who we are
-description: "Meet the BIRD Lab team at UC Davis: our PI, postdoctoral scholars, PhD and undergraduate researchers, collaborators, and alumni."
+description: "Meet our research group team: PI, researchers, collaborators, and alumni."
 ---
 
-{%- comment -%} Featured PI block (Christina): richer than a standard card. {%- endcomment -%}
+{%- comment -%} Featured PI block {%- endcomment -%}
 {%- assign pi_group = site.data.people.groups | where: "id", "pi" | first -%}
 {%- assign pi = pi_group.members | first -%}
+
+{%- if site.data.people.groups == blank or site.data.people.groups.size == 0 -%}
+<div class="note u-mt-fluid">
+  <p class="u-m0">People and team information will be updated soon. <a href="{{ '/contact/' | relative_url }}">Contact us</a> for inquiries.</p>
+</div>
+{%- else -%}
+
+{%- if pi -%}
 <section class="people-group">
   <h2>{{ pi_group.title }}</h2>
   <div class="pi-feature" id="{{ pi.name | slugify }}">
@@ -15,8 +23,8 @@ description: "Meet the BIRD Lab team at UC Davis: our PI, postdoctoral scholars,
       {%- if pi.photo -%}
         <img class="pi-feature__photo" src="{{ pi.photo | relative_url }}" alt="{{ pi.name }}" width="220" height="220">
       {%- else -%}
-        <div class="pi-feature__placeholder" role="img" aria-label="{{ pi.name }} (photo to be added)">
-          Photo coming soon. Drop <code>christina-harvey.jpg</code> in <code>assets/img/people/</code> and add a <code>photo:</code> line.
+        <div class="pi-feature__placeholder" role="img" aria-label="{{ pi.name }}">
+          Photo to be added.
         </div>
       {%- endif -%}
       <p class="links links--left">
@@ -32,18 +40,12 @@ description: "Meet the BIRD Lab team at UC Davis: our PI, postdoctoral scholars,
       <p class="role">{{ pi.role }}{% if pi.pronouns %} · {{ pi.pronouns }}{% endif %}</p>
       {%- if pi.field %}<p class="field-tags u-justify-start">{%- assign pifields = pi.field | split: "," -%}{%- for fld in pifields -%}<span class="field-tag">{{ fld | strip }}</span>{%- endfor -%}</p>{% endif -%}
       <div class="prose u-mt-06">
-        <p>Christina Harvey is an engineer and zoologist who seeks to understand the fundamental principles of biological flight. Her research combines biomechanics, aerodynamics, flight dynamics, and animal behavior to 
-        uncover biological principles and determine which of those principles may benefit in engineering designs.</p>
-        
-        <p>Her background bridges engineering and biology, with a BEng in Mechanical Engineering (McGill University), an MSc in Zoology 
-        (University of British Columbia), and a PhD in Aerospace Engineering (University of Michigan). 
-        That perspective shapes the BIRD Lab and the Center for Animal Locomotion & Innovation (CALI), where engineers, biologists, veterinarians, and computer scientists work together to answer questions no single discipline could solve alone.</p>
-        
-        <p>Christina is an Amelia Earhart Fellow and a Packard Fellow. She is passionate about rigorous science, continually refining her mentoring and teaching through evidence and reflection, and building an open, collaborative research environment where curiosity comes first.</p>
+        {%- if pi.note %}<p>{{ pi.note }}</p>{% endif -%}
       </div>
     </div>
   </div>
 </section>
+{%- endif -%}
 
 {%- comment -%} One combined team grid (PI featured above). Each card carries its own
    role text + bird badge, so we no longer split into separate role sections. The
@@ -197,4 +199,6 @@ description: "Meet the BIRD Lab team at UC Davis: our PI, postdoctoral scholars,
     </table>
   </details>
 </section>
+{%- endif -%}
+
 

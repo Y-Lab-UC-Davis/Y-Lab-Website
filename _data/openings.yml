@@ -1,23 +1,47 @@
 # ─────────────────────────────────────────────────────────────
-#  OPENINGS: drives the Undergrad, Graduate & Postdoc cards on the Join page.
+#  OPENINGS
+#  Drives recruitment status cards on the /join/ page.
 #
 #  TO OPEN OR CLOSE A POSITION, change one line:
 #     open: true    → green "Now recruiting" pill  + the `open_note`
 #     open: false   → amber "Open via fellowship" pill + the `closed_note`
 #  (Undergrad is simpler: the pill text IS the note. open: true shows the
 #   green `open_note` pill, open: false the amber `closed_note` pill.)
-#
+# 
 #  Nothing else needs editing. The pill text is also readable on its own
 #  (never colour-only), so the status stays clear for screen-reader and
 #  colour-blind visitors; please keep it that way when editing.
+#  EXAMPLE CONFIGURATION:
 #
 #  `email_body` is a short draft that pre-fills the email when someone
 #  clicks "Email me", so reaching out is one click and a few edits.
+
+#  email_body: |
+#    Hi Dr. [PI Last Name],
+#
+#    A bit about me: [program/year + background].
+#    Why your lab: [project or paper of interest].
+#    Timing: [expected start date]. My CV is attached.
+#
+#  undergrad:
+#    open: true
+#    open_note: Interviewing for upcoming quarters
+#    closed_note: Not currently interviewing
+#
+#  graduate:
+#    open: true
+#    open_note: Open funded positions for upcoming academic year
+#    closed_note: No direct funded openings at present
+#
+#  postdoc:
+#    open: false
+#    open_note: Recruiting postdocs in specific research areas
+#    closed_note: No funded postdoc openings at present
 # ─────────────────────────────────────────────────────────────
 
 # Shared draft that pre-fills the "Email me" button (kept short on purpose).
 email_body: |
-  Hi Dr. Harvey,
+  Hi Dr. [PI Last Name],
 
   A bit about me: [program/year + one line of background].
   Why your lab: [a project or paper of yours that caught my eye].
@@ -25,24 +49,16 @@ email_body: |
   Timing: [when I'd start]. My CV and unofficial transcript are attached.
 
 undergrad:
-  open: true
-  open_note: Interviewing most quarters
+  open: false
+  open_note: Currently interviewing
   closed_note: Not currently interviewing
 
 graduate:
   open: false
-  open_note: >-
-    I have a funded opening for the coming cycle. If the lab looks like a fit,
-    email me; early fall is the best time to reach out.
-  closed_note: >-
-    No funded openings at the moment. If you're interested, reach out and we can
-    look at fellowship options together.
+  open_note: Funded openings available for next admissions cycle
+  closed_note: No funded openings at the moment
 
 postdoc:
   open: false
-  open_note: >-
-    I'm currently recruiting a postdoc. Email me with your interests and a few
-    fellowship or start-date thoughts, and we'll take it from there.
-  closed_note: >-
-    No funded openings at the moment. If you're interested, reach out and we can
-    look at fellowship options together.
+  open_note: Recruiting postdocs
+  closed_note: No funded openings at the moment

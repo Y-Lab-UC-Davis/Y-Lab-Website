@@ -1,50 +1,39 @@
 # ─────────────────────────────────────────────────────────────
-#  BIRD Lab, Jekyll configuration
-#  Bio-Informed Research & Design Lab · UC Davis
+#  Research Lab, Jekyll configuration
 # ─────────────────────────────────────────────────────────────
 
-title: "BIRD Lab"
-tagline: "Bio-Informed Research & Design"
+title: "Research Lab"
+tagline: "Research & Innovation"
 description: >-
-  The BIRD Lab at UC Davis studies how birds fly in order to build better
-  aircraft. We identify fundamental biological principles of flight and refine
-  them to improve engineered systems through bio-informed research.
+  Welcome to our research lab group homepage. We conduct cutting-edge research
+  and develop novel technologies.
 
 # Site address. `url` is the ORIGIN only (no path, no trailing slash).
 # Leave `baseurl` EMPTY, the deploy workflow fills in the project path
-# ("/bird-lab-website") automatically at build time, and an empty baseurl keeps
-# the Site-checks link test passing. For a future custom-domain move, see the
-# migration notes under "Google Search Console verification" below.
-url: "https://uc-bird-lab.github.io"
+# automatically at build time.
+url: "https://example.github.io"
 baseurl: ""
 
 # ── Google Search Console verification ───────────────────────
-# jekyll-seo-tag reads this key and emits
-#   <meta name="google-site-verification" content="...">
-# on every page, including the homepage GSC checks.
-#
-google_site_verification: L8d8KgsD07pwppyU9Jw4QpHmSsM_XuosM8-dVuAPsHw
+# google_site_verification: ""
 
 lab:
-  full_name: "Bio-Informed Research & Design Lab"
   institution: "University of California, Davis"
-  pi: "Dr. Christina Harvey"
-  pi_email: "harvey@ucdavis.edu"
-  orcid: "0000-0002-2830-0844"
-  scholar: "https://scholar.google.com/citations?hl=en&user=_uRCRPgAAAAJ"
   location: "Department of Mechanical & Aerospace Engineering, UC Davis, Davis, CA"
+  full_name: "Research Lab"
+  pi: "Dr. Principal Investigator"
+  pi_email: "pi@university.edu"
+  orcid: "0000-0000-0000-0000"
+  scholar: "https://scholar.google.com"
   # PI / lab links surfaced in the footer and Data & Code section.
-  linkedin: "https://www.linkedin.com/in/Christina-A-Harvey"
-  instagram: "https://www.instagram.com/ucdbirdlab_mae/"
-  instagram_handle: "ucdbirdlab_mae"
-  github_org: "https://github.com/UC-BIRD-Lab"
+  linkedin: ""
+  instagram: ""
+  instagram_handle: ""
+  github_org: ""
   # FigShare (or other data repository) for published data/code.
-  figshare_url: "https://figshare.com/authors/Christina_Harvey/4766004"
+  figshare_url: ""
 
 # Default social-share (Open Graph) image used by jekyll-seo-tag.
-# A purpose-built 1200x630 branded card (logo on brand navy), opaque so it reads
-# the same in light and dark preview surfaces. Dimensions are declared so the
-# preview reserves the right space (og:image:width/height + twitter tags).
 image:
   path: /assets/img/og-image.png
   width: 1200
@@ -59,19 +48,19 @@ twitter:
 assets:
   # Lab group photo. Powers BOTH the People-page group photo
   # and the Home "In the field" cinematic band.
-  lab_photo: "/assets/img/lab/CALIopening-photo-edited-2026.jpg"
-  # Playful wind-tunnel candid shown as the "lab culture" moment on the Join page.
-  culture_photo: "/assets/img/lab/labphoto-silly-2024.jpg"
+  lab_photo: ""
+  # Playful candid shown as the "lab culture" moment on the Join page.
+  culture_photo: ""
 
 # Private member workspace (Notion - Internal Pages).
-member_portal_url: "https://app.notion.com/p/birdlab/Internal-Lab-Pages-6d6f4c7465a44de5a518a5a6786593f1"
+member_portal_url: ""
 
 # Undergraduate interest form
-undergrad_form_url: "https://forms.gle/TsddkYBtYMH5zkt78"
+undergrad_form_url: ""
 
 # Privacy-friendly, cookieless analytics (GoatCounter). 
 analytics:
-  goatcounter: "birdlab"   
+  goatcounter: ""   
 
 
 # ── Build settings ───────────────────────────────────────────

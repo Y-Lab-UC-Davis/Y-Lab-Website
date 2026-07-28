@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Home"
-description: "The BIRD Lab at UC Davis uncovers fundamental principles of avian flight to advance biology, inspire next-generation aerospace systems, and support wildlife rehabilitation."
+description: "Welcome to our research group homepage."
 
 ---
 
@@ -25,14 +25,13 @@ description: "The BIRD Lab at UC Davis uncovers fundamental principles of avian 
 
   <!-- Left column -->
     <div>
-      <p class="eyebrow eyebrow--on-dark">Bio-Informed Research &amp; Design&nbsp;·&nbsp;UC&nbsp;Davis</p>
-      <h1>Learning from birds to understand flight.</h1>
+      <p class="eyebrow eyebrow--on-dark">{{ site.tagline }}&nbsp;·&nbsp;{{ site.lab.institution }}</p>
+      <h1>Innovative Research &amp; Technology</h1>
       <p class="lead">
-        Flight is one of nature's greatest experiments. We study birds not to copy them, but to 
-        discover the principles that govern flight itself.
+        We conduct cutting-edge research to understand fundamental principles and develop next-generation engineering systems.
       </p>
       <div class="hero__cta">
-        <a class="btn btn--light" href="{{ '/research/' | relative_url }}">Explore the research</a>
+        <a class="btn btn--light" href="{{ '/research/' | relative_url }}">Explore research</a>
         <a class="btn btn--ghost btn--on-dark" href="{{ '/join/' | relative_url }}">Join the lab</a>
       </div>
       {%- assign member_count = 0 -%}
@@ -62,7 +61,7 @@ description: "The BIRD Lab at UC Davis uncovers fundamental principles of avian 
       </div>
       <a class="btn btn--primary" href="{{ '/research/#projects' | relative_url }}">See all projects &rarr;</a>
     </div>
-    <p class="lead prose u-mt-10">Many desirable characteristics of bird flight still elude current aircraft design. We study birds to identify which attributes are useful for engineered systems and which attributes are not.</p>
+    <p class="lead prose u-mt-10">We focus on interdisciplinary research to solve critical technical challenges.</p>
 
     <div class="research-split">
       <div class="research-col">
@@ -79,46 +78,12 @@ description: "The BIRD Lab at UC Davis uncovers fundamental principles of avian 
           {%- endfor -%}
         </ul>
       </div>
-      <div class="research-col">
-        <h3 class="research-col__label">Why it matters</h3>
-        <ul class="rlist">
-          <li class="rlist__item">
-            <span class="rlist__icon"><img src="{{ '/assets/img/icons/impact-aircraft.svg' | relative_url }}" alt="" aria-hidden="true"></span>
-            <span class="rlist__body">
-              <span class="rlist__title">Adaptable drones</span>
-              <span class="rlist__line">We translate avian control actions into maneuvers to enable UAV operation in urban and disaster environments.</span>
-            </span>
-          </li>
-          <li class="rlist__item">
-            <span class="rlist__icon"><img src="{{ '/assets/img/icons/impact-wildlife.svg' | relative_url }}" alt="" aria-hidden="true"></span>
-            <span class="rlist__body">
-              <span class="rlist__title">Healthier wildlife</span>
-              <span class="rlist__line">We establish quantitative metrics to improve wild raptor rehabilitation and release success.</span>
-            </span>
-          </li>
-          <li class="rlist__item">
-            <span class="rlist__icon"><img src="{{ '/assets/img/icons/impact-people.svg' | relative_url }}" alt="" aria-hidden="true"></span>
-            <span class="rlist__body">
-              <span class="rlist__title">The next generation</span>
-              <span class="rlist__line">We train the next generation of engineers and scientists to tackle complex, interdisciplinary challenges.</span>
-            </span>
-          </li>
-        </ul>
-      </div>
     </div>
   </div>
 </section>
 
-<!-- Bio-informed principle (the spine) -->
-<section class="section">
-  <div class="container center">
-    <h2 class="eyebrow">Bio-informed, not just bio-inspired</h2>
-    <p class="lead prose u-mt-10 u-mi-auto">Engineers are often inspired by biological systems; however, literature often conflates inspiration with scientific evidence. For every project we report the difference.</p>
-    <p class="u-mt-12"><a class="btn btn--ghost" href="{{ '/research/#framework' | relative_url }}">See how we report it &rarr;</a></p>
-  </div>
-</section>
-
 <!-- In partnership with (collaborating organizations from _data/collaborators.yml) -->
+{%- if site.data.collaborators and site.data.collaborators.size > 0 -%}
 <section class="section section--tint">
   <div class="container center partners">
     <h2 class="eyebrow">In partnership with</h2>
@@ -131,23 +96,6 @@ description: "The BIRD Lab at UC Davis uncovers fundamental principles of avian 
       </a>
       {%- endfor -%}
     </div>
-    <p class="u-mt-14">All listed partners are dedicated to education, outreach, conservation, and research.</p>
-  </div>
-</section>
-
-<!-- CALI band -->
-{%- if site.assets.lab_photo and site.assets.lab_photo != "" -%}
-<section class="field-band" aria-label="The BIRD Lab in the field">
-  <img class="field-band__img" src="{{ site.assets.lab_photo | relative_url }}" alt="The BIRD Lab team with live raptors in the CALI flight hall" loading="lazy">
-  <div class="field-band__overlay"></div>
-  <div class="container field-band__caption">
-    <p class="eyebrow eyebrow--on-dark">Unique Facilities</p>
-    <h2 class="field-band__line">The Center for Animal Locomotion & Innovation (CALI)</h2>
-    <p>World-class high-speed, high-resolution photogrammetry and motion capture capabilities to study animal or engineered locomotion.</p>
-          <div class="hero__cta">
-        <a class="btn btn--light" href="{{ '/cali/' | relative_url }}">Explore CALI</a>
-        <a class="btn btn--ghost btn--on-dark" href="{{ '/facilities/' | relative_url }}">Tour all facilities</a>
-      </div>
   </div>
 </section>
 {%- endif -%}

@@ -20,20 +20,20 @@ You're encouraged to take vacation throughout the year. Most members take three 
 GSRs and postdocs are covered by collective bargaining agreements; the policies in those contracts or appointment letters govern. This page is only for time-off communication policies for internal lab transparency. Please always abide by the Time Reporting System (TRS) policy outlined in your contract. 
 </div>
 
-Beyond formal leave, "hours shifting" lets you rearrange when you work your paid hours. This covers two situations: appointments below full time for the given term (your appointment letter states your percentage; ask Christina if you're unsure whether this applies to you), and compressed schedules at any percentage, e.g., 9/80s (80 hours over nine days, with every other Friday off) or 4/10s (four 10-hour days, with one weekday off each week).
-If you'd like a standing compressed schedule, discuss and get approval from Christina once, then simply log the off-days as they come. Hour-shifting arrangements longer than 1 day per week need to be discussed in person with Christina in advance.
+Beyond formal leave, "hours shifting" lets you rearrange when you work your paid hours. This covers two situations: appointments below full time for the given term (your appointment letter states your percentage; ask the PI if you're unsure whether this applies to you), and compressed schedules at any percentage, e.g., 9/80s (80 hours over nine days, with every other Friday off) or 4/10s (four 10-hour days, with one weekday off each week).
+If you'd like a standing compressed schedule, discuss and get approval from the PI once, then simply log the off-days as they come. Hour-shifting arrangements longer than 1 day per week need to be discussed in person with the PI in advance.
 
-The main lab expectation is that you *log your time away*, whether it is formal leave, sick days, shifted hours, work travel, or working from home days as specified below, in alignment with your specific contract requirements. This system allows Christina to track coverage for CALI and the wind tunnel, and ensures your labmates know when you're out of office through automatic status adjustments.
+The main lab expectation is that you *log your time away*, whether it is formal leave, sick days, shifted hours, work travel, or working from home days as specified below, in alignment with your specific contract requirements. This system allows the PI to track coverage for lab activities, and ensures your labmates know when you're out of office through automatic status adjustments.
 
 ## How to request time off
 
-We use a custom Time-Off Request Slack workflow with the BIRD Lab Leave Bot to request and record time off for Christina, graduate students and post-doctoral fellows. Before your first request, you'll receive a private authorization link at onboarding; if you never got one, ask Christina. After that, you just run the workflow.
+We use a custom Time-Off Request Slack workflow with the Leave Bot to request and record time off for the PI, graduate students and post-doctoral fellows. Before your first request, you'll receive a private authorization link at onboarding; if you never got one, ask the PI. After that, you just run the workflow.
 
 1. In Slack, navigate to the "Time-Off Request" workflow and run it.
 2. Select your leave type, first and last day, duration (full or half day), a brief reason, and a short handoff note.
-3. Christina will then review. Once Christina approves, your Slack status will update automatically on those dates and clear at the end of your last day.
+3. The PI will then review. Once approved, your Slack status will update automatically on those dates and clear at the end of your last day.
 
-Requests are approved in nearly all cases. If a request overlaps a major deadline, conference, or experimental campaign, Christina will work with you to find timing that meets both your needs and the lab's commitments. Note that you never need to request weekends or UC Davis holidays.
+Requests are approved in nearly all cases. If a request overlaps a major deadline, conference, or experimental campaign, the PI will work with you to find timing that meets both your needs and the lab's commitments. Note that you never need to request weekends or institutional holidays.
 
 *Logging is only to convey availability.* Your request should cover only the days (or half days) that you're actually unavailable or out of the office. This may differ from what you report in TRS (TRS follows your contract's rules; this tracker just tells the lab when they can/can't reach you). 
 
@@ -42,7 +42,7 @@ Some examples:
 - Leaving around midday to travel? That's a half-day request.
 - Half days are the smallest unit. Stepping out for an hour or two needs no request at all, though you're welcome to log an Hours Shifted half day if you'd like it visible. If you've already put in a full day of work, you do not need to submit anything.
 
-If your plans change: run the "Time-Off Request - Cancel or Change Dates" workflow (or message Christina) to update the tracker.
+If your plans change: run the "Time-Off Request - Cancel or Change Dates" workflow (or message the PI) to update the tracker.
 
 | Type of Leave | When to use it | Your Slack status shows |
 |---|---|---|
@@ -55,7 +55,7 @@ If your plans change: run the "Time-Off Request - Cancel or Change Dates" workfl
 
 ## Sick days
 
-If you're sick, please stay home and focus on recovering. Sick days go through the same workflow; however, same-day or after-the-fact submission is totally fine. Just let Christina know as soon as you reasonably can by submitting a workflow request and selecting "Sick Day" as the Leave Type. 
+If you're sick, please stay home and focus on recovering. Sick days go through the same workflow; however, same-day or after-the-fact submission is totally fine. Just let the PI know as soon as you reasonably can by submitting a workflow request and selecting "Sick Day" as the Leave Type. 
 
 - **Rest fully.** Logging off completely is always okay.
 - **Only if you genuinely feel up to it**, light reading or planning is fine, but never expected.
@@ -69,8 +69,8 @@ If you're sick, please stay home and focus on recovering. Sick days go through t
 | Work from Home | By that morning | Run workflow - Type: Working from Home | No support should be needed if this is the request |
 | Work Travel | After travel is booked | Run workflow - Type: Work Travel | Request support as needed |
 | Formal Leave/Hours Shifted: Under 1 week | At least 1 day in advance | Run workflow - Type: Formal Leave or Hours Shifted | Request support as needed |
-| Formal Leave/Hours Shifted: 1 to 2 weeks | One month or more in advance | Email to Christina + Run workflow - Type: Formal Leave, or Hours Shifted (hour-shifting requires advance discussion) | Quick handoff (contacts, tasks needing coverage) and an out-of-office reply |
-| Formal Leave: More than 2 weeks | Two or more months in advance | Email to Christina + Run workflow - Type: Formal Leave | A full handoff plan, agreed with Christina |
+| Formal Leave/Hours Shifted: 1 to 2 weeks | One month or more in advance | Email to the PI + Run workflow - Type: Formal Leave, or Hours Shifted (hour-shifting requires advance discussion) | Quick handoff (contacts, tasks needing coverage) and an out-of-office reply |
+| Formal Leave: More than 2 weeks | Two or more months in advance | Email to the PI + Run workflow - Type: Formal Leave | A full handoff plan, agreed with the PI |
 {: .leave-table}
 
-For extended medical or parental leave, talk with Christina as early as possible. These arrangements are coordinated through UC Davis HR rather than the Slack workflow.
+For extended medical or parental leave, talk with the PI as early as possible. These arrangements are coordinated through HR rather than the Slack workflow.

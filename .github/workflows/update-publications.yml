@@ -29,8 +29,8 @@ jobs:
       - name: Sync from OpenAlex
         id: sync
         env:
-          LAB_ORCID: "0000-0002-2830-0844"
-          OPENALEX_MAILTO: "harvey@ucdavis.edu"
+          LAB_ORCID: "0000-0000-0000-0000"
+          OPENALEX_MAILTO: "pi@university.edu"
         run: python scripts/update_publications.py
 
       - name: Open a pull request if anything changed
@@ -42,7 +42,7 @@ jobs:
           title: "📚 New publication(s) from OpenAlex"
           body: |
             This automated pull request adds journal article(s) found on
-            **OpenAlex** for ORCID `0000-0002-2830-0844`.
+            **OpenAlex** for the lab ORCID.
 
             Please check each new entry, title, author list, venue, and DOI,
             then merge. Edit anything that needs fixing before merging; future

@@ -12,5 +12,6 @@ group :jekyll_plugins do
 end
 
 # Windows / JRuby helpers (harmless elsewhere)
-gem "tzinfo-data", platforms: [:mingw, :x64_mingw, :mswin, :jruby]
+gem "tzinfo-data", platforms: [:windows, :jruby]
 gem "webrick", "~> 1.8"
+gem 'wdm', '>= 0.1.0'

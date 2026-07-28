@@ -26,17 +26,17 @@ role's handoff page are in the [member portal]({{ '/portal/' | relative_url }}).
 Each handoff page holds that role's routine and checklists. Roles are reassigned
 when a student leaves, and each owner keeps their handoff page current so the next person can
 run the role from it alone. When a role gives you authority to
-act (pause unsafe work, restrict equipment, freeze access), you have Dr. Harvey's
+act (pause unsafe work, restrict equipment, freeze access), you have the PI's
 backing to use it.
 
 <aside class="marginnote marginnote--warn" markdown="1">
 No role should require chasing individuals. If someone doesn't comply twice, or
-you find yourself chasing external folks, escalate to Christina.
+you find yourself chasing external folks, escalate to the PI.
 </aside>
 
 **A task is done** when all of its parts are complete. **If something is blocked**
 for over a week, or immediately if it's safety- or compliance-critical, tell
-Christina what happened, what you need, and by when.
+the PI what happened, what you need, and by when.
 
 
 

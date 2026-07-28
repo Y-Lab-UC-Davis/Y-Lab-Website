@@ -48,34 +48,6 @@ requirements:
     who: Biomechanics researchers
     note: Guided by senior member or PI.
 
-  # ---- Live animals at CALI ----
-  - name: ACU 101 course
-    who: CALI researchers
-    link: https://research.ucdavis.edu/research-support/animal-care-use/training-classes/animal-care-and-use-101-acu101-course/
-    note: Re-take the refresher every 3 years
-  - name: Care and Use of Birds, Owls and Raptors
-    who: CALI researchers
-    link: https://safetyservices.ucdavis.edu/units/occupational-health/surveillance-system/zoonotic-diseases/birds
-    note: Includes zoonotic-disease review
-  - name: Animal Bites and Scratches procedures
-    who: CALI researchers
-    link: https://safetyservices.ucdavis.edu/units/occupational-health/surveillance-system/animal-bites
-  - name: Animal Allergies information
-    who: CALI researchers
-    link: https://safetyservices.ucdavis.edu/units/occupational-health/surveillance-system/animal-allergies
-  - name: Animal PPE expectations
-    who: CALI researchers
-    note: See Working with live animals at CALI
-  - name: California Raptor Center requirements
-    who: CALI researchers
-    note: ask Christina for current guidelines
-  - name: Initial Safety Training, CALI
-    who: CALI researchers
-    note: Complete relevant Slack Workflow, includes the OHSS Risk Assessment and Health Surveillance Questionnaire
-  - name: IACUC Protocol Review
-    who: CALI researchers
-    note: Complete relevant Slack Workflow to be added to the relevant IACUC protocol rosters, one request per protocol.
-
 # Recurring cadence shown on the Lab safety page. Keep this block when you edit
 # the requirements above, or the schedule table renders empty.
 #   what - the task (required)

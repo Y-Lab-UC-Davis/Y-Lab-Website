@@ -45,7 +45,7 @@ except ImportError:
     sys.exit("PyYAML is required: pip install pyyaml")
 
 ORCID = os.environ.get("LAB_ORCID", "0000-0002-2830-0844")
-MAILTO = os.environ.get("OPENALEX_MAILTO", "harvey@ucdavis.edu")
+MAILTO = os.environ.get("OPENALEX_MAILTO", "pi@university.edu")
 OUT = os.path.join(os.path.dirname(__file__), "..", "_data", "publications.yml")
 # The hand-maintained companion; its `exclude:` list names DOIs to never list.
 MANUAL = os.path.join(os.path.dirname(__file__), "..", "_data", "publications_manual.yml")

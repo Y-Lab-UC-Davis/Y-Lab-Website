@@ -3,15 +3,15 @@ layout: page
 title: Contact
 eyebrow: Get in touch
 prose: true
-description: "Contact the BIRD Lab at UC Davis: email Dr. Christina Harvey about research collaboration, press enquiries, or joining the lab."
+description: "Contact our research group about collaboration, media inquiries, or joining the lab."
 ---
 
 <div class="contact-card">
 <div class="contact-card__info">
-<p class="contact-card__name">Dr. Christina Harvey</p>
-<p class="muted">Lab Director · Mechanical &amp; Aerospace Engineering, UC&nbsp;Davis</p>
+<p class="contact-card__name">{{ site.lab.pi }}</p>
+<p class="muted">Lab Director · {{ site.lab.institution }}</p>
 <p><a href="mailto:{{ site.lab.pi_email }}">{{ site.lab.pi_email }}</a><br>
-University of California, Davis · Davis, CA 95616</p>
+{{ site.lab.location }}</p>
 </div>
 <a class="btn btn--primary contact-card__btn" href="mailto:{{ site.lab.pi_email }}">Email the lab &rarr;</a>
 </div>
@@ -23,13 +23,13 @@ University of California, Davis · Davis, CA 95616</p>
 <h3>Prospective students &amp; postdocs</h3>
 <p>Start with the Join page that includes current openings, timing, and application details.</p>
 </a>
-<a class="card card--link" href="mailto:{{ site.lab.pi_email }}?subject={{ 'Press inquiry - BIRD Lab (UC Davis)' | uri_escape }}">
+<a class="card card--link" href="mailto:{{ site.lab.pi_email }}?subject={{ 'Press inquiry' | uri_escape }}">
 <h3>Press &amp; media</h3>
 <p>We're happy to talk about and share our work. Please reach out via email.</p>
 </a>
-<a class="card card--link" href="mailto:{{ site.lab.pi_email }}?subject={{ 'Research collaboration - BIRD Lab (UC Davis)' | uri_escape }}">
-<h3>Collaboration &amp; facility access</h3>
-<p>Curious about working together or about using the facilities (CALI or wind tunnel)? Please reach out via email.</p>
+<a class="card card--link" href="mailto:{{ site.lab.pi_email }}?subject={{ 'Research collaboration' | uri_escape }}">
+<h3>Research collaboration</h3>
+<p>Curious about working together or using research facilities? Please reach out via email.</p>
 </a>
 </div>
 

@@ -9,10 +9,8 @@
   url: /people/
 - title: Publications
   url: /publications/
-- title: Facilities
-  url: /facilities/
-- title: CALI
-  url: /cali/
+# - title: Facilities
+#   url: /facilities/
 - title: Lab Guide
   url: /lab-guide/
 - title: News

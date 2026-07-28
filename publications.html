@@ -2,7 +2,7 @@
 layout: page
 title: Publications
 eyebrow: What we do
-description: "Journal articles, conference papers, and open data and code from the BIRD Lab's research on avian flight and bio-informed aerospace design."
+description: "Journal articles, conference papers, and research publications."
 ---
 
 {%- assign journals = site.data.publications -%}
@@ -32,8 +32,12 @@ description: "Journal articles, conference papers, and open data and code from t
    year; media (videos/podcasts/radio) is a flat list — include both. Items without
    a doi simply never match. {%- endcomment -%}
 {%- assign all_press = "" | split: "" -%}
-{%- for yr in site.data.press -%}{%- assign all_press = all_press | concat: yr.items -%}{%- endfor -%}
-{%- if site.data.media -%}{%- assign all_press = all_press | concat: site.data.media -%}{%- endif -%}
+{%- for yr in site.data.press -%}
+  {%- if yr.items -%}{%- assign all_press = all_press | concat: yr.items -%}{%- endif -%}
+{%- endfor -%}
+{%- if site.data.media and site.data.media.size > 0 -%}
+  {%- assign all_press = all_press | concat: site.data.media -%}
+{%- endif -%}
 
 {%- comment -%}
   Roster of current lab members + alumni (NOT affiliates), built from people.yml so
@@ -45,8 +49,12 @@ description: "Journal articles, conference papers, and open data and code from t
   "Martínez-Carmena" still matches the "Martinez" an author list uses.
 {%- endcomment -%}
 {%- assign roster_people = "" | split: "" -%}
-{%- for g in site.data.people.groups -%}{%- assign roster_people = roster_people | concat: g.members -%}{%- endfor -%}
-{%- assign roster_people = roster_people | concat: site.data.people.alumni.members -%}
+{%- for g in site.data.people.groups -%}
+  {%- if g.members -%}{%- assign roster_people = roster_people | concat: g.members -%}{%- endif -%}
+{%- endfor -%}
+{%- if site.data.people.alumni and site.data.people.alumni.members -%}
+  {%- assign roster_people = roster_people | concat: site.data.people.alumni.members -%}
+{%- endif -%}
 {%- assign roster = "" -%}
 {%- for m in roster_people -%}
   {%- assign parts = m.name | remove: "Dr. " | strip | split: " " -%}

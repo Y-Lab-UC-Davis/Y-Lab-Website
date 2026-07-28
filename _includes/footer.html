@@ -2,9 +2,9 @@
   <div class="container footer-grid">
     <div>
       <div class="brandmark">
-        <img class="footer-logo" src="{{ '/assets/img/logo_whiteshading.png' | relative_url }}" alt="BIRD Lab">
+        <img class="footer-logo" src="{{ '/assets/img/logo_whiteshading.png' | relative_url }}" alt="{{ site.title }}">
       </div>
-      <p><strong>Bio-Informed Research &amp; Design Lab</strong></p>
+      <p><strong>{{ site.lab.full_name }}</strong></p>
       <p>{{ site.lab.location }}</p>
     </div>
 
@@ -14,7 +14,6 @@
         <li><a href="{{ '/research/' | relative_url }}">Research</a></li>
         <li><a href="{{ '/people/' | relative_url }}">People</a></li>
         <li><a href="{{ '/publications/' | relative_url }}">Publications</a></li>
-        <li><a href="{{ '/facilities/' | relative_url }}">Facilities</a></li>
         <li><a href="{{ '/news/' | relative_url }}">News &amp; Updates</a></li>
         <li><a href="{{ '/lab-guide/' | relative_url }}">Lab Guide</a></li>
       </ul>
@@ -25,17 +24,17 @@
       <ul>
         <li><a href="{{ '/join/' | relative_url }}">Join the lab</a></li>
         <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
-        <li><a href="{{ site.lab.scholar }}">Google Scholar</a></li>
-        <li><a href="https://orcid.org/{{ site.lab.orcid }}">ORCID</a></li>
-        {%- if site.lab.github_org %}<li><a href="{{ site.lab.github_org }}" rel="noopener">GitHub</a></li>{% endif -%}
-        {%- if site.lab.linkedin %}<li><a href="{{ site.lab.linkedin }}" rel="noopener">LinkedIn</a></li>{% endif -%}
-        {%- if site.lab.instagram %}<li><a href="{{ site.lab.instagram }}" rel="noopener">Instagram</a></li>{% endif -%}
+        {%- if site.lab.scholar and site.lab.scholar != "" %}<li><a href="{{ site.lab.scholar }}">Google Scholar</a></li>{% endif -%}
+        {%- if site.lab.orcid and site.lab.orcid != "" %}<li><a href="https://orcid.org/{{ site.lab.orcid }}">ORCID</a></li>{% endif -%}
+        {%- if site.lab.github_org and site.lab.github_org != "" %}<li><a href="{{ site.lab.github_org }}" rel="noopener">GitHub</a></li>{% endif -%}
+        {%- if site.lab.linkedin and site.lab.linkedin != "" %}<li><a href="{{ site.lab.linkedin }}" rel="noopener">LinkedIn</a></li>{% endif -%}
+        {%- if site.lab.instagram and site.lab.instagram != "" %}<li><a href="{{ site.lab.instagram }}" rel="noopener">Instagram</a></li>{% endif -%}
       </ul>
     </div>
   </div>
   <div class="container footer-bottom">
-    <span>© {{ 'now' | date: "%Y" }} BIRD Lab · University of California, Davis</span>
+    <span>© {{ 'now' | date: "%Y" }} {{ site.title }} · {{ site.lab.institution }}</span>
     <span><a href="{{ '/accessibility/' | relative_url }}">Accessibility</a> · <a href="{{ '/privacy/' | relative_url }}">Privacy</a></span>
-    <span class="footer-credit">Written by the BIRD Lab assisted by Claude (Cowork) · Reviewed by Christina Harvey · Built with Jekyll on GitHub Pages · <a href="{{ '/accessibility/#how-this-site-is-made' | relative_url }}">About this site</a></span>
+    <span class="footer-credit">Built with Jekyll on GitHub Pages · <a href="{{ '/accessibility/#how-this-site-is-made' | relative_url }}">About this site</a></span>
   </div>
 </footer>

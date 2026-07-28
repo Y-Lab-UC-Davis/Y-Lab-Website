@@ -51,13 +51,13 @@ work, and it gives search tools conflicting signals.
 - **Keep a CV current** alongside your profiles: update it the day you have news,
   not once a year when you need it.
 
-<div class="callout" markdown="1">
+<!-- <div class="callout" markdown="1">
 **See how it's done.** Christina keeps a public
 [Google Scholar](https://scholar.google.com/citations?user=_uRCRPgAAAAJ) and
 [ORCID](https://orcid.org/0000-0002-2830-0844) profile, plus a
 [UC Davis faculty page](https://mae.ucdavis.edu/people/christina-harvey). Use them
 as a model.
-</div>
+</div> -->
 
 ## If you're headed to industry
 
@@ -69,15 +69,6 @@ this is your path, keep your best code public and readable (see
 [Code]({{ '/lab-guide/code/' | relative_url }})) and tailor a one-to-two-page
 resume per role.
 
-<div class="callout callout--warn" markdown="1">
-**Get industry specifics from someone who's done it.** Christina's career has been
-in academia, so treat the guidance above as a starting point, not authority. For
-what a given employer actually looks for, talk to people with direct industry
-experience and use campus resources like the
-[GradPathways Career Management](https://gradpathways.ucdavis.edu/career-management)
-program (see [Career planning & job search]({{ '/lab-guide/career-planning/' | relative_url }})).
-</div>
-
 ## Communicate your work (optional)
 
 Profiles make your work findable; talks and plain-language summaries make it land.
@@ -85,7 +76,7 @@ When your research reaches a wider audience (a
 [talk]({{ '/lab-guide/presentations/' | relative_url }}),
 [poster]({{ '/lab-guide/posters/' | relative_url }}), press piece, or public
 summary), keep the framing accurate and free of hype, in line with how the lab
-talks about its work, and loop in Christina before representing the lab publicly.
+talks about its work, and loop in the PI before representing the lab publicly.
 
 A public social presence is genuinely optional and the evidence for its payoff is
 thin, so only invest if you enjoy it. If you do, the research community has largely

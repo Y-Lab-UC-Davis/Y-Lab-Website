@@ -29,13 +29,6 @@
 #                        Say what the image shows (and note if it is a rendering,
 #                        not a photo). Falls back to "Inside {name}" if omitted.
 #
-#  THE HOUSE PATTERN (matches the CALI facility section, and every facility here
-#  should follow it): chips for the capabilities in words, then an equipment
-#  table for the numbers. A chip never repeats a figure from the table. Label
-#  rows by what a visitor can MEASURE rather than by what hardware exists, and
-#  leave out anything a facility of that kind would obviously have. Anyone who
-#  needs more than the table detail is meant to email us — the contact note at
-#  the foot of the page is the release valve, which is what lets these blocks
 #  stay short.
 #
 #  NOTE ON CALI: the flagship block below is intentionally a short TEASER. CALI
@@ -43,84 +36,15 @@
 #  recharge rates, team, and access details (single source of truth in
 #  _data/cali.yml). Keep this block brief and let the button link into /cali/ so
 #  the two pages never repeat — and never drift out of sync.
+#    photo: /assets/img/facilities/wind-tunnel.jpg
+#    photo_alt: Interior photo of test section
+#    blurb: Brief summary of capability.
+#    capabilities:
+#      - Force & moment measurement
+#      - Flow visualization
+#    equipment:
+#      - label: Test section
+#        value: "3 x 3 x 8 ft (W x H x L)"
+#        also: "Max speed: 50 m/s"
 # ─────────────────────────────────────────────────────────────
 
-- name: Center for Animal Locomotion and Innovation (CALI)
-  featured: true
-  tagline: >-
-    Purpose-built flight hall for studying animal locomotion and
-    translating it into robotics and rehabilitation metrics.
-  partner: Co-directed with Dr. Michelle Hawkins
-  location: California Raptor Center, UC Davis
-  url: /cali/
-  url_label: Explore the CALI facility
-  photo: /assets/img/facilities/cali.jpg
-  photo_alt: >-
-    The CALI flight hall: a long bright room lined with white curtains
-    and motion capture cameras.
-  funding_key: cali
-  blurb: >-
-    Our flagship facility is a staff-operated, shared research and training space
-    for high-resolution motion capture and high-speed imaging. The full CALI
-    section covers the equipment, services, recharge rates, and how to get
-    involved.
-
-- name: UC Davis Aeronautical Wind Tunnel
-  tagline: >-
-    Low-turbulence aerodynamic testing of airfoils, morphing wings,
-    and bird-scale models.
-  partner: Co-directed with Dr. Camli Badrya
-  location: UC Davis Bainer Hall
-  photo: /assets/img/facilities/wind-tunnel.jpg
-  photo_note: AI rendering based on real photos, to illustrate the setup.
-  photo_alt: >-
-    Rendering of the wind tunnel: a blue intake narrowing into a silver
-    test section, then a tube to the fan.
-  capabilities:
-    - Force, moment & surface-pressure measurement
-    - Particle Image Velocimetry
-    - Gust & dynamic-inflow testing
-    - Bird-scale speeds and force/torque measurements
-  equipment:
-    - label: Test section
-      value: "4 × 2.8 × 12 ft (W × H × L)"
-      also: "5-165 mph (2.2–73.8 m/s)"
-    - label: Flow quality
-      value: "Turbulence below 0.1%"
-      also: "Angularity within ±0.2°, velocity uniformity ±0.75% across the interior 80%"
-    - label: Forces
-      value: "AEROLAB external balance — lift ±300 lb, drag ±50 lb, side force ±150 lb, moments to ±70 ft·lb"
-      also: "ATI Mini40 six-axis — Fx, Fy ±80 N, Fz ±240 N, torques ±4 N·m"
-    - label: Model support
-      value: "Two 36-in floor turntables with 3 DOF model positioning, α ±35°, β ±45°"
-    - label: Pressures
-      value: "32-channel PSI ESP-32HD scanner, 625 scans/s, expandable to 256 channels"
-    - label: PIV 2D-2C
-      value: "Laser: Dual-cavity Nd:YAG laser — 200 mJ/pulse, 532 nm, 15 Hz"
-      also: "Camera: FlowSense FCX 5M-260 — 5 MP at 262 fps"
-    - label: Wake & drag
-      value: "Automated two-axis traverse"
-      also: "Momentum-deficit drag to 1–2% uncertainty"
-    - label: Unsteady
-      value: "Programmable speed ramps to 2.1 m/s² for gust-response and dynamic-inflow testing"
-    - label: Models
-      value: "In-house carbon-fiber-capable 3-D printing"
-
-- name: Specimen-focused Motion Capture Room
-  tagline: >-
-    High-resolution capture of specimens across their full range of motion.
-  location: UC Davis Bainer Hall
-  photo: /assets/img/facilities/specimen-room.jpg
-  photo_note: AI rendering based on real photos, to illustrate the setup.
-  photo_alt: >-
-    Rendering of the specimen room: five motion capture cameras on
-    tripods encircling a small round table with a laptop.
-  capabilities:
-    - Specimen range-of-motion capture
-    - Morphological measurement
-  equipment:
-    - label: Motion capture
-      value: "5 × OptiTrack Flex 13 — 1.3 MP (1280 × 1024), 120 fps, sub-0.5 mm tracking"
-    - label: Specimen storage
-      value: "21 cu ft glass-door freezer, manual defrost"
-      also: "Standard refrigerator"
