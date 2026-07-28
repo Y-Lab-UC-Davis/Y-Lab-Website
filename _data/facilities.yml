@@ -29,13 +29,14 @@
 #                        Say what the image shows (and note if it is a rendering,
 #                        not a photo). Falls back to "Inside {name}" if omitted.
 #
-#  stay short.
-#
-#  NOTE ON CALI: the flagship block below is intentionally a short TEASER. CALI
-#  has its own section at /cali/, which owns the full equipment specs, services,
-#  recharge rates, team, and access details (single source of truth in
-#  _data/cali.yml). Keep this block brief and let the button link into /cali/ so
-#  the two pages never repeat — and never drift out of sync.
+# EXAMPLE ENTRY:
+#  - name: Lab Wind Tunnel Facility
+#    featured: true # Set to true for flagship facility card at top
+#    tagline: Low-turbulence aerodynamic test facility.
+#    partner: Co-directed with Partner Name
+#    location: Hall Room 101, University Name
+#    url: /facilities/wind-tunnel/ # Or external URL
+#    url_label: Visit facility
 #    photo: /assets/img/facilities/wind-tunnel.jpg
 #    photo_alt: Interior photo of test section
 #    blurb: Brief summary of capability.

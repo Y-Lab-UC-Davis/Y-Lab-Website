@@ -19,9 +19,9 @@
 #  `url` is a site-relative path (baseurl is added automatically).
 # ─────────────────────────────────────────────────────────────
 
-enabled: true
-label: "Now hiring"
-text: "We're looking for a Social Media Coordinator — a paid, part-time position (~4 hours/month)."
-cta: "Learn more & apply"
-url: "/join/#social-media-coordinator"
-deadline: 2026-09-30
+enabled: false
+label: "Announcement"
+text: "Welcome to our research group site!"
+cta: "Learn more"
+url: "/join/"
+deadline: 2026-12-31
