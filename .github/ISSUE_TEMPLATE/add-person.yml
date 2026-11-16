@@ -6,9 +6,10 @@ body:
   - type: markdown
     attributes:
       value: |
-        Fill in what you can, only **name** and **role** are required. A maintainer
-        will add this to the site. To include a **photo**, drag an image file into
-        this box (or email it to the PI); square headshots look best.
+        Fill in what you can (`name`, `role`, and `start` year are required). A
+        maintainer will review and merge the automated PR. No photo is needed
+        here — you can upload a headshot anytime later using the
+        **📷 Add or update a member photo** issue form.
   - type: input
     id: name
     attributes:

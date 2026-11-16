@@ -1,0 +1,35 @@
+name: "📷 Add or update a member photo"
+description: Upload a headshot for your People page entry (can be submitted anytime after registering).
+title: "[Photo] "
+labels: ["photo"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Upload a headshot for the People page. Since photos are displayed in a **circle**, a few quick guidelines help it look great:
+
+        - **Aspect ratio:** **1:1 (square)** works best (or a photo with enough room around your face to crop square).
+        - **Framing:** **Head and shoulders**, centered in the frame with a little space above your head so the circular crop doesn't clip the top of your head or chin. Good lighting and a simple background work best.
+        - **Size & format:** **JPG or PNG**, at least **400×400 px** (~600×600 px is ideal; larger files are fine too — a maintainer/bot will resize them).
+  - type: input
+    id: name
+    attributes:
+      label: Full name
+      description: Use the same name as on your People page entry.
+      placeholder: Jordan Rivera
+    validations:
+      required: true
+  - type: textarea
+    id: photo
+    attributes:
+      label: Headshot
+      description: Drag and drop an image file (JPG or PNG) into this box, or paste it from your clipboard.
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirm
+      options:
+        - label: This photo is OK to publish on the public lab website.
+          required: true
