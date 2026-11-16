@@ -31,7 +31,7 @@ workflow. Change the behavior or wording? Edit the script.
 | Robot (workflow file) | Runs when… | What it does | Result |
 |---|---|---|---|
 | **Update publications** (`update-publications.yml`) | 1st of each month | Checks OpenAlex for new papers by your ORCID; also fills in a free **Open access** link when a paper has one | Opens a PR editing `_data/publications.yml` |
-| **Issue form to PR** (`issue-to-pr.yml`) | Someone submits a website issue form | Turns the form (news / conference / person / press) into the right `_data` entry | Opens a PR, comments on the issue, and closes it when you merge |
+| **Issue form to PR** (`issue-to-pr.yml`) | Someone submits a website issue form | Turns the form (news / conference / press; `add-person` is archived in favor of `lab-admin` + `sync_people.py`) into the right `_data` entry | Opens a PR, comments on the issue, and closes it when you merge |
 | **Optimize images** (`optimize-images.yml`) | An image is added to `assets/img/` | Shrinks anything too large (max 1600px wide; ~300 KB JPEG / ~600 KB PNG) | Opens a PR with the smaller files |
 | **Link rot check** (`link-rot-check.yml`) | Once a year (Jan 6) | Checks every paper DOI, press link, and data/code link still works | Opens an **issue** listing only the genuinely dead ones |
 | **Guide link check** (`guide-link-check.yml`) | Once a year (Jul 5) | Checks the Lab Guide's outside links | Opens an issue if any broke |

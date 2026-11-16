@@ -11,7 +11,7 @@ There are **three ways** to get an update in, from least to most technical.
 
 Go to the repo's **Issues → New issue**, pick the matching form, fill it in, submit:
 
-- ➕ **Add or update a lab member**
+- 📷 **Add or update a member photo** *(new members register their profile first in `lab-admin`, which syncs here via `scripts/sync_people.py`)*
 - 📄 **Add a conference paper, talk, or poster**
 - 📣 **Add a news milestone**
 - 📰 **Add press coverage**
@@ -20,12 +20,12 @@ That's it. The submission lands as a tidy GitHub issue for a maintainer to apply
 You only need a free GitHub account. (Journal articles aren't here: they update
 themselves from OpenAlex.)
 
-> **🤖 These forms now apply themselves.** When you submit any of the four forms
-> above, a bot immediately drafts the matching change (news milestone, conference
-> paper/talk/poster, new/updated member, or press item), opens a pull request, and
-> comments on your issue with the link. A maintainer just checks it and merges —
-> merging closes your issue. Nothing to copy by hand. If a required field is missing
-> or a role has no group yet, the bot comments to say so instead.
+> **🤖 News, conference, and press forms apply themselves.** When you submit one of
+> those three forms above, a bot immediately drafts the matching change, opens a
+> pull request, and comments on your issue with the link. A maintainer just checks
+> it and merges — merging closes your issue. Nothing to copy by hand. If a required
+> field is missing, the bot comments to say so instead. Photo issues go directly to a
+> maintainer to crop and add to `assets/img/people/`.
 
 ## 2. The direct way: edit the file (a little GitHub comfort)
 

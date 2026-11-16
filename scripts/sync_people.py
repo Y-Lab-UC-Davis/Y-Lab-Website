@@ -36,7 +36,9 @@ ROLE_MAP = {
     "phd": ("phd", "PhD Student"),
     "msc": ("msc", "MSc Student"),
     "undergrad": ("undergrad", "Undergraduate Researcher"),
+    "visiting_undergrad": ("undergrad", "Visiting Undergraduate Researcher"),
     "visitor": ("visiting", "Visiting Researcher"),
+    "staff": ("visiting", "Lab Staff / Affiliate"),
 }
 
 GROUP_META = [
@@ -197,6 +199,9 @@ def index_existing(people_data: dict) -> dict[str, dict]:
 def build_member_entry(src: dict, existing: dict | None) -> tuple[str, dict]:
     raw_role = str(src.get("role") or "undergrad").strip().lower()
     gid, role_title = ROLE_MAP.get(raw_role, ("undergrad", "Undergraduate Researcher"))
+    home_inst = str(src.get("home_institution") or "").strip()
+    if home_inst and raw_role in ("visitor", "visiting_undergrad"):
+        role_title = f"{role_title} · {home_inst}"
     full_name = str(src.get("full_name") or "").strip()
 
     entry: dict = {
@@ -227,6 +232,10 @@ def build_member_entry(src: dict, existing: dict | None) -> tuple[str, dict]:
         scholar = str(pub.get("google_scholar") or "").strip()
         if scholar:
             entry["scholar"] = scholar
+        orcid_raw = str(pub.get("orcid") or "").strip()
+        if orcid_raw:
+            m = re.search(r"\d{4}-\d{4}-\d{4}-[\dxX]{4}", orcid_raw)
+            entry["orcid"] = m.group() if m else orcid_raw
         linkedin = str(pub.get("linkedin") or "").strip()
         if linkedin:
             entry["linkedin"] = linkedin
