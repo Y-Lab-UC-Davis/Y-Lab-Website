@@ -15,10 +15,13 @@ see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Add or update a team member: `_data/people.yml`
 
+If your profile is already in `../lab-admin/members/`, run
+`python3 scripts/sync_people.py` to update `_data/people.yml` automatically.
+
 Everyone except the PI shows in one combined **"The team" grid**; each card gets a
-bird badge (from the `role` text) and optional discipline tags. In the file,
-members sit under `groups:` (`postdocs`, `phd`, `masters`, `undergrad`), which only
-sets the **order** they appear.
+role badge (from the `role` text) and optional discipline tags. In the file,
+members sit under `groups:` (`postdoc`, `phd`, `msc`, `undergrad`, `visiting`),
+which sets the **order** they appear.
 
 Add a block under the right group's `members:` list. Only `name` and `role` are required.
 

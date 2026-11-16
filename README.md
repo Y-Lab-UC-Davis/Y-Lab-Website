@@ -54,7 +54,7 @@ On recent macOS this can fail on the `eventmachine` gem: see the fix in
 │   └── navigation.yml      top menu
 ├── _layouts/  _includes/ ← page templates (rarely touched)
 ├── assets/              ← CSS, JS, logo, images
-├── scripts/             ← publications sync · press/paper helper · link check · image tools
+├── scripts/             ← publications sync · roster sync · press/paper helper · link check · image tools
 ├── CONTRIBUTING.md      ← how lab members submit updates + delegation
 └── .github/             ← workflows (deploy · publications · checks · link-rot · images · issue→PR) + issue forms
 ```

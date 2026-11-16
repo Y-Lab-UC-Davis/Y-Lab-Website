@@ -109,6 +109,7 @@ defaults:
     values: { layout: "page" }
 
 exclude:
+  - AGENTS.md
   - README.md
   - MAINTENANCE.md
   - ARCHITECTURE.md
