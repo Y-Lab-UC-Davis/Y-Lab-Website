@@ -13,12 +13,13 @@
 - **Approve / Modify / Disapprove Format for PI Issues:** Do not use multiple-choice checkboxes (`- [ ] Option A / Option B`) on `pi-input` issues. State what is needed, present a single proposed default/draft, and ask Dr. Yan to reply with **Approve**, **Modify**, or **Disapprove**. Split multi-topic requests into small, single-topic issues.
 
 ## GitHub Operations (`gh` & Workflows)
-- **Never add `website-update` to task issues:** `.github/workflows/issue-to-pr.yml` triggers `scripts/issue_to_change.py` on any open issue carrying the `website-update` label. Only the four member submission forms in `.github/ISSUE_TEMPLATE/` should use `website-update`.
+- **Never add `website-update` to task or photo issues:** `.github/workflows/issue-to-pr.yml` triggers `scripts/issue_to_change.py` on any open issue carrying the `website-update` label. Only the three automated content forms in `.github/ISSUE_TEMPLATE/` (`add-news.yml`, `add-conference-paper.yml`, `add-press.yml`) should use `website-update`. Photo submissions (`add-photo.yml`) use the `photo` label and are handled manually by maintainers.
 - **Check existing issues and labels first:** Verify existing items with `gh issue list` and `gh label list` before creating new issues or referencing labels.
 
 ## YAML Data Files & Python Sync Scripts
 - **Preserve example blocks and comments:** Always keep `EXAMPLE ENTRY` / `EXAMPLE STRUCTURE` / `MEMBER TEMPLATE EXAMPLE` comments and field documentation intact in `_data/*.yml`. Scripts that rewrite `_data/*.yml` (`scripts/sync_people.py`, `scripts/update_publications.py`) must preserve these headers, examples, and section comments.
 - **Initialize empty YAML lists as `[]`:** Never leave empty list keys blank (`null`); Liquid `concat` filters fail on `nil`.
+- **Single source of truth for member profiles:** Member registration and bio/link updates belong in `lab-admin` (`member-registration.yml` -> `members/*.yml`), synced into `_data/people.yml` via `scripts/sync_people.py` (which preserves manual `photo`, `awards`, `aliases`, `last`, `orcid`, and `role_icon` fields). Do not re-enable `add-person.yml` on the website; collect headshots separately via `add-photo.yml`.
 - **Public privacy boundaries (`scripts/sync_people.py`):** When syncing profiles from `../lab-admin/members/*.yml` into `_data/people.yml`, never copy `email_personal`, `desk_location`, `bainer_access`, or `lab_access`, and omit personal contact links (`email`, `linkedin`, `orcid`, `scholar`, `website`, `github`) for undergraduate and visiting researcher entries.
 - **Publications sync (`scripts/update_publications.py`):** Syncs by Dr. Yan's ORCID (`0000-0002-3711-0807`) via OpenAlex. Never remove manual entries or exclusions; unwanted DOIs returned by OpenAlex belong under `exclude:` in `_data/publications_manual.yml`.
 
