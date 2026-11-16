@@ -102,28 +102,6 @@ Space" example poster and his poster-design guide](https://colinpurrington.com/t
 decorative background, illegible text: spotting the problems there makes them much easier
 to avoid on your own poster.
 
-## Learning from real posters
-
-A few of Christina's own posters, annotated with what worked and what she'd change. Every
-poster is a draft you learn from; look for the declarative section headers, the highlighted
-key takeaways, and the summary or comparative figure that carries the story, and notice the
-honest notes about titles set too small or a section that carried too many words.
-
-<figure class="figure" markdown="1">
-![Annotated conference poster: "Gliding gulls manipulate their elbow to modulate aerodynamic trade-offs."](/assets/img/guide/poster-example-gulls.jpg)
-<figcaption>Images pull people in and declarative headers state each result, but the title may be set too small and one panel risks overwhelming the reader.</figcaption>
-</figure>
-
-<figure class="figure" markdown="1">
-![Annotated conference poster: "Static longitudinal stability of four avian species' wings."](/assets/img/guide/poster-example-four-species.jpg)
-<figcaption>The key takeaways are highlighted up front, though the text is near the upper limit of what a poster should carry.</figcaption>
-</figure>
-
-<figure class="figure" markdown="1">
-![Annotated conference poster: "Longitudinal dynamic stability of a gliding gull."](/assets/img/guide/poster-example-dynamic-stability.jpg)
-<figcaption>Light shading separates the sections cleanly and logos sit along the bottom, but the all-caps headers are harder to read than sentence case.</figcaption>
-</figure>
-
 ## Making and printing it
 
 <aside class="marginnote" markdown="1">

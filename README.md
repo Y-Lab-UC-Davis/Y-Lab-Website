@@ -1,6 +1,6 @@
-# BIRD Lab website
+# Y-Lab website
 
-The public website for the **Bio-Informed Research & Design (BIRD) Lab** at UC Davis: built as a static [Jekyll](https://jekyllrb.com/) site, hosted free on **GitHub Pages**, and designed so that non-technical lab members can keep it current by editing plain text files.
+The public website for **Y-Lab** at UC Davis (directed by Dr. Wenzhong Yan): built as a static [Jekyll](https://jekyllrb.com/) site, hosted free on **GitHub Pages**, and designed so that non-technical lab members can keep it current by editing plain text files.
 
 > **New here? Read these in order:**
 > - [CONTENT-GUIDE.md](CONTENT-GUIDE.md) (edit content)
@@ -54,7 +54,7 @@ On recent macOS this can fail on the `eventmachine` gem: see the fix in
 │   └── navigation.yml      top menu
 ├── _layouts/  _includes/ ← page templates (rarely touched)
 ├── assets/              ← CSS, JS, logo, images
-├── scripts/             ← publications sync · press/paper helper · link check · image tools
+├── scripts/             ← publications sync · roster sync · press/paper helper · link check · image tools
 ├── CONTRIBUTING.md      ← how lab members submit updates + delegation
 └── .github/             ← workflows (deploy · publications · checks · link-rot · images · issue→PR) + issue forms
 ```
@@ -79,5 +79,4 @@ The decisions and trade-offs behind all of this are in
 ---
 
 ## License / credit
-Content © BIRD Lab, UC Davis. Lab logo is the lab's own mark. Built with Jekyll;
-hosted on GitHub Pages.
+Content © Y-Lab, UC Davis. Adapted with permission from the BIRD Lab website template (UC Davis). Built with Jekyll; hosted on GitHub Pages.

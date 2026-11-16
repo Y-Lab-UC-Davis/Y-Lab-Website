@@ -38,10 +38,11 @@ workflow. Change the behavior or wording? Edit the script.
 | **Site checks** (`site-checks.yml`) | Every change | Tests links, images, and accessibility | Flags problems before they ship |
 | **Build & deploy** (`deploy.yml`) | Every merge to `main` | Rebuilds and publishes the site | The live site updates |
 
-There are also two helper scripts you run **yourself** when you want to, not on a
+There are also helper scripts you run **yourself** when you want to, not on a
 schedule: `add_press.py` (draft a news/press entry or a paper announcement with
-social captions) and `check_links.py` / `optimize_images.py` (the manual versions of
-the two robots above).
+social captions), `sync_people.py` (sync active student profiles from
+`../lab-admin/members/` into `_data/people.yml`), and `check_links.py` /
+`optimize_images.py` (the manual versions of the two robots above).
 
 ## How to change the common things (with exact spots)
 

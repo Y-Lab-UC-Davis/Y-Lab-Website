@@ -39,9 +39,8 @@
 #  `_data/press.yml`; tag a story with the paper's `doi:` there and it is counted
 #  automatically as the "In the news · N" badge next to that paper.
 #
-#  The entries below were populated from the UC-BIRD-Lab & charvey23 GitHub orgs
-#  and public FigShare/Dryad datasets. Add `data:`/`code:` to more papers as
-#  their repositories go public.
+#  The entries below can be populated with code repos and datasets from
+#  Y-Lab-UC-Davis and public FigShare/Dryad datasets as repositories go public.
 # 
 # 
 #  EXAMPLE ENTRY:

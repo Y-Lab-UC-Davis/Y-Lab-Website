@@ -1,17 +1,18 @@
 # ─────────────────────────────────────────────────────────────
-#  Research Lab, Jekyll configuration
+#  Y-Lab, Jekyll configuration
 # ─────────────────────────────────────────────────────────────
 
-title: "Research Lab"
-tagline: "Research & Innovation"
+title: "Y-Lab"
+tagline: "Mechanical Intelligence for Soft Robots"
 description: >-
-  Welcome to our research lab group homepage. We conduct cutting-edge research
-  and develop novel technologies.
+  Welcome to the Y-Lab homepage at UC Davis. We develop next-generation soft and
+  bio-inspired robots by integrating Mechanical Intelligence (MI) with
+  Computational Intelligence (AI).
 
 # Site address. `url` is the ORIGIN only (no path, no trailing slash).
 # Leave `baseurl` EMPTY, the deploy workflow fills in the project path
 # automatically at build time.
-url: "https://example.github.io"
+url: "https://y-lab-uc-davis.github.io"
 baseurl: ""
 
 # ── Google Search Console verification ───────────────────────
@@ -19,17 +20,18 @@ baseurl: ""
 
 lab:
   institution: "University of California, Davis"
-  location: "Department of Mechanical & Aerospace Engineering, UC Davis, Davis, CA"
-  full_name: "Research Lab"
-  pi: "Dr. Principal Investigator"
-  pi_email: "pi@university.edu"
-  orcid: "0000-0000-0000-0000"
-  scholar: "https://scholar.google.com"
+  location: "Department of Mechanical & Aerospace Engineering, Bainer Hall, UC Davis, Davis, CA"
+  full_name: "Y-Lab (Mechanical Intelligence and Soft Robotics Lab)"
+  founded: 2025
+  pi: "Dr. Wenzhong Yan"
+  pi_email: "wyan@ucdavis.edu"
+  orcid: "0000-0002-3711-0807"
+  scholar: "https://scholar.google.com/citations?user=YHx-3YIAAAAJ"
   # PI / lab links surfaced in the footer and Data & Code section.
   linkedin: ""
   instagram: ""
   instagram_handle: ""
-  github_org: ""
+  github_org: "https://github.com/Y-Lab-UC-Davis"
   # FigShare (or other data repository) for published data/code.
   figshare_url: ""
 
@@ -46,8 +48,11 @@ twitter:
 # Optional image assets. 
 # Pages only render the image when its path is set, so the build never references a missing file.
 assets:
+  # Optional hero background video + poster image for the Home page.
+  hero_video: ""
+  hero_poster: ""
   # Lab group photo. Powers BOTH the People-page group photo
-  # and the Home "In the field" cinematic band.
+  # and the Home group photo band.
   lab_photo: ""
   # Playful candid shown as the "lab culture" moment on the Join page.
   culture_photo: ""
@@ -104,6 +109,7 @@ defaults:
     values: { layout: "page" }
 
 exclude:
+  - AGENTS.md
   - README.md
   - MAINTENANCE.md
   - ARCHITECTURE.md

@@ -53,12 +53,6 @@ roles:
     owns: website updates, Instagram post coordination, scripts for tours, outreach events, inclusive-culture events.
     can: publish routine updates, request content with deadlines, and set the monthly content schedule.
 
-  - name: Animal Care Coordinator
-    tagline: Predictable animal welfare and compliance
-    purpose: Keeps animal welfare and compliance predictable and reliable.
-    owns: feeding and monitoring schedules, welfare logs, IACUC reminders, partner coordination.
-    can: pause animal-related activities if welfare or compliance is at risk; require training before animal handling.
-
   - name: Inventory & Process Improvement Lead
     tagline: Stocked consumables, steady upgrades
     purpose: Keeps common consumables stocked and ships small workflow upgrades that cut friction.

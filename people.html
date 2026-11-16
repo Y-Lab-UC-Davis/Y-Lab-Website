@@ -158,17 +158,10 @@ description: "Meet our research group team: PI, researchers, collaborators, and 
 </section>
 {%- endif -%}
 
+{%- if site.data.people.alumni.members and site.data.people.alumni.members.size > 0 -%}
 <section class="people-group" id="alumni">
   <h2>{{ site.data.people.alumni.title }}</h2>
-  {%- comment -%}
-    EDIT ME BY HAND. This sentence highlights a few notable alumni destinations.
-    It is intentionally hand-written (not generated from the alumni table below),
-    so update these company/school names here whenever you want to refresh the
-    highlights. The full, always-current list lives in the table underneath.
-  {%- endcomment -%}
-  <p class="muted">We are forever grateful to the members who helped build and grow our lab.
-  They've gone on to positions in industry at <strong>Boeing, NASA&nbsp;Ames, and Northwood</strong>
-  as well as to pursue academic positions at <strong>Stanford, UCLA, and CU&nbsp;Boulder</strong>.</p>
+  <p class="muted">We are grateful to the former members who helped build and grow {{ site.title }}.</p>
   <details class="alumni-details">
     <summary>See all {{ site.data.people.alumni.members | size }} past members &amp; where they are now</summary>
     <table class="alumni-table">
@@ -199,6 +192,7 @@ description: "Meet our research group team: PI, researchers, collaborators, and 
     </table>
   </details>
 </section>
+{%- endif -%}
 {%- endif -%}
 
 

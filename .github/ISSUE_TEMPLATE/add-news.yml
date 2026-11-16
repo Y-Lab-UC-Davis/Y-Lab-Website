@@ -32,6 +32,6 @@ body:
     attributes:
       label: What happened
       description: One or two sentences, written like the existing timeline entries.
-      placeholder: Ada won a best-paper award at AIAA Aviation.
+      placeholder: Zhongxiao won a best-paper award at IEEE RoboSoft.
     validations:
       required: true

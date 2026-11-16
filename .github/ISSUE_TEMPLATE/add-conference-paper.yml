@@ -12,7 +12,7 @@ body:
     id: title
     attributes:
       label: Title
-      placeholder: Wing–tail interaction effects in a morphing-tail aircraft during perch
+      placeholder: Origami-inspired soft actuators with programmable stiffness
     validations:
       required: true
   - type: input
@@ -20,14 +20,14 @@ body:
     attributes:
       label: Authors
       description: As they should appear, initials + last name.
-      placeholder: K. Bordner, C. Cook, C. Harvey
+      placeholder: J. Pieck, W. Yan
     validations:
       required: true
   - type: input
     id: venue
     attributes:
       label: Venue
-      placeholder: AIAA SciTech Forum, Orlando, FL
+      placeholder: IEEE International Conference on Soft Robotics (RoboSoft)
     validations:
       required: true
   - type: input
@@ -51,4 +51,4 @@ body:
     id: doi
     attributes:
       label: DOI or link (optional)
-      placeholder: https://doi.org/10.2514/6.2025-1460
+      placeholder: https://doi.org/10.1109/RoboSoft.2026.000000

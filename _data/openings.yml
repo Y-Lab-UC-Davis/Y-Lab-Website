@@ -41,7 +41,7 @@
 
 # Shared draft that pre-fills the "Email me" button (kept short on purpose).
 email_body: |
-  Hi Dr. [PI Last Name],
+  Hi Dr. Yan,
 
   A bit about me: [program/year + one line of background].
   Why your lab: [a project or paper of yours that caught my eye].
@@ -49,16 +49,16 @@ email_body: |
   Timing: [when I'd start]. My CV and unofficial transcript are attached.
 
 undergrad:
-  open: false
+  open: true
   open_note: Currently interviewing
   closed_note: Not currently interviewing
 
 graduate:
   open: false
   open_note: Funded openings available for next admissions cycle
-  closed_note: No funded openings at the moment
+  closed_note: Open to prospective graduate students coming in with external funding or fellowships.
 
 postdoc:
   open: false
   open_note: Recruiting postdocs
-  closed_note: No funded openings at the moment
+  closed_note: Open to prospective postdocs coming in with external funding or fellowships.

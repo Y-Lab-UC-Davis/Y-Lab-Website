@@ -4,15 +4,15 @@
 #
 #  Conference talks & posters WITHOUT a DOI, plus blog posts. These are NOT
 #  indexed by OpenAlex, so add them here by hand. Conference/meeting papers that
-#  DO have a DOI (e.g. AIAA SciTech/AVIATION) are pulled automatically into
+#  DO have a DOI (e.g. IEEE ICRA/IROS, ASME, AIAA) are pulled automatically into
 #  publications.yml, so don't add those here. See MAINTENANCE.md.
 #
 #  If a talk you added here later gets a DOI and syncs into publications.yml,
 #  delete it here to keep this file tidy. As a safety net, the Publications page
 #  already hides any entry here whose title matches a synced one (the DOI version
 #  wins), so you won't see a duplicate even if you forget.
-# 
-# 
+#
+#
 #  EXAMPLE ENTRY:
 #
 #  - title: "Invited Presentation Title"
@@ -24,20 +24,20 @@
 #    url: "link"
 # ─────────────────────────────────────────────────────────────
 
-conference: 
-talks:
-blogs:
-posters:
+conference: []
+talks: []
+blogs: []
+posters: []
 
 # ─────────────────────────────────────────────────────────────
-#  DO-NOT-LIST, OpenAlex sometimes returns things under the lab's ORCID that
+#  DO-NOT-LIST: OpenAlex sometimes returns things under the lab's ORCID that
 #  aren't really papers (a profile write-up, a talk abstract indexed like an
 #  article, …). List their BARE DOI here and the sync will drop them and never
 #  re-add them. Add a short `reason:` for the next person.
-# 
-#  EXAMPLE
-#    - doi: "10.1242/jeb.245923"    # "ECR Spotlight – Christina Harvey", profile write-up, not a paper
+#
+#  EXAMPLE:
+#    - doi: "10.xxxx/xxxx"
 #      reason: "Journal spotlight/profile of the PI, not a research paper."
-# 
+#
 # ─────────────────────────────────────────────────────────────
-exclude:
+exclude: []

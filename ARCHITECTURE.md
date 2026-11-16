@@ -1,6 +1,6 @@
 # Architecture
 
-Why the BIRD Lab site is built the way it is. This document is deliberately
+Why the Y-Lab site is built the way it is. This document is deliberately
 durable: it explains decisions and trade-offs, not the current contents. Anything
 that changes as you edit the site (which pages exist, how many people or papers,
 the exact menu) is not repeated here, because the site itself is the source of

@@ -23,8 +23,7 @@ Whether your background is in engineering, physical sciences, or related discipl
 - **Willingness to grow:** developing both your technical depth and collaboration skills.
 - **Care for the lab:** keeping our environment welcoming, safe, and rigorous.
 
-New here? Our [Lab Guide]({{ '/lab-guide/' | relative_url }}) and
-[research]({{ '/research/' | relative_url }}) pages show how our group operates.
+New here? Our [research]({{ '/research/' | relative_url }}) page shows what our group works on.
 
 ## Openings
 
@@ -34,7 +33,11 @@ New here? Our [Lab Guide]({{ '/lab-guide/' | relative_url }}) and
 {%- if ug.open %}<span class="status status--active">{{ ug.open_note }}</span>{% else %}<span class="status status--paused">{{ ug.closed_note }}</span>{% endif %}
 <h3>Undergraduates</h3>
 <p>{% if ug.open %}{{ ug.open_note }}{% else %}{{ ug.closed_note }}{% endif %}</p>
-<a class="btn btn--primary" href="{{ site.undergrad_form_url | default: '/contact/' }}">Interest form &rarr;</a>
+{%- if site.undergrad_form_url and site.undergrad_form_url != "" -%}
+<a class="btn btn--primary" href="{{ site.undergrad_form_url }}" rel="noopener">Interest form &rarr;</a>
+{%- else -%}
+<a class="btn btn--primary" href="mailto:{{ site.lab.pi_email }}?subject={{ 'Prospective undergraduate researcher' | uri_escape }}&body={{ site.data.openings.email_body | uri_escape }}">Email PI &rarr;</a>
+{%- endif -%}
 </div>
 {%- assign grad = site.data.openings.graduate -%}
 <div class="card">
@@ -52,7 +55,9 @@ New here? Our [Lab Guide]({{ '/lab-guide/' | relative_url }}) and
 </div>
 </div>
 
+{%- if site.data.funding and site.data.funding.size > 0 -%}
 <p class="muted u-fs-sm"><strong>Funding your own spot?</strong> Browse our <a href="{{ '/lab-guide/funding-applications/' | relative_url }}">curated list of fellowships &amp; scholarships</a>.</p>
+{%- endif -%}
 
 ## What to include in a first email
 

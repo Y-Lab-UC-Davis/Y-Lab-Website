@@ -59,9 +59,6 @@ New undergrads: check with Christina or your mentor before starting the onboardi
 
 Undergrads are not given office keys and are not to be in the facilities alone.
 {: .guide-info}
-
-If your project involves animals, complete the required training early; see [Animal care & ethics]({{ '/lab-guide/animal-care-ethics/' | relative_url }}).
-{: .guide-info}
 </div>
 
 <div class="guide-step" markdown="1">

@@ -1,13 +1,13 @@
 ---
 # Front matter makes Jekyll process the Liquid below, so relative_url picks up the
-# project baseurl the deploy workflow injects (/bird-lab-website). Without this the
+# project baseurl the deploy workflow injects (/Y-Lab-Website). Without this the
 # icon paths would resolve to the domain root and 404 on the live project page.
 layout: null
 ---
 {
-  "name": "BIRD Lab",
-  "short_name": "BIRD Lab",
-  "description": "Bio-Informed Research & Design, UC Davis. We uncover the principles of avian flight to advance biology, aerospace, and wildlife rehabilitation.",
+  "name": "Y-Lab",
+  "short_name": "Y-Lab",
+  "description": "Y-Lab at UC Davis. Mechanical Intelligence and Soft Robotics Lab, directed by Dr. Wenzhong Yan.",
   "start_url": "{{ '/' | relative_url }}",
   "display": "standalone",
   "background_color": "#0b162d",
