@@ -34,9 +34,10 @@ description: "Contact our research group about collaboration, media inquiries, o
 </div>
 
 <p class="muted u-fs-sm u-mt-16">Find me online:
-<a href="https://www.christinaharvey.ca">personal website</a> ·
-<a href="{{ site.lab.scholar }}">Google Scholar</a> ·
-<a href="https://orcid.org/{{ site.lab.orcid }}">ORCID</a> ·
-<a href="https://mae.ucdavis.edu/people/christina-harvey">UC&nbsp;Davis MAE page</a> ·
-<a href="{{ site.lab.instagram }}">Instagram</a>
+<a href="https://wzyan24.wixsite.com/wenzhong-yan" rel="noopener">personal website</a> ·
+<a href="{{ site.lab.scholar }}" rel="noopener">Google Scholar</a> ·
+<a href="https://orcid.org/{{ site.lab.orcid }}" rel="noopener">ORCID</a> ·
+<a href="https://mae.ucdavis.edu/people/wenzhong-yan" rel="noopener">UC&nbsp;Davis MAE page</a>
+{%- if site.lab.instagram and site.lab.instagram != "" %} · <a href="{{ site.lab.instagram }}" rel="noopener">Instagram</a>{% endif -%}
+{%- if site.lab.linkedin and site.lab.linkedin != "" %} · <a href="{{ site.lab.linkedin }}" rel="noopener">LinkedIn</a>{% endif -%}
 </p>

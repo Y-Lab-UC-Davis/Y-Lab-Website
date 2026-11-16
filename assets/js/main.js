@@ -1,4 +1,4 @@
-/* BIRD Lab — progressive enhancement. Site works without JS. */
+/* Y-Lab — progressive enhancement. Site works without JS. */
 (function () {
   "use strict";
 
@@ -306,7 +306,7 @@
     if (!isNaN(end.getTime()) && new Date() > end) { bar.remove(); return; }
   }
 
-  var key = "birdlab-announce-dismissed-" + (deadline || "current");
+  var key = "ylab-announce-dismissed-" + (deadline || "current");
   try {
     if (sessionStorage.getItem(key) === "1") { bar.remove(); return; }
   } catch (e) { /* private mode; bar just stays dismissible per page */ }

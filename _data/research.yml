@@ -1,5 +1,5 @@
 # ─────────────────────────────────────────────────────────────
-#  RESEARCH 
+#  RESEARCH
 #  Defines the research themes and project directory for /research/
 #
 #  Each project is a small card: a one-sentence blurb, its theme, the lead
@@ -8,7 +8,7 @@
 #  `papers` is a list of DOIs that belong to THIS project. The card looks each
 #  one up in the publications data and shows its title + year + link. To feature
 #  a new paper, paste its DOI here (one line). `image` and `contact` are optional.
-# 
+#
 #  EXAMPLE STRUCTURE:
 #
 #  themes:
@@ -29,6 +29,56 @@
 #      blurb: One sentence summary of project goals.
 # ─────────────────────────────────────────────────────────────
 
-themes: 
+themes:
+  - id: origami-soft-robotics
+    title: Origami and Soft Robotics
+    short: Utilizing folding mechanisms, compliant structures, and soft materials to build adaptable, impact-resilient robots.
+    blurb: Utilizing folding mechanisms, compliant structures, and soft materials to build adaptable, impact-resilient robots.
+    why: Soft and foldable bodies allow robots to safely interact with humans, survive high-impact collisions, and adapt to confined environments.
 
-projects: 
+  - id: mechanical-intelligence
+    title: Mechanical Intelligence and Structural Instability
+    short: Harnessing buckling, bistability, and physical computation for autonomous sensing, actuation, and control.
+    blurb: Harnessing buckling, bistability, and physical computation for autonomous sensing, actuation, and control without heavy onboard electronics.
+    why: Embedding intelligence directly into mechanical structures enables untethered operation in extreme or sub-gram regimes where conventional processors fail.
+
+  - id: computational-fabrication
+    title: Computational Fabrication and Smart Materials
+    short: Streamlining the design-to-fabrication pipeline for programmable metamaterials, active textiles, and wearable devices.
+    blurb: Streamlining the design-to-fabrication pipeline for programmable metamaterials, active textiles, and wearable devices.
+    why: Rapid, accessible fabrication turns complex multifunctional materials into practical robotic systems and assistive interfaces.
+
+  - id: miniaturized-bioinspired-robots
+    title: Miniaturized and Bio-Inspired Robots
+    short: Developing insect-scale aerial and terrestrial robots capable of operating in complex, unstructured environments.
+    blurb: Developing insect-scale aerial and terrestrial robots capable of operating in complex, unstructured environments.
+    why: Resilient micro-robots open new possibilities for environmental monitoring, search and rescue, and exploration.
+
+projects:
+  - title: Anisotropic Particle Jamming and Variable-Stiffness Structures
+    lead: Jason Daniel Pieck
+    contact: jdpieck@ucdavis.edu
+    theme: mechanical-intelligence
+    blurb: Developing low-profile, directional jamming metamaterials with programmable anisotropic stiffness for adaptive robotic structures.
+
+  - title: Bio-Inspired Fish-Tail Propulsion and Passive Impedance Metamaterials
+    lead: Zhongxiao Deng
+    contact: robdeng@ucdavis.edu
+    theme: miniaturized-bioinspired-robots
+    blurb: Investigating passive impedance metamaterials and compliant fin mechanisms for efficient bio-inspired aquatic propulsion.
+
+  - title: SnailBot Soft Robotic Terrestrial Locomotion
+    lead: Kyra Alexa Ruiz
+    contact: Kamruiz@ucdavis.edu
+    theme: origami-soft-robotics
+    blurb: Designing soft, compliant robotic locomotion systems inspired by gastropod mechanics for traversing complex surfaces.
+
+  - title: Moving Textiles and Wearable Actuators
+    lead: Luci Masselink
+    theme: computational-fabrication
+    blurb: Creating active fabric mechanisms and compliant wearable interfaces capable of programmable motion and force assistance.
+
+  - title: Liquid Metal Core Sample Compression
+    lead: Parnita Chowtoori
+    theme: computational-fabrication
+    blurb: Characterizing liquid-metal-embedded elastomer composites under compression for soft sensing and tunable mechanical response.

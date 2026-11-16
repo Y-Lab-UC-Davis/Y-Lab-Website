@@ -44,14 +44,18 @@ try:
 except ImportError:
     sys.exit("PyYAML is required: pip install pyyaml")
 
-ORCID = os.environ.get("LAB_ORCID", "0000-0002-2830-0844")
-MAILTO = os.environ.get("OPENALEX_MAILTO", "pi@university.edu")
+ORCID = os.environ.get("LAB_ORCID", "0000-0002-3711-0807")
+MAILTO = os.environ.get("OPENALEX_MAILTO", "wyan@ucdavis.edu")
 OUT = os.path.join(os.path.dirname(__file__), "..", "_data", "publications.yml")
 # The hand-maintained companion; its `exclude:` list names DOIs to never list.
 MANUAL = os.path.join(os.path.dirname(__file__), "..", "_data", "publications_manual.yml")
 
-# OpenAlex work types we treat as peer-reviewed journal articles.
-JOURNAL_TYPES = {"article", "review", "letter"}
+# OpenAlex work types we include (peer-reviewed journal articles and indexed proceedings).
+JOURNAL_TYPES = {"article", "review", "letter", "proceedings-article"}
+CONFERENCE_VENUE_HINTS = (
+    "conference", "proceedings", "symposium", "workshop", "congress",
+    "forum", "meeting", "icra", "iros", "robosoft",
+)
 
 # Ignore repositories and obvious supplementary materials.
 EXCLUDED_SOURCE_TYPES = {"repository"}
@@ -96,6 +100,17 @@ HEADER = """\
 #  to point at a specific copy (e.g. your ResearchGate preprint), set `preprint:`
 #  or `pdf:` for that DOI in _data/pub_links.yml — those win over this.
 #  Keep newest first: this file is written sorted by date, newest first.
+#
+#  EXAMPLE ENTRY:
+#
+#  - title: "Publication Title Here"
+#    authors: "A. Author, B. Coauthor, W. Yan"
+#    venue: "Journal / Conference Name"
+#    year: 2026
+#    date: "2026-01-15"
+#    type: journal # journal | conference
+#    doi: "https://doi.org/10.xxxx/xxxx"
+#    oa_url: "https://..."
 # ────────────────────────────────────────────────────────────
 """
 
@@ -115,7 +130,7 @@ def fetch_works() -> list[dict]:
         }
         url = base + "?" + urllib.parse.urlencode(params)
         try:
-            req = urllib.request.Request(url, headers={"User-Agent": f"BIRDLab-site ({MAILTO})"})
+            req = urllib.request.Request(url, headers={"User-Agent": f"YLab-site ({MAILTO})"})
             with urllib.request.urlopen(req, timeout=30) as resp:
                 data = json.load(resp)
         except Exception as exc:  # network/JSON/HTTP: fail safe
@@ -190,12 +205,17 @@ def aiaa_type(source_name: str, doi: str) -> str | None:
     return None                                   # can't tell → flag & leave out
 
 
-def publication_type(source_type: str, source_name: str, doi: str) -> str | None:
+def publication_type(source_type: str, source_name: str, doi: str, work_type: str = "") -> str | None:
     """journal | conference | None (None = exclude, or flag for manual handling)."""
     if source_type == "repository":
         return None
     if doi.startswith("10.2514/"):               # AIAA: shared journal/conference prefix
         return aiaa_type(source_name, doi)
+    if work_type == "proceedings-article" or source_type == "conference":
+        return "conference"
+    s = (source_name or "").strip().lower()
+    if s and any(h in s for h in CONFERENCE_VENUE_HINTS):
+        return "conference"
     return "journal"
 
 def is_correction(work: dict) -> bool:
@@ -253,7 +273,7 @@ def to_entry(work: dict) -> dict | None:
     or "")
     source_type = source.get("type") or ""
 
-    pub_type = publication_type(source_type, source_name, norm_doi(doi))
+    pub_type = publication_type(source_type, source_name, norm_doi(doi), work.get("type") or "")
 
     if pub_type is None:
         return None

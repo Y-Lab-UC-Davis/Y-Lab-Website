@@ -1,4 +1,4 @@
-# Maintaining the BIRD Lab website
+# Maintaining the Y-Lab website
 
 Everything you need to keep the site current and healthy: written so any lab
 member can do it, no coding required.
@@ -37,7 +37,8 @@ Do these once a month. None of them require the command line.
    drafts the entry and opens a PR automatically; you just merge it (which closes the
    issue). Prefer the paper helper for a new paper: `python scripts/add_press.py --paper <doi>`.
 4. **Update People** (`_data/people.yml`):
-   - **Add** a new member, or **promote** someone by changing their `role:` (the bird badge updates itself).
+   - **Sync from `lab-admin`:** run `python3 scripts/sync_people.py` to pull active student profiles from `../lab-admin/members/`.
+   - **Add** a new member manually, or **promote** someone by changing their `role:` (the role badge updates itself).
    - **Retire** someone: cut their whole block from `groups:` and paste it under `alumni:`, then add a `now:` line. Their `start:` (year joined) and any `linkedin:` carry over, and a LinkedIn icon appears beside their name in the alumni table.
 5. **Confirm the Join page** hiring status still reads correctly. All three
    status pills (undergrad, graduate, postdoc) are one-line `open:` toggles in
@@ -71,7 +72,7 @@ files → Commit (with a message) → Push**. Full setup and troubleshooting is 
 
 Prefer to edit locally instead of on github.com? RStudio has a built-in **Git**
 pane, so you can publish without the command line. Repo:
-`https://github.com/UC-BIRD-Lab/bird-lab-website.git`.
+`https://github.com/Y-Lab-UC-Davis/Y-Lab-Website.git`.
 
 **One-time setup**
 
@@ -187,7 +188,7 @@ add `photo: /assets/img/people/firstname-lastname.jpg` to that person in
 
 **Journal articles are automatic.** A GitHub Action, **Update publications**, runs
 on the **1st of each month** (and on demand from **Actions → Run workflow**). It
-reads the PI's ORCID (`0000-0002-2830-0844`) from OpenAlex and opens a pull
+reads the PI's ORCID (`0000-0002-3711-0807`) from OpenAlex and opens a pull
 request adding any new articles to `_data/publications.yml`. You review and merge.
 
 - **It's safe:** the bot only *adds* articles with a new DOI (and fills in a missing
@@ -216,10 +217,10 @@ never overwrite them. Add a data link, a code repo, and (for major papers only) 
 small figure:
 
 ```yaml
-- doi: "10.1098/rsif.2025.0868"
+- doi: "10.1038/s41467-023-37158-9"
   data: "https://figshare.com/…"
-  code: "https://github.com/UC-BIRD-Lab/…"
-  image: /assets/img/research/perchaero.jpg   # optional; only for standout papers
+  code: "https://github.com/Y-Lab-UC-Davis/…"
+  image: /assets/img/pubs/paper_graphic.jpg   # optional; only for standout papers
 ```
 
 Nothing shows until the paper itself is on the Publications page, so you can add
@@ -286,12 +287,12 @@ matching `_data/*.yml` file using the cheat-sheet in
 
 ## Moving to a custom domain later (optional)
 
-If the lab ever wants `birdlab.ucdavis.edu` or similar instead of
-`uc-bird-lab.github.io`: request the subdomain from UC Davis IT (or buy a
+If the lab ever wants `ylab.ucdavis.edu` or similar instead of
+`y-lab-uc-davis.github.io`: request the subdomain from UC Davis IT (or buy a
 domain), then in the repo go to **Settings → Pages → Custom domain**, enter it,
 and keep **Enforce HTTPS** checked. GitHub writes a `CNAME` file to the repo;
 your DNS host needs a matching CNAME record pointing at
-`uc-bird-lab.github.io`. Afterward, update `url:` in `_config.yml` so absolute
+`y-lab-uc-davis.github.io`. Afterward, update `url:` in `_config.yml` so absolute
 links and the sitemap use the new address. Old links keep redirecting from the
 github.io address automatically.
 

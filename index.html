@@ -1,34 +1,36 @@
 ---
 layout: default
 title: "Home"
-description: "Welcome to our research group homepage."
+description: "Y-Lab at UC Davis: Mechanical Intelligence and Soft Robotics Lab, directed by Dr. Wenzhong Yan."
 
 ---
 
 <section class="hero">
+  {%- if site.assets.hero_video and site.assets.hero_video != "" -%}
   <!-- Adding Video -->
-    <video class="section-bg" autoplay muted loop playsinline
-         poster="{{ '/assets/img/facilities/cali.jpg' | relative_url }}" aria-hidden="true">
-    <source src="{{ '/assets/video/bird-glide.mp4' | relative_url }}" type="video/mp4">
+  <video class="section-bg" autoplay muted loop playsinline
+         {%- if site.assets.hero_poster and site.assets.hero_poster != "" %} poster="{{ site.assets.hero_poster | relative_url }}"{%- endif %} aria-hidden="true">
+    <source src="{{ site.assets.hero_video | relative_url }}" type="video/mp4">
   </video>
   <button type="button" class="video-toggle" aria-pressed="false" aria-label="Pause background video">
     <img class="icon-pause" src="{{ '/assets/img/icons/video-pause.svg' | relative_url }}" alt="" aria-hidden="true">
     <img class="icon-play" src="{{ '/assets/img/icons/video-play.svg' | relative_url }}" alt="" aria-hidden="true">
   </button>
+  {%- endif -%}
   <div class="container hero__inner">
-      <!-- Decorative logo -->
-  <img
-    class="hero__logo"
-    src="{{ '/assets/img/logo_whiteshading.png' | relative_url }}"
-    alt=""
-    aria-hidden="true">
+    <!-- Decorative logo -->
+    <img
+      class="hero__logo"
+      src="{{ '/assets/img/logo_whiteshading.png' | relative_url }}"
+      alt=""
+      aria-hidden="true">
 
-  <!-- Left column -->
+    <!-- Left column -->
     <div>
       <p class="eyebrow eyebrow--on-dark">{{ site.tagline }}&nbsp;·&nbsp;{{ site.lab.institution }}</p>
-      <h1>Innovative Research &amp; Technology</h1>
+      <h1>Mechanical Intelligence for Next-Generation Robotics</h1>
       <p class="lead">
-        We conduct cutting-edge research to understand fundamental principles and develop next-generation engineering systems.
+        We develop next-generation soft and bio-inspired robots by integrating Mechanical Intelligence (MI) with Computational Intelligence (AI) for real-world deployment.
       </p>
       <div class="hero__cta">
         <a class="btn btn--light" href="{{ '/research/' | relative_url }}">Explore research</a>
@@ -39,7 +41,7 @@ description: "Welcome to our research group homepage."
         {%- assign member_count = member_count | plus: g.members.size -%}
       {%- endfor -%}
       <div class="hero__stats">
-        <div><span class="num">2022</span><span class="lbl">Founded</span></div>
+        <div><span class="num">{{ site.lab.founded | default: 2025 }}</span><span class="lbl">Founded</span></div>
         {%- comment -%} Count peer-reviewed research + conference papers. publications.yml
            already holds both journal and conference entries, so filter by type rather than
            adding the manual list on top (which double-counted before). {%- endcomment -%}
@@ -61,8 +63,9 @@ description: "Welcome to our research group homepage."
       </div>
       <a class="btn btn--primary" href="{{ '/research/#projects' | relative_url }}">See all projects &rarr;</a>
     </div>
-    <p class="lead prose u-mt-10">We focus on interdisciplinary research to solve critical technical challenges.</p>
+    <p class="lead prose u-mt-10">We combine mechanical intelligence, smart materials, and computational fabrication to create resilient robotic systems.</p>
 
+    {%- if site.data.research.themes and site.data.research.themes.size > 0 -%}
     <div class="research-split">
       <div class="research-col">
         <h3 class="research-col__label">What we study</h3>
@@ -79,6 +82,7 @@ description: "Welcome to our research group homepage."
         </ul>
       </div>
     </div>
+    {%- endif -%}
   </div>
 </section>
 
@@ -100,21 +104,20 @@ description: "Welcome to our research group homepage."
 </section>
 {%- endif -%}
 
-
-
-<!-- Open by default: public lab guide, data & code, plain-language writing -->
+<!-- Open by default: publications, data & code, plain-language writing -->
 <section class="section section--tint">
   <div class="container">
     <h2 class="eyebrow">Open science</h2>
-    <p class="lead prose">Transparency is part of good science. Our lab guide is public, and we share our data and code with publication, often alongside plain-language summaries.</p>
+    <p class="lead prose">Transparency is part of good science. We strive to release open-access manuscripts, hardware designs, datasets, and reproducible software alongside our publications.</p>
     <div class="grid grid-3 u-mt-16">
-      <a class="card card--link" href="{{ '/lab-guide/' | relative_url }}">
+      <a class="card card--link" href="{{ '/publications/' | relative_url }}">
         <div class="card-head">
           <div class="os-icon"><img src="{{ '/assets/img/icons/os-lab-guide.svg' | relative_url }}" alt="" aria-hidden="true"></div>
-          <h3>Public Lab Guide</h3>
+          <h3>Open-Access Publications</h3>
         </div>
-        <p>A searchable, living-document wiki of how we run the lab open for anyone to read.</p>
+        <p>Browse our peer-reviewed journal articles, conference papers, and preprints.</p>
       </a>
+      {%- if site.lab.github_org and site.lab.github_org != "" -%}
       <a class="card card--link" href="{{ site.lab.github_org }}" rel="noopener">
         <div class="card-head">
           <div class="os-icon"><img src="{{ '/assets/img/icons/os-github.svg' | relative_url }}" alt="" aria-hidden="true"></div>
@@ -122,12 +125,17 @@ description: "Welcome to our research group homepage."
         </div>
         <p>Released alongside our papers, so results can be checked and built upon.</p>
       </a>
-      <a class="card card--link" href="{{ '/publications/#blog' | relative_url }}">
+      {%- endif -%}
+      {%- assign blog_anchor = '/publications/#data-code' -%}
+      {%- if site.data.publications_manual.blogs and site.data.publications_manual.blogs.size > 0 -%}
+        {%- assign blog_anchor = '/publications/#blog' -%}
+      {%- endif -%}
+      <a class="card card--link" href="{{ blog_anchor | relative_url }}">
         <div class="card-head">
           <div class="os-icon"><img src="{{ '/assets/img/icons/os-blog.svg' | relative_url }}" alt="" aria-hidden="true"></div>
           <h3>Behind the papers</h3>
         </div>
-        <p>Short, jargon-light posts on what we found and why it matters, written for readers from any background.</p>
+        <p>Short, jargon-light posts and resources on what we found and why it matters.</p>
       </a>
     </div>
   </div>
@@ -144,22 +152,27 @@ description: "Welcome to our research group homepage."
              A thumbnail shows when the paper has a figure in pub_links.yml, matched by
              DOI, the same way the Publications page does it. {%- endcomment -%}
           {%- assign recent = site.data.publications -%}
-          {%- for pub in recent limit:3 -%}
-          {%- assign rich = "" -%}
-          {%- if pub.doi -%}{%- assign rich = site.data.pub_links | where_exp: "x", "x.doi and pub.doi contains x.doi" | first -%}{%- endif -%}
-          <div class="pub{% if rich.image %} pub--rich{% endif %}">
-            {%- if rich.image %}<img class="pub__thumb" src="{{ rich.image | relative_url }}" alt="Figure from “{{ pub.title }}”" loading="lazy">{% endif -%}
-            <div class="pub__main">
-              <p class="pub__title">
-                {%- if pub.doi -%}<a href="{{ pub.doi }}">{{ pub.title }}</a>{%- else -%}{{ pub.title }}{%- endif -%}
-              </p>
-              <p class="pub__meta">{{ pub.authors }} · <span class="pub__venue">{{ pub.venue }}</span> · {{ pub.year }}</p>
+          {%- if recent and recent.size > 0 -%}
+            {%- for pub in recent limit:3 -%}
+            {%- assign rich = "" -%}
+            {%- if pub.doi -%}{%- assign rich = site.data.pub_links | where_exp: "x", "x.doi and pub.doi contains x.doi" | first -%}{%- endif -%}
+            <div class="pub{% if rich.image %} pub--rich{% endif %}">
+              {%- if rich.image %}<img class="pub__thumb" src="{{ rich.image | relative_url }}" alt="Figure from “{{ pub.title }}”" loading="lazy">{% endif -%}
+              <div class="pub__main">
+                <p class="pub__title">
+                  {%- if pub.doi -%}<a href="{{ pub.doi }}">{{ pub.title }}</a>{%- else -%}{{ pub.title }}{%- endif -%}
+                </p>
+                <p class="pub__meta">{{ pub.authors }} · <span class="pub__venue">{{ pub.venue }}</span> · {{ pub.year }}</p>
+              </div>
             </div>
-          </div>
-          {%- endfor -%}
+            {%- endfor -%}
+          {%- else -%}
+            <p class="muted">Selected publications will appear here once synced.</p>
+          {%- endif -%}
         </div>
       </div>
 
+      {%- if site.data.recognition.awards and site.data.recognition.awards.size > 0 -%}
       <aside class="home-highlights__side">
         <h2 class="eyebrow">Recognition</h2>
         <div class="recognition-grid recognition-grid--stack">
@@ -174,19 +187,24 @@ description: "Welcome to our research group homepage."
           {%- endfor -%}
         </div>
       </aside>
+      {%- endif -%}
     </div>
 
     <div class="home-highlights__foot">
       <a class="btn btn--primary" href="{{ '/publications/' | relative_url }}">All publications &rarr;</a>
+      {%- if site.data.recognition.media and site.data.recognition.media.size > 0 -%}
       <div class="home-featured">
         <h2 class="eyebrow">Featured in</h2>
         <div class="media-row">
           {%- for m in site.data.recognition.media -%}
           <a class="media-chip" href="{{ m.url }}" rel="noopener">{{ m.name }}</a>
           {%- endfor -%}
+          {%- if site.data.press and site.data.press.size > 0 -%}
           <a class="media-more" href="{{ '/news/#in-the-news' | relative_url }}">More coverage &rarr;</a>
+          {%- endif -%}
         </div>
       </div>
+      {%- endif -%}
     </div>
   </div>
 </section>
@@ -196,6 +214,7 @@ description: "Welcome to our research group homepage."
   <div class="container home-news-row">
     <div class="home-news">
       <h2 class="eyebrow">Latest news</h2>
+      {%- if site.data.updates and site.data.updates.size > 0 -%}
       {%- comment -%} Same month-grouped timeline as the News page; capped height, scroll for older. {%- endcomment -%}
       <div class="mini-scroll">
         <div class="news-timeline">
@@ -217,7 +236,10 @@ description: "Welcome to our research group homepage."
           {%- endfor -%}
         </div>
       </div>
-      {%- if site.lab.instagram -%}
+      {%- else -%}
+      <p class="muted u-mt-10">Lab milestones and updates will be posted here.</p>
+      {%- endif -%}
+      {%- if site.lab.instagram and site.lab.instagram != "" -%}
       <a class="insta-card" href="{{ site.lab.instagram }}" rel="noopener">
         <span class="insta-card__icon" aria-hidden="true">{% include instagram-icon.html %}</span>
         <span class="insta-card__body">
@@ -228,14 +250,17 @@ description: "Welcome to our research group homepage."
       </a>
       {%- endif -%}
     </div>
+    {%- if site.assets.lab_photo and site.assets.lab_photo != "" -%}
     <a class="home-photo u-self-start" href="{{ '/people/' | relative_url }}">
-      <img src="{{ '/assets/img/lab/students-CALIopening-2026.jpg' | relative_url }}" alt="The BIRD Lab team at the CALI flight hall, 2026" loading="lazy">
-      <span class="home-photo__cap">The BIRD Lab, 2026 &middot; Meet the Team &rarr;</span>
+      <img src="{{ site.assets.lab_photo | relative_url }}" alt="{{ site.title }} team photo" loading="lazy">
+      <span class="home-photo__cap">{{ site.title }} &middot; Meet the Team &rarr;</span>
     </a>
+    {%- endif -%}
   </div>
 </section>
 
 <!-- Supported by (funders from _data/funders.yml) -->
+{%- if site.data.funders and site.data.funders.size > 0 -%}
 <section class="section">
   <div class="container center partners">
     <h2 class="eyebrow">Supported by</h2>
@@ -253,4 +278,4 @@ description: "Welcome to our research group homepage."
     </div>
   </div>
 </section>
-
+{%- endif -%}

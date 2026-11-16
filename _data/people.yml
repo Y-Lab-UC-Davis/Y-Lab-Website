@@ -1,7 +1,13 @@
 # ─────────────────────────────────────────────────────────────
 #  PEOPLE
 #  Groups defined below drive the /people/ directory page.
-#  Supported Group IDs: pi, postdoc, phd, msc, undergrad, alumni, affiliates.
+#  Supported Group IDs: pi, postdoc, phd, msc, undergrad, visiting, affiliates, alumni.
+#
+#  Member entries under postdoc / phd / msc / undergrad / visiting can be
+#  synced from ../lab-admin/members/*.yml via:
+#      python3 scripts/sync_people.py
+#  Manual website-only fields (`photo`, `awards`, `aliases`, `last`, `orcid`)
+#  are preserved across sync runs.
 #
 #  PHOTO (optional). Two ways, both end with a file in assets/img/people/:
 #    • Easiest: drop an already-small square JPG straight into
@@ -11,19 +17,18 @@
 #    Then add:  photo: /assets/img/people/jane-doe.jpg
 #    No photo = a clean initials avatar.
 #
-#  ROLE BADGE (the bird) is inferred automatically from each person's `role`
-#  text: Postdoc 🦉 · PhD 🦢 · MSc 🦜 · Undergrad 🐥 · Visiting 🕊️ · PI 🦅.
-#  Override one with  role_icon: "🦅"  if needed.
+#  ROLE BADGE is inferred automatically from each person's `role` text.
+#  Override one with  role_icon: "..."  if needed.
 #
-#  FIELD (optional), shows small discipline tag(s) so the lab's engineering/
-#  biology mix is visible. Comma-separate for more than one, e.g.
-#    field: "Aerospace, Animal Behavior"
+#  FIELD (optional), shows small discipline tag(s) so the lab's multidisciplinary
+#  mix is visible. Comma-separate for more than one, e.g.
+#    field: "Mechanical Engineering, Robotics"
 #
 #  SORTING: the team grid lists each role by LAST NAME A–Z. The last name is the
-#  last word of `name` by default (so "Alfonso Martínez-Carmena" → sorts under M).
-#  If that guess is wrong for someone (e.g. a two-word surname with no hyphen),
-#  add a `last:` line with the surname to sort by, e.g.  last: "van Dijk".
-# 
+#  last word of `name` by default. If that guess is wrong for someone (e.g. a
+#  two-word surname with no hyphen), add a `last:` line with the surname to
+#  sort by, e.g.  last: "van Dijk".
+#
 #  MEMBER TEMPLATE EXAMPLE:
 #
 #  groups:
@@ -56,72 +61,123 @@
 #          field: "Aerospace Engineering"
 #          start: 2026
 #          email: asmith@university.edu
-# 
+#
 #  alumni:
 #    title: Alumni
 #    members:
-#        - { name: Benjamin Tai-Brownlee, role: "Undergraduate Researcher (first in lab)", start: 2022, now: "Boeing" }
-# 
-# ─────────────────────────────────────────────────────────────
+#        - { name: Alex Smith, role: "Undergraduate Researcher", start: 2024, now: "Stanford University" }
+#
 # ─────────────────────────────────────────────────────────────
 
 groups:
   - id: pi
     title: Principal Investigator
-    members: 
+    members:
+      - name: Dr. Wenzhong Yan
+        aliases: ["Wenzhong Yan", "Dr. Yan"]
+        role: Assistant Professor · Lab Director
+        field: "Mechanical & Aerospace Engineering"
+        start: 2025
+        email: "wyan@ucdavis.edu"
+        website: "https://wzyan24.wixsite.com/wenzhong-yan"
+        scholar: "https://scholar.google.com/citations?user=YHx-3YIAAAAJ"
+        orcid: 0000-0002-3711-0807
+        github: "https://github.com/Y-Lab-UC-Davis"
+        note: "Dr. Wenzhong Yan is an Assistant Professor in the Department of Mechanical and Aerospace Engineering at the University of California, Davis, where he directs the Y-Lab. Prior to joining UC Davis, he was a postdoctoral researcher at Yale University and UCLA. He received his Ph.D. in Mechanical and Aerospace Engineering from UCLA in 2023. His research integrates mechanical intelligence and computational intelligence to create resilient soft, origami, and bio-inspired robotic systems."
 
   - id: postdoc
     title: Postdoctoral Scholars
-    members: 
+    members: []
 
   - id: phd
     title: PhD Researchers
     members:
-      
+      - name: Zhongxiao Deng
+        aliases: ["Shawn Deng"]
+        role: PhD Student
+        pronouns: he/him
+        field: Mechanical Engineering
+        start: 2025
+        email: "robdeng@ucdavis.edu"
+        github: "https://github.com/dzxniupi666"
+        note: "UCDavis MAE PhD Candidate | Robotics & Control Systems | Mechanical Intelligence"
+      - name: Jason Daniel Pieck
+        role: PhD Student
+        pronouns: any/all
+        field: Mechanical Engineering
+        start: 2025
+        email: "jdpieck@ucdavis.edu"
+        website: "https://jdpieck.github.io/"
+        linkedin: "https://www.linkedin.com/in/jdpieck/"
+        github: "https://github.com/jdpieck"
+        note: Researching anisotropic particle jamming and robotic structures.
+      - name: Kyra Alexa Ruiz
+        role: PhD Student
+        field: Aerospace Engineering
+        start: 2025
+        email: "Kamruiz@ucdavis.edu"
+        github: "https://github.com/k-ruiz"
+
   # Master's students. Kept here (empty) on purpose so a submitted "MSc Student"
   # auto-files into it. While empty it shows nothing on the site; members appear
-  # as soon as one is added. Keep `members: []` (an empty list) while empty — the
-  # `[]` matters so the site build stays happy; the automation swaps it for a real
-  # list when it adds the first person.
+  # as soon as one is added. Keep `members: []` (an empty list) while empty so
+  # the site build stays happy; the automation swaps it for a real list when it
+  # adds the first person.
   - id: msc
-    title: Master's Students
-    members: 
+    title: "Master's Students"
+    members: []
 
   - id: undergrad
     title: Undergraduate Researchers
     members:
-
+      - name: Parnita Chowtoori
+        role: Undergraduate Researcher
+        pronouns: she/her
+        field: Computer Engineering
+        start: 2025
+      - name: Dogeun Lee
+        role: Undergraduate Researcher
+        pronouns: he/him
+        field: Mechanical Engineering
+        start: 2025
+      - name: Luci Masselink
+        role: Undergraduate Researcher
+        pronouns: they/them
+        field: Mechanical Engineering
+        start: 2025
+        note: "Interested in electrical and mechanical work, with an emphasis on moving mechanisms. Also interested in manufacturing (additive and subtractive)."
+      - name: Chonticha Phanphanit
+        role: Undergraduate Researcher
+        pronouns: she/her
+        field: Mechanical Engineering
+        start: 2025
+        note: Interested in autonomous robotics and mechanical intelligence.
+      - name: Dhruv Sabnis
+        role: Undergraduate Researcher
+        pronouns: he/him
+        field: Mechanical Engineering
+        start: 2025
 
   # Visiting researchers (non-undergraduate). Kept here (empty) on purpose so a
   # submitted "Visiting Researcher" auto-files into it. While empty it shows
-  # nothing; members appear once added. (Visiting UNDERGRADS go in the undergrad
-  # group above — both get the 🕊️ badge from their role text either way.)
-  # Keep `members: []` (an empty list) while empty so the site build stays happy.
+  # nothing; members appear once added. Keep `members: []` while empty.
   - id: visiting
     title: Visiting Researchers
-    members: 
+    members: []
 
 # Individual collaborators and affiliated researchers outside the core group.
-# (Partner *organizations*, CRC, CHC, the museum, live in collaborators.yml
-#  and appear in the "In partnership with" strip on the home page.)
+# (Partner *organizations* live in collaborators.yml and appear on the home page.)
 affiliates:
   title: Collaborators
-  # These collaborators now appear on the CALI page (_data/cali.yml → affiliates);
-  # Dr. Michelle Hawkins shows there as a CALI co-director. The section is hidden
-  # on the People page while this list is empty (guarded in people.html). Add
-  # members back here to restore the People-page Collaborators section.
-  members: 
+  members: []
 
 # Past members.
 #  TO RETIRE SOMEONE: cut their whole block from `groups` above (from its
 #  `- name:` line through its last field) and paste it below AS IS: the
 #  indentation here matches the groups, so no re-indenting is needed. Then just
 #  add a `now:` line (current position / destination); until you do, the table
-#  shows a dash. The alumni table reuses the same fields, `start` (year joined)
-#  and `linkedin` carry over automatically, and a LinkedIn icon appears beside
-#  the name whenever `linkedin` is present. Extra fields (photo, email, field,
-#  awards…) are simply ignored, so you don't have to trim them.
+#  shows a dash. `start` (year joined) and `linkedin` carry over automatically.
 #  `role` = position held in the lab; `now` = current position / destination.
 alumni:
   title: Alumni
-  members:
+  members: []

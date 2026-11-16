@@ -24,7 +24,7 @@ Add a block under the right group's `members:` list. Only `name` and `role` are 
 
 ```yaml
       - name: Jordan Rivera
-        role: PhD Researcher                # drives the bird: PhD 🦢
+        role: PhD Researcher                # drives the role badge
         start: 2026                         # year they joined; sorts the grid
         pronouns: they/them
         field: "Mechanical Engineering"     # optional discipline tag(s); comma-separate
@@ -35,12 +35,11 @@ Add a block under the right group's `members:` list. Only `name` and `role` are 
         note: One short line about their project.   # optional
         photo: /assets/img/people/jordan-rivera.jpg # optional
         awards:                             # optional; see "Awards" below
-          - "Best Student Paper, AIAA Aviation 2026"
+          - "Best Student Paper, IEEE RoboSoft 2026"
         aliases: ["Dr. Rivera"]             # optional; see "Auto-linking" below
 ```
 
-- **The bird is automatic** from the `role` words: Postdoc 🦉 · PhD 🦢 · MSc 🦜 ·
-  Undergrad 🐥 · Visiting 🕊️ · PI 🦅. Force a different one with `role_icon: "🦅"`.
+- **The role badge is automatic** from the `role` words. Force a different one with `role_icon:` if needed.
 - **Contact links become icons** automatically. Add any of `email`, `website`,
   `scholar`, `orcid`, `linkedin`, `github` and each shows as a small icon button:
   no wording needed. This works the same on the PI's featured block.
@@ -52,11 +51,11 @@ Add a block under the right group's `members:` list. Only `name` and `role` are 
   beside it, so two or three honors stay tidy (no repeated trophies).
 - **`aliases:`** lists other name forms (a nickname, or "Dr. Rivera") that should
   also auto-link in the news timeline: see *Auto-linking* under news milestones.
-- **`field:`** shows small tags (e.g. `Aerospace`, `Biology`, `Animal Behavior`,
-  `Computer Science`) so the lab's engineering/biology mix is visible. Use the
+- **`field:`** shows small tags (e.g. `Mechanical Engineering`, `Aerospace Engineering`,
+  `Computer Science`) so the lab's multidisciplinary mix is visible. Use the
   field someone *trained in*. Comma-separate for more than one.
 - **Promote someone** (e.g. undergrad → PhD): just change their `role:` text (and
-  move the block if you want them earlier in the order). The bird updates itself.
+  move the block if you want them earlier in the order). The role badge updates itself.
 - **Someone left:** cut their whole block from `groups:` and paste it into the
   `alumni:` list at the bottom, then add a `now:` line for where they went. You
   can trim it to one line or paste the full block as-is: extra fields are ignored:
@@ -76,8 +75,7 @@ Add a block under the right group's `members:` list. Only `name` and `role` are 
 **Journal article**: usually automatic. If you need to add one by hand, put it
 at the **top** of `_data/publications.yml`:
 ```yaml
-- title: "Your exact paper title"
-  authors: "A. Author, C. Harvey, B. Coauthor"
+- authors: "A. Author, W. Yan, B. Coauthor"
   venue: "Journal Name"
   year: 2026
   type: journal
@@ -88,8 +86,8 @@ at the **top** of `_data/publications.yml`:
 `_data/publications_manual.yml`:
 ```yaml
   - title: "Talk or paper title"
-    authors: "C. Harvey, K. Bordner"
-    venue: "AIAA SciTech Forum, Orlando, FL"
+    authors: "W. Yan, J. Pieck"
+    venue: "IEEE RoboSoft"
     year: 2026
     type: conference
     note: Poster          # or "Presentation"; OMIT for a conference paper
@@ -109,13 +107,13 @@ link, a code repo, a figure: go in this separate file, matched to the paper by
 its **bare DOI**. The auto-sync never touches it, so your extras are safe.
 
 ```yaml
-- doi: "10.1098/rsif.2025.0868"   # bare DOI, no "https://doi.org/"
-  data: "https://figshare.com/…"  # optional: dataset link
-  code: "https://github.com/UC-BIRD-Lab/…"  # optional: code repo
-  image: /assets/img/research/perchaero.jpg # optional: only for major papers
-  kind: review                    # optional: "review" or "commentary" (journals only)
-  award: "AIAA Jefferson Goblet Student Paper Award"  # optional: gold 🏆 pill
-  correction: "https://doi.org/…" # optional: a correction/corrigendum for this paper
+- doi: "10.1038/s41467-023-37158-9"   # bare DOI, no "https://doi.org/"
+  data: "https://figshare.com/…"      # optional: dataset link
+  code: "https://github.com/Y-Lab-UC-Davis/…"  # optional: code repo
+  image: /assets/img/pubs/paper_graphic.jpg    # optional: only for major papers
+  kind: review                        # optional: "review" or "commentary" (journals only)
+  award: "Best Paper Award"           # optional: gold 🏆 pill
+  correction: "https://doi.org/…"     # optional: a correction/corrigendum for this paper
 ```
 
 - Add `image:` **sparingly**: just standout papers, or the list gets busy.
@@ -186,7 +184,7 @@ valid: `text: "We spoke at <a href='https://example.com'>the workshop</a>."`
 - **`tag:`**: labels **why** a story that is *not* tied to a paper is in the list.
   Use it only when there's no `doi:` (a paper-linked story shows the "Paper" pill
   instead, so the two are mutually exclusive). Pick one from this small vocabulary:
-  `Center` (the flight-research center / CALI facility), `Award` (fellowships,
+  `Center` (research center milestones), `Award` (fellowships,
   faculty honors), `Funding` (grants, research-award milestones), `Profile`
   (interviews/profiles of the PI or lab members), `Feature` (general research
   coverage not tied to one specific paper).
@@ -294,46 +292,41 @@ photo rows. Prefer **specs** (big-number tiles) and short capability **chips** o
 long paragraphs.
 
 ```yaml
-- name: Center for Animal Locomotion and Innovation (CALI)
+- name: Soft Robotics & Fabrication Lab
   featured: true                     # ONE facility only → the flagship band
   tagline: >-
     One credible line shown with the name.
-  partner: Co-directed with Dr. …    # optional
-  location: California Raptor Center, UC Davis   # optional
+  partner: Co-directed with …        # optional
+  location: Bainer Hall 1072A, UC Davis   # optional
   url: https://…                     # optional "Learn more" button
-  url_label: Visit the CALI consortium
-  photo: /assets/img/facilities/cali.jpg
-  photo_note: AI rendering based on real photos, to illustrate the setup.  # optional caption
-  # photo_alt describes the photo for screen readers (note if it is a
-  # rendering). Falls back to "Inside {name}" if omitted.
+  url_label: Visit facility
+  photo: /assets/img/facilities/lab.jpg
   photo_alt: >-
-    The CALI flight hall, a long bright room lined with white curtains
-    and motion capture cameras.
+    The fabrication and testing bay showing mechanical testing rigs and
+    prototyping stations.
   funding:                           # optional credit badge in the photo corner
-    note: "DURIP support from:"
-    name: DEVCOM Army Research Laboratory
-    logo: /assets/img/partners/arl.png
-    url: https://www.arl.army.mil/
+    note: "Support from:"
+    name: National Science Foundation
+    logo: /assets/img/partners/nsf.png
+    url: https://www.nsf.gov/
   specs:                             # big-number tiles; keep `value` short
-    - { value: "48", label: "OptiTrack motion-capture cameras" }
-    - { value: "9", label: "high-speed Phantom cameras" }
+    - { value: "24/7", label: "Environmental chamber access" }
   capabilities:                      # short qualitative chips
-    - Sub-millisecond, sub-millimeter tracking
-    - Daylight-balanced lighting for live birds
+    - Rapid planar & soft material fabrication
+    - Multi-axis mechanical characterization
   equipment:                         # optional detail table under the chips
-    - label: Motion capture
-      value: "44 × OptiTrack VersaX 120 — 12.6 MP, 300 fps"
-      also: "Second line under the same label (optional)"
+    - label: Fabrication
+      value: "Laser cutter and multi-material 3D printing"
+      also: "Vacuum degassing & elastomer casting"
 ```
 
 - **`equipment:`**: the detail table under the chips. Each row is a `label` (the
   category) and a `value` (the detail), plus an optional `also:` for a second
   line under the same label. Leave it off and no table renders. Use the vendors'
   own spelling for model names so they are searchable.
-- **The house pattern is chips, then a table** — the same shape as the CALI
-  facility section. Chips say what a visitor can *do* here, in words; the table
-  says what it is done *with*, in numbers. A chip never repeats a figure from
-  the table. Keep rows to one line, label them by what a visitor can *measure*
+- **The house pattern is chips, then a table**: chips say what a visitor can *do* here,
+  in words; the table says what it is done *with*, in numbers. A chip never repeats a
+  figure from the table. Keep rows to one line, label them by what a visitor can *measure*
   rather than by what hardware exists, and leave out anything a facility of that
   kind would obviously have.
 - **`specs:` (the big-number tiles) are deliberately unused on this page.** They
@@ -446,11 +439,11 @@ Each project card on the Research page can show one figure. To add or change one
    `image: /assets/img/research/airfoil.jpg`. No `image:` = the card simply shows
    no figure (still valid).
 
-`theme:` on each project must match a theme `id` in the same file. The three ids
-are: **`morphology-kinematics`**, **`mechanics-dynamics`**, **`sensing-control`**.
-A matching theme shows its label as a tag on the card. Each theme also has a
-`why:` line ("why it matters") shown on the Home and Research pages: keep it to
-one plain-language sentence.
+`theme:` on each project must match a theme `id` in the same file (e.g.,
+`origami-soft-robotics`, `mechanical-intelligence`, `computational-fabrication`,
+`miniaturized-bioinspired-robots`). A matching theme shows its label as a tag on
+the card. Each theme also has a `why:` line ("why it matters") shown on the Home
+and Research pages: keep it to one plain-language sentence.
 
 ---
 
@@ -468,18 +461,10 @@ outlet under `media:` (`name`, `url`). Keep awards accurate and specific.
   `bash scripts/apply-images.sh` (~1 min; resizes and compresses everything), then
   add `photo: /assets/img/people/<name>.jpg` to that person on `_data/people.yml`.
   No photo = a clean initials avatar.
-- **PI bio:** Christina's featured bio is written directly in `people.html`
-  (top of the page); edit the prose there.
+- **PI bio:** Dr. Yan's featured bio lives in `_data/people.yml` under the `pi` group.
 - **Group photo:** run `bash scripts/apply-images.sh "/path/to/group-photo.jpg"`
   to create `assets/img/lab-photo.jpg`, then set `lab_photo: /assets/img/lab-photo.jpg`
-  under `assets:` in `_config.yml`. This shows it at the top of People **and** as
-  the cinematic "In the field" band under the Home hero.
-
-### Role badges (the bird taxonomy 🦉🦢🦜🐥🕊️)
-Each person card shows a small bird, chosen automatically from words in their
-`role`: Postdoc 🦉 · PhD 🦢 · MSc 🦜 · Undergrad 🐥 · Visiting 🕊️ (the PI 🦅 is the
-featured block, not a card). A legend appears above the team grid. To override
-one person's bird, add `role_icon: "🦅"` to them in `_data/people.yml`.
+  under `assets:` in `_config.yml`. This shows it on the Home and People pages.
 
 ### "Scenes from the lab" & the Join culture photo
 - **Scenes (People):** put optimized photos in `assets/img/lab/` (or a large
@@ -500,27 +485,22 @@ site never shows a broken image.
 
 These live directly in `index.html` (edit the text in place):
 
-- **Video hero**: background video is `assets/video/bird-glide.mp4` with a dark
-  overlay and a pause/play button. It auto-hides for visitors who set "reduce
-  motion." To swap the clip, replace the `.mp4` (keep it small: see budget). The
-  poster frame shown before the video loads is `assets/img/facilities/cali.jpg`.
-- **Brand band**: the logo + one-line "principles, not mimicry" statement.
-- **"A signature idea"**: the three-axis bio-inspired reporting framework
-  (source / mimicry / evidence) tied to Harvey 2026.
-- **"We run our lab in the open"**: links to the Lab Guide, GitHub, and blog.
+- **Video hero**: optional background video configured via `assets.hero_video` and
+  `assets.hero_poster` in `_config.yml`. It auto-hides for visitors who set
+  "reduce motion." Keep any `.mp4` clip small (see budget).
+- **"Open science"**: links to Publications, GitHub (`lab.github_org`), and plain-language summaries.
 - **Supported by / In partnership with**: funder logos from `_data/funders.yml`
   and partner organizations from `_data/collaborators.yml` (see below).
 
 ### Funders & partners: two files
-- **`_data/funders.yml`**: the home page **"Supported by"** logo band (AFOSR,
-  Packard, NSF, ARL, CITRIS…). Each entry has `name`, `short` (the name shown
+- **`_data/funders.yml`**: the home page **"Supported by"** logo band (NSF,
+  AFOSR, ARL, etc.). Each entry has `name`, `short` (the name shown
   under the logo), `url`, and `logo:`. Logos sit in a fixed-height box so their
   names line up across the row.
 - **`_data/collaborators.yml`**: the home page **"In partnership with"** strip of
-  partner *organizations* (California Raptor Center, California Hawking Club, the
-  museum). Each entry: `name`, `sub` (short descriptor), `photo` (square image in
-  `assets/img/partners/`), `url`. Individual academic collaborators stay in
-  `people.yml` under `affiliates`.
+  partner *organizations*. Each entry: `name`, `sub` (short descriptor), `photo`
+  (square image in `assets/img/partners/`), `url`. Individual academic
+  collaborators stay in `people.yml` under `affiliates`.
 
 Drop all logos in `assets/img/partners/`.
 

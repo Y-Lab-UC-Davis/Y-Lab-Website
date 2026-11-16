@@ -1,4 +1,4 @@
-# Keeping the BIRD Lab site up to date
+# Keeping the Y-Lab site up to date
 
 The goal: keep the site current with as little effort as possible, and make it
 hard to break the live site (every change is reviewed and auto-checked first).
@@ -47,7 +47,7 @@ the **top** of the list, fill in the submitted values, commit.
 **New member → `_data/people.yml`** (add under the right group's `members:`)
 ```yaml
       - name: Jane Doe
-        role: PhD Researcher          # exactly as submitted; sets the bird
+        role: PhD Researcher          # determines the role badge
         start: 2026
         pronouns: they/them
         field: "Mechanical & Aerospace Engineering"
@@ -60,8 +60,8 @@ the **top** of the list, fill in the submitted values, commit.
 **Conference item → `_data/publications_manual.yml`** (top of `conference:`)
 ```yaml
   - title: "Exact title"
-    authors: "J. Doe, C. Harvey"
-    venue: "AIAA SciTech Forum, Orlando, FL"
+    authors: "J. Doe, W. Yan"
+    venue: "IEEE RoboSoft"
     year: 2026
     type: conference
     note: Talk            # or Poster; delete this line for a Paper

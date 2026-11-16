@@ -1,10 +1,18 @@
 {%- comment -%}
   Structured data (schema.org JSON-LD). Invisible to readers; it tells search
   engines exactly what the lab and the PI are, so they can show rich results and
-  correctly link Christina, the BIRD Lab, and her ORCID/Scholar profiles.
+  correctly link Dr. Yan, Y-Lab, and his ORCID/Scholar profiles.
   Generated from _config.yml, so it stays accurate on its own.
 {%- endcomment -%}
 {%- assign base = site.url | append: site.baseurl -%}
+{%- assign same_as = "" | split: "" -%}
+{%- if site.lab.orcid and site.lab.orcid != "" -%}
+  {%- assign orcid_url = "https://orcid.org/" | append: site.lab.orcid -%}
+  {%- assign same_as = same_as | push: orcid_url -%}
+{%- endif -%}
+{%- if site.lab.scholar and site.lab.scholar != "" -%}{%- assign same_as = same_as | push: site.lab.scholar -%}{%- endif -%}
+{%- if site.lab.linkedin and site.lab.linkedin != "" -%}{%- assign same_as = same_as | push: site.lab.linkedin -%}{%- endif -%}
+{%- if site.lab.github_org and site.lab.github_org != "" -%}{%- assign same_as = same_as | push: site.lab.github_org -%}{%- endif -%}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,10 +38,9 @@
       "worksFor": { "@id": "{{ base }}/#lab" },
       "url": "{{ base }}/people/",
       "sameAs": [
-        "https://orcid.org/{{ site.lab.orcid }}",
-        {{ site.lab.scholar | jsonify }},
-        {{ site.lab.linkedin | jsonify }},
-        {{ site.lab.github_org | jsonify }}
+        {%- for s in same_as -%}
+        {{ s | jsonify }}{% unless forloop.last %},{% endunless %}
+        {%- endfor -%}
       ]
     }
   ]

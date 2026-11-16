@@ -29,8 +29,8 @@ jobs:
       - name: Sync from OpenAlex
         id: sync
         env:
-          LAB_ORCID: "0000-0000-0000-0000"
-          OPENALEX_MAILTO: "pi@university.edu"
+          LAB_ORCID: "0000-0002-3711-0807"
+          OPENALEX_MAILTO: "wyan@ucdavis.edu"
         run: python scripts/update_publications.py
 
       - name: Open a pull request if anything changed

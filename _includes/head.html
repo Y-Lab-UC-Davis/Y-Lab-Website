@@ -18,7 +18,7 @@
 {%- comment -%} ?v= is the build time, so every deploy busts browser/CDN caches
    and readers never see a stale stylesheet after a design change. {%- endcomment -%}
 <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.time | date: '%s' }}">
-<link rel="alternate" type="application/atom+xml" title="BIRD Lab news" href="{{ '/feed.xml' | relative_url }}">
+<link rel="alternate" type="application/atom+xml" title="{{ site.title }} news" href="{{ '/feed.xml' | relative_url }}">
 
 {%- comment -%} MathJax typesets the LaTeX in kramdown's math/tex script tags.
    Loaded only on pages that opt in with `math: true` in their front matter. {%- endcomment -%}

@@ -11,12 +11,12 @@
   url: /publications/
 # - title: Facilities
 #   url: /facilities/
-- title: Lab Guide
-  url: /lab-guide/
+# - title: Lab Guide
+#   url: /lab-guide/
 - title: News
   url: /news/
 - title: Join
   url: /join/
-- title: Member Portal
-  url: /portal/
-  cta: true
+# - title: Member Portal
+#   url: /portal/
+#   cta: true

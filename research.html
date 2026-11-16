@@ -2,57 +2,14 @@
 layout: page
 title: Research
 eyebrow: What we do
-description: "Overview of our research themes, projects, and scientific framework."
+description: "Overview of our research themes, projects, and mission in mechanical intelligence and soft robotics."
 ---
 
 <!-- Mission as a centered, boxless editorial statement -->
 <section class="mission-statement">
   <h2 class="eyebrow" id="mission">Our mission</h2>
-  <p class="mission-statement__text">To identify fundamental scientific principles and adapt relevant concepts into enhanced <em>engineered systems</em>.</p>
+  <p class="mission-statement__text">To create next-generation soft and bio-inspired robots by embedding <em>mechanical intelligence</em> into smart materials, compliant structures, and autonomous systems.</p>
   <span class="mission-statement__rule" aria-hidden="true"></span>
-</section>
-
-<!-- transparent reporting framework -->
-<section class="section u-pb-fluid" id="framework">
-  <div class="container framework-section">
-    <div class="framework-intro">
-      <h2 class="eyebrow">Our guiding framework</h2>
-      <p class="lead">Interdisciplinary design embeds scientifically supported principles into the engineering design process.</p>
-      <p>Being clear in presentation matters to us, so for projects we report the core attributes of inspiration, methodology, and evidence.</p>
-    </div>
-    <div class="framework-flow">
-      <div class="framework-card">
-        <div class="framework-card__body">
-          <div class="framework-card__head">
-            <span class="framework-card__num">1</span>
-            <h3>Source of inspiration</h3>
-          </div>
-          <p>Explicit identification of the species or family from which an idea originates.</p>
-        </div>
-        <span class="fw-icon" aria-hidden="true"><img src="{{ '/assets/img/icons/fw-source.svg' | relative_url }}" alt=""></span>
-      </div>
-      <div class="framework-card">
-        <div class="framework-card__body">
-          <div class="framework-card__head">
-            <span class="framework-card__num">2</span>
-            <h3>Level of mimicry</h3>
-          </div>
-          <p>How closely biology is mimicked: abstracted, analogy, or direct mimicry.</p>
-        </div>
-        <span class="fw-icon" aria-hidden="true"><img src="{{ '/assets/img/icons/fw-mimicry.svg' | relative_url }}" alt=""></span>
-      </div>
-      <div class="framework-card">
-        <div class="framework-card__body">
-          <div class="framework-card__head">
-            <span class="framework-card__num">3</span>
-            <h3>Strength of evidence</h3>
-          </div>
-          <p>How much and what type of biological evidence supports the implemented design.</p>
-        </div>
-        <span class="fw-icon" aria-hidden="true"><img src="{{ '/assets/img/icons/fw-evidence.svg' | relative_url }}" alt=""></span>
-      </div>
-    </div>
-  </div>
 </section>
 
 <hr class="divider u-my-30">
@@ -90,7 +47,7 @@ description: "Overview of our research themes, projects, and scientific framewor
 <hr class="divider u-my-30">
 
 <h2 class="eyebrow" id="themes">What we study</h2>
-<p class="lead prose u-mt-10">Three connected research areas bridge biology, aerospace, and robotics.</p>
+<p class="lead prose u-mt-10">Core research areas bridging soft robotics, mechanical intelligence, smart materials, and bio-inspired systems.</p>
 <div class="grid grid-3 u-mt-15">
   {%- for t in site.data.research.themes -%}
   <div class="card">
@@ -108,7 +65,7 @@ description: "Overview of our research themes, projects, and scientific framewor
 
 <h2 id="projects">Active projects</h2>
 <p class="lead prose">A snapshot of current member-led projects, grouped by the lab's main
-themes above. </p>
+themes above.</p>
 
 <div class="grid grid-2 projects-grid u-mt-15">
   {%- for p in site.data.research.projects -%}
@@ -125,7 +82,8 @@ themes above. </p>
       {%- comment -%} Papers explicitly linked to this project, looked up by DOI in the
          publications data so the title/year stay in one place. {%- endcomment -%}
       {%- if p.papers and p.papers.size > 0 -%}
-        {%- assign allpubs = site.data.publications | concat: site.data.publications_manual.conference -%}
+        {%- assign manual_conf = site.data.publications_manual.conference | default: empty -%}
+        {%- assign allpubs = site.data.publications | concat: manual_conf -%}
         <p class="proj-paper"><span class="proj-paper__label">Paper</span>
         {%- for key in p.papers -%}
           {%- assign match = allpubs | where_exp: "x", "x.doi contains key" | first -%}

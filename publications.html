@@ -78,7 +78,7 @@ description: "Journal articles, conference papers, and research publications."
     <option value="conference">Conference &amp; posters</option>
   </select>
   <a class="btn btn--ghost" href="{{ site.lab.scholar }}">Google Scholar</a>
-  {%- if site.data.publications_manual.blog -%}<a class="btn btn--ghost" href="#blog">Jump to blogs &darr;</a>{%- endif -%}
+  {%- if site.data.publications_manual.blogs and site.data.publications_manual.blogs.size > 0 -%}<a class="btn btn--ghost" href="#blog">Jump to blogs &darr;</a>{%- endif -%}
 </div>
 
 {%- for y in years -%}
@@ -163,10 +163,10 @@ description: "Journal articles, conference papers, and research publications."
 
 <p id="pub-noresults" hidden class="muted u-mt-15">No publications match your search.</p>
 
-{%- if site.data.publications_manual.blog -%}
+{%- if site.data.publications_manual.blogs and site.data.publications_manual.blogs.size > 0 -%}
 <h2 id="blog" class="u-mt-fluid">Blog posts &amp; plain-language summaries</h2>
 <div class="press-list u-mt-10">
-  {%- for b in site.data.publications_manual.blog -%}
+  {%- for b in site.data.publications_manual.blogs -%}
   <a href="{{ b.url }}">{{ b.title }}
     <span class="src">{% if b.authors %}{{ b.authors }} · {% endif %}{{ b.venue }} · {{ b.year }}</span>
   </a>
@@ -178,9 +178,6 @@ description: "Journal articles, conference papers, and research publications."
 <p class="prose">We practice open science: the data and code behind our papers are released
 publicly on publication, so results can be checked, reused, and built upon.</p>
 <p class="hero__cta u-mt-10">
-  {%- if site.lab.github_org %}<a class="btn btn--primary" href="{{ site.lab.github_org }}" rel="noopener">UC-BIRD-Lab on GitHub</a>{% endif -%}
+  {%- if site.lab.github_org and site.lab.github_org != "" %}<a class="btn btn--primary" href="{{ site.lab.github_org }}" rel="noopener">{{ site.title }} on GitHub</a>{% endif -%}
   {%- if site.lab.figshare_url and site.lab.figshare_url != "" %}<a class="btn btn--ghost" href="{{ site.lab.figshare_url }}" rel="noopener">Datasets on FigShare</a>{% endif -%}
 </p>
-{%- if site.lab.figshare_url == "" -%}
-<p class="muted u-fs-sm">A dedicated data repository (FigShare) is being set up; add its URL as <code>figshare_url</code> in <code>_config.yml</code> to surface it here.</p>
-{%- endif -%}

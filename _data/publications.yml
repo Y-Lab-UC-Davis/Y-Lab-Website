@@ -1,16 +1,285 @@
-# ─────────────────────────────────────────────────────────────
-#  PUBLICATIONS 
-#  Peer-reviewed journal and conference publications for /publications/
+# ────────────────────────────────────────────────────────────
+#  PUBLICATIONS: journal articles and DOI-bearing conference papers
+#
+#  THIS FILE IS AUTO-MANAGED by scripts/update_publications.py.
+#  The "Update publications" GitHub Action opens a pull request when new works
+#  appear on OpenAlex for the lab's ORCID. Review and merge it. You may also
+#  hand-edit any entry to fix a detail; future runs preserve existing DOIs.
+#  Anything with a DOI syncs here; conference talks and posters WITHOUT a DOI
+#  live in publications_manual.yml.
+#
+#  Fields: title, authors, venue, year, date (YYYY-MM-DD), type, doi (URL),
+#          oa_url (a free open-access copy, when OpenAlex knows one)
+#  `date` is used to sort within a year (the page still groups by `year`).
+#  `oa_url` is auto-filled when a paper is open access and left blank otherwise;
+#  to point at a specific copy (e.g. your ResearchGate preprint), set `preprint:`
+#  or `pdf:` for that DOI in _data/pub_links.yml — those win over this.
+#  Keep newest first: this file is written sorted by date, newest first.
 #
 #  EXAMPLE ENTRY:
 #
 #  - title: "Publication Title Here"
-#    authors: "A. Author, B. Coauthor, C. PI"
+#    authors: "A. Author, B. Coauthor, W. Yan"
 #    venue: "Journal / Conference Name"
 #    year: 2026
 #    date: "2026-01-15"
 #    type: journal # journal | conference
 #    doi: "https://doi.org/10.xxxx/xxxx"
-# ─────────────────────────────────────────────────────────────
+#    oa_url: "https://..."
+# ────────────────────────────────────────────────────────────
 
-[]
+- title: "Takeoff of an all-polymer micro aerial flying robot"
+  authors: "Y. Zhu, H. Wu, D. Sun, W. Budiman, K. Liu, Y. Chen, W. Yan, Q. Pei"
+  venue: "Science Robotics"
+  year: 2026
+  date: "2026-09-30"
+  type: journal
+  doi: "https://doi.org/10.1126/scirobotics.aed8148"
+  oa_url: "https://doi.org/10.5061/dryad.q2bvq8421"
+
+- title: "Attentional Graph Meta-Learning for Indoor Localization Using Extremely Sparse Fingerprints"
+  authors: "W. Yan, F. Yin, J. Gao, A. Wang, Y. Tian, R. Chen"
+  venue: "IEEE Transactions on Mobile Computing"
+  year: 2025
+  date: "2025-12-31"
+  type: journal
+  doi: "https://doi.org/10.1109/tmc.2025.3649637"
+  oa_url: "https://arxiv.org/pdf/2504.04829"
+
+- title: "Self‐Sustained, Continuous Jumping of a Light‐Driven Electronics‐Free Insect‐Scale Soft Robot"
+  authors: "W. Yan, P. Shi, Z. Liu, Y. Chen, Y. Yan, Y. Zhao, C. Chen, D. Martinez, A. M. Mehta, X. He"
+  venue: "Advanced Materials"
+  year: 2025
+  date: "2025-12-01"
+  type: journal
+  doi: "https://doi.org/10.1002/adma.202519669"
+
+- title: "A self-regenerative heat pump based on a dual-functional relaxor ferroelectric polymer"
+  authors: "H. Wu, Y. Zhu, W. Yan, S. Zhang, W. Budiman, K. Liu, J. Wu, Y. Meng, X. Zhao, A. M. Mehta, S. Kaur, Q. Pei"
+  venue: "Science"
+  year: 2024
+  date: "2024-10-31"
+  type: journal
+  doi: "https://doi.org/10.1126/science.adr2268"
+
+- title: "Majority voting of doctors improves appropriateness of AI reliance in pathology"
+  authors: "H. Gu, C. Yang, S. Magaki, N. Zarrin‐Khameh, N. S. Lakis, I. Cobos, N. Khanlou, X. R. Zhang, J. S. Assi, J. T. Byers, A. Hamza, K. Han, A. R. Meyer, H. Mirbaha, C. Mohila, T. M. Stevens, S. L. Stone, W. Yan, M. Haeri, X. Chen"
+  venue: "International Journal of Human-Computer Studies"
+  year: 2024
+  date: "2024-06-20"
+  type: journal
+  doi: "https://doi.org/10.1016/j.ijhcs.2024.103315"
+  oa_url: "https://doi.org/10.1016/j.ijhcs.2024.103315"
+
+- title: "Enhancing mitosis quantification and detection in meningiomas with computational digital pathology"
+  authors: "H. Gu, C. Yang, I. Al-kharouf, S. Magaki, N. S. Lakis, C. K. Williams, S. Alrosan, E. Onstott, W. Yan, N. Khanlou, I. Cobos, X. R. Zhang, N. Zarrin‐Khameh, H. V. Vinters, X. Chen, M. Haeri"
+  venue: "Acta Neuropathologica Communications"
+  year: 2024
+  date: "2024-01-11"
+  type: journal
+  doi: "https://doi.org/10.1186/s40478-023-01707-6"
+  oa_url: "https://actaneurocomms.biomedcentral.com/counter/pdf/10.1186/s40478-023-01707-6"
+
+- title: "Self-deployable contracting-cord metamaterials with tunable mechanical properties"
+  authors: "W. Yan, T. H. Jones, C. L. Jawetz, R. H. Lee, J. B. Hopkins, A. M. Mehta"
+  venue: "Materials Horizons"
+  year: 2024
+  date: "2024-01-01"
+  type: journal
+  doi: "https://doi.org/10.1039/d4mh00584h"
+  oa_url: "https://arxiv.org/pdf/2407.06362"
+
+- title: "Soft Kirigami Composites for Form‐Finding of Fully Flexible Deployables"
+  authors: "J. Zavodnik, Y. Wang, W. Yan, M. Brojan, M. K. Jawed"
+  venue: "Advanced Materials Technologies"
+  year: 2023
+  date: "2023-11-27"
+  type: journal
+  doi: "https://doi.org/10.1002/admt.202300909"
+  oa_url: "https://doi.org/10.1002/admt.202300909"
+
+- title: "StarBlocks: Soft Actuated Self-Connecting Blocks for Building Deformable Lattice Structures"
+  authors: "L. Zhao, Y. Wu, W. Yan, W. Zhan, X. Huang, J. Booth, A. M. Mehta, K. E. Bekris, R. K. Kramer-Bottiglio, D. Balkcom"
+  venue: "IEEE Robotics and Automation Letters"
+  year: 2023
+  date: "2023-06-08"
+  type: journal
+  doi: "https://doi.org/10.1109/lra.2023.3284361"
+
+- title: "Design of Bistable Soft Deployable Structures via a Kirigami‐Inspired Planar Fabrication Approach"
+  authors: "M. Mungekar, L. Ma, W. Yan, V. Kackar, S. Shokrzadeh, M. K. Jawed"
+  venue: "Advanced Materials Technologies"
+  year: 2023
+  date: "2023-05-15"
+  type: journal
+  doi: "https://doi.org/10.1002/admt.202300088"
+  oa_url: "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/admt.202300088"
+
+- title: "A Lamb wave magnetoelectric antenna design for implantable devices"
+  authors: "R. Zheng, V. Estrada, N. Virushabadoss, A. R. Will-Cole, A. Acosta, J. W. Hu, W. Yan, J. P. Chang, N. X. Sun, R. M. Henderson, G. P. Carman, A. E. Sepulveda"
+  venue: "Applied Physics Letters"
+  year: 2023
+  date: "2023-05-15"
+  type: journal
+  doi: "https://doi.org/10.1063/5.0151937"
+
+- title: "Origami-based integration of robots that sense, decide, and respond"
+  authors: "W. Yan, S. Li, M. Deguchi, Z. Zheng, D. L. Rus, A. M. Mehta"
+  venue: "Nature Communications"
+  year: 2023
+  date: "2023-04-03"
+  type: journal
+  doi: "https://doi.org/10.1038/s41467-023-37158-9"
+  oa_url: "https://www.nature.com/articles/s41467-023-37158-9.pdf"
+
+- title: "Improving Workflow Integration with xPath: Design and Evaluation of a Human-AI Diagnosis System in Pathology"
+  authors: "H. Gu, Y. Liang, Y. Xu, C. K. Williams, S. Magaki, N. Khanlou, H. V. Vinters, Z. Chen, S. Ni, C. Yang, W. Yan, X. R. Zhang, Y. Li, M. Haeri, X. Chen"
+  venue: "ACM Transactions on Computer-Human Interaction"
+  year: 2022
+  date: "2022-12-16"
+  type: journal
+  doi: "https://doi.org/10.1145/3577011"
+  oa_url: "https://dl.acm.org/doi/pdf/10.1145/3577011"
+
+- title: "Wearable microneedle-based electrochemical aptamer biosensing for precision dosing of drugs with narrow therapeutic windows"
+  authors: "S. Lin, X. Cheng, J. Zhu, B. Wang, D. Jelínek, Y. Zhao, T. Wu, A. Horrillo, J. Tan, J. Yeung, W. Yan, S. Forman, H. A. Coller, C. E. Milla, S. Emaminejad"
+  venue: "Science Advances"
+  year: 2022
+  date: "2022-09-23"
+  type: journal
+  doi: "https://doi.org/10.1126/sciadv.abq4539"
+  oa_url: "https://www.science.org/doi/pdf/10.1126/sciadv.abq4539?download=true"
+
+- title: "Fabrication-aware design for furniture with planar pieces"
+  authors: "W. Yan, D. Zhao, A. M. Mehta"
+  venue: "Robotica"
+  year: 2022
+  date: "2022-04-11"
+  type: journal
+  doi: "https://doi.org/10.1017/s0263574722000443"
+  oa_url: "https://doi.org/10.1017/s0263574722000443"
+
+- title: "A Cut-and-Fold Self-Sustained Compliant Oscillator for Autonomous Actuation of Origami-Inspired Robots"
+  authors: "W. Yan, A. M. Mehta"
+  venue: "Soft Robotics"
+  year: 2021
+  date: "2021-11-23"
+  type: journal
+  doi: "https://doi.org/10.1089/soro.2021.0018"
+  oa_url: "https://arxiv.org/pdf/2108.08449"
+
+- title: "Towards One-Dollar Robots: An Integrated Design and Fabrication Strategy for Electromechanical Systems"
+  authors: "W. Yan, A. M. Mehta"
+  venue: "Robotica"
+  year: 2020
+  date: "2020-12-17"
+  type: journal
+  doi: "https://doi.org/10.1017/s0263574720001101"
+  oa_url: "https://arxiv.org/pdf/2011.04772"
+
+- title: "Effect of crystallographic orientation on stress evolution of the void in single crystal during uniaxial tensile creep"
+  authors: "W. Yan, W. Wang, W. Zhao, Z. Yue"
+  venue: "Materialwissenschaft und Werkstofftechnik"
+  year: 2018
+  date: "2018-06-01"
+  type: journal
+  doi: "https://doi.org/10.1002/mawe.201600740"
+
+- title: "Experimental investigation on the vibration tuning of a shell with a shape memory alloy ring"
+  authors: "J. Hong, W. Yan, Y. Ma, D. Zhang, X. Yang"
+  venue: "Smart Materials and Structures"
+  year: 2015
+  date: "2015-09-08"
+  type: journal
+  doi: "https://doi.org/10.1088/0964-1726/24/10/105007"
+
+- title: "Experimental and analytical investigation of fatigue and fracture behaviors for scarfed lap riveted joints with different lap angle"
+  authors: "X. Yuan, Z. Yue, W. Yan, S. Wen, L. Li"
+  venue: "Engineering Failure Analysis"
+  year: 2013
+  date: "2013-06-07"
+  type: journal
+  doi: "https://doi.org/10.1016/j.engfailanal.2013.05.019"
+
+- title: "Research of Segmentation Algorithms for Overlapping Chromosomes"
+  authors: "W. Yan, L. Bai"
+  venue: "Engineering"
+  year: 2013
+  date: "2013-01-01"
+  type: journal
+  doi: "https://doi.org/10.4236/eng.2013.510b082"
+  oa_url: "http://www.scirp.org/journal/PaperDownload.aspx?paperID=40831"
+
+- title: "Algorithms for Chromosome Classification"
+  authors: "W. Yan, L. Bai"
+  venue: "Engineering"
+  year: 2013
+  date: "2013-01-01"
+  type: journal
+  doi: "https://doi.org/10.4236/eng.2013.510b081"
+  oa_url: "http://www.scirp.org/journal/PaperDownload.aspx?paperID=40829"
+
+- title: "On the fatigue performance of Aluminum alloy 2024 scarfed lap joints"
+  authors: "W. Yan, H. Gao, X. Yuan, F. Wang, Z. Yue"
+  venue: "STRUCTURAL ENGINEERING AND MECHANICS"
+  year: 2012
+  date: "2012-10-10"
+  type: journal
+  doi: "https://doi.org/10.12989/sem.2012.44.1.035"
+
+- title: "Effect of split sleeve cold expansion on cracking behaviors of titanium alloy TC4 holes"
+  authors: "W. Yan, X. Wang, H. Gao, Z. F. Yue"
+  venue: "Engineering Fracture Mechanics"
+  year: 2012
+  date: "2012-04-16"
+  type: journal
+  doi: "https://doi.org/10.1016/j.engfracmech.2012.04.008"
+
+- title: "Factors Study Influencing on Numerical Simulation of Aircraft Windshield against Bird Strike"
+  authors: "F. Wang, Z. Yue, W. Yan"
+  venue: "Shock and Vibration"
+  year: 2011
+  date: "2011-01-01"
+  type: journal
+  doi: "https://doi.org/10.1155/2011/304541"
+  oa_url: "https://downloads.hindawi.com/journals/sv/2011/304541.pdf"
+
+- title: "Simulation of the interface characterization of thin film on substrate system by bending creep tests"
+  authors: "S. Wen, W. Yan, J. Kang, X. Li, Z. Yue"
+  venue: "Applied Surface Science"
+  year: 2010
+  date: "2010-08-20"
+  type: journal
+  doi: "https://doi.org/10.1016/j.apsusc.2010.08.049"
+
+- title: "Layered elastic solid method for the generation of unstructured dynamic mesh"
+  authors: "S. Huo, F. Wang, W. Yan, Z. Yue"
+  venue: "Finite Elements in Analysis and Design"
+  year: 2010
+  date: "2010-07-17"
+  type: journal
+  doi: "https://doi.org/10.1016/j.finel.2010.06.006"
+
+- title: "Prediction of fatigue performance of fastener holes with bolt clamping force based on critical plane approach"
+  authors: "X. Li, J. Kang, W. Yan, F. Wang, Z. Yue"
+  venue: "Materials Science and Engineering A"
+  year: 2010
+  date: "2010-02-18"
+  type: journal
+  doi: "https://doi.org/10.1016/j.msea.2010.02.028"
+
+- title: "Simulation of the creep damage behavior of thin film/substrate systems by bending creep tests"
+  authors: "S. Wen, W. Yan, J. Kang, X. Li, Z. F. Yue"
+  venue: "Materials & Design (1980-2015)"
+  year: 2010
+  date: "2010-02-03"
+  type: journal
+  doi: "https://doi.org/10.1016/j.matdes.2010.01.052"
+
+- title: "Prediction of strength using bending test method"
+  authors: "S. Wen, W. Yan, X. Wang, X. Li, Z. F. Yue"
+  venue: "Materials & Design (1980-2015)"
+  year: 2009
+  date: "2009-11-05"
+  type: journal
+  doi: "https://doi.org/10.1016/j.matdes.2009.11.002"

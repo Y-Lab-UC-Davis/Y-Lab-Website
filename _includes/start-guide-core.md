@@ -17,9 +17,6 @@
 
 The wind tunnel office is room WTB 1401.
 {: .guide-info}
-
-If your project involves animals, complete the required training early; see [Animal care & ethics]({{ '/lab-guide/animal-care-ethics/' | relative_url }}).
-{: .guide-info}
 </div>
 
 <div class="guide-step" markdown="1">

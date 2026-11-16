@@ -1,77 +1,129 @@
 #!/usr/bin/env bash
 # ─────────────────────────────────────────────────────────────────────────
-#  BIRD Lab — image asset generator (run on a Mac; uses built-in `sips`)
+#  Y-Lab — image asset generator (cross-platform via Python/Pillow; macOS `sips` fallback)
 #
-#  Generates optimized site images from originals you have locally:
-#    • assets/img/lab-photo.jpg   — lab group photo (People page)
+#  Generates optimized site images from local originals:
+#    • assets/img/lab-photo.jpg   — lab group photo (People / Home page)
 #    • assets/img/og-image.jpg    — 1200×630 social-share image
-#    • assets/img/people/*.jpg    — square, optimized headshots
-#
-#  WHY a script you run (not generated for you): the high-res originals and the
-#  Notion export live on your Mac, not in this repo. `sips` ships with macOS, so
-#  no installs are needed.
+#    • assets/img/people/*.jpg    — square 600×600 headshots
+#    • assets/img/lab/*.jpg       — 1600px wide lab scene photos
 #
 #  USAGE
 #    1) Group photo:
 #         bash scripts/apply-images.sh "/path/to/group-photo.jpg"
-#       …or let it auto-search the export folder:
-#         bash scripts/apply-images.sh
-#    2) Headshots: drop originals into  assets/img/people/_raw/  (any name;
-#       use the person's name, e.g. "Christina Harvey.jpg") then run this script.
-#       Each becomes  assets/img/people/firstname-lastname.jpg.
+#    2) Headshots: drop originals into  assets/img/people/_raw/  (e.g.
+#       "Wenzhong Yan.jpg") then run this script. Each becomes
+#       assets/img/people/firstname-lastname.jpg.
+#    3) Lab scenes: drop originals into  assets/img/lab/_raw/  then run this script.
 #
 #  AFTER RUNNING
 #    • Set  lab_photo: /assets/img/lab-photo.jpg  under  assets:  in _config.yml
 #    • For each headshot, add  photo: /assets/img/people/<name>.jpg  in _data/people.yml
-#  (og-image.jpg is already wired via `image:` in _config.yml.)
 # ─────────────────────────────────────────────────────────────────────────
 set -euo pipefail
 cd "$(dirname "$0")/.."          # repo root
 
-SRC_DEFAULT="$HOME/Downloads/Private & Shared 5/BIRD Lab"
-SRC="${BIRD_SRC:-$SRC_DEFAULT}"
-
 IMG_DIR="assets/img"
 PEOPLE_DIR="$IMG_DIR/people"
 RAW_HEADSHOTS="$PEOPLE_DIR/_raw"
-mkdir -p "$PEOPLE_DIR"
+LAB_DIR="$IMG_DIR/lab"
+RAW_LAB="$LAB_DIR/_raw"
+mkdir -p "$PEOPLE_DIR" "$LAB_DIR"
 
-command -v sips >/dev/null 2>&1 || { echo "ERROR: this script needs macOS 'sips'."; exit 1; }
-
-echo "── BIRD Lab image generator ──"
-echo "Source export: $SRC"
-
-# ── 1. Lab group photo + OG image ────────────────────────────────────────
+echo "── Y-Lab image generator ──"
 GROUP_PHOTO="${1:-}"
-if [ -z "$GROUP_PHOTO" ] && [ -d "$SRC" ]; then
-  GROUP_PHOTO="$(find "$SRC" -type f \
-      \( -iname '*group*' -o -iname '*team*' -o -iname '*lab photo*' -o -iname '*lab-photo*' \) \
-      \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.heic' \) \
-      2>/dev/null | head -1 || true)"
+
+if python3 -c "import PIL" >/dev/null 2>&1; then
+  python3 - "$GROUP_PHOTO" "$IMG_DIR" "$PEOPLE_DIR" "$RAW_HEADSHOTS" "$LAB_DIR" "$RAW_LAB" <<'PY'
+import os, re, sys
+from PIL import Image, ImageOps
+
+group_photo, img_dir, people_dir, raw_headshots, lab_dir, raw_lab = sys.argv[1:7]
+
+def save_jpg(im, out, quality=82):
+    if im.mode in ("RGBA", "LA", "P"):
+        rgba = im.convert("RGBA")
+        bg = Image.new("RGB", rgba.size, (255, 255, 255))
+        bg.paste(rgba, mask=rgba.split()[-1])
+        im = bg
+    else:
+        im = im.convert("RGB")
+    im.save(out, "JPEG", quality=quality, optimize=True, progressive=True)
+
+def slugify(name):
+    return re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
+
+if group_photo and os.path.isfile(group_photo):
+    print(f"Group photo: {group_photo}")
+    with Image.open(group_photo) as src:
+        src = ImageOps.exif_transpose(src)
+        lab_im = src.copy()
+        if lab_im.width > 1600:
+            lab_im = lab_im.resize((1600, round(lab_im.height * 1600 / lab_im.width)), Image.LANCZOS)
+        save_jpg(lab_im, os.path.join(img_dir, "lab-photo.jpg"), 82)
+        print(f"  → {img_dir}/lab-photo.jpg")
+        og_im = ImageOps.fit(src, (1200, 630), method=Image.LANCZOS)
+        save_jpg(og_im, os.path.join(img_dir, "og-image.jpg"), 82)
+        print(f"  → {img_dir}/og-image.jpg")
+        print("  NEXT: set  lab_photo: /assets/img/lab-photo.jpg  under assets: in _config.yml")
+elif group_photo:
+    print(f"Group photo not found: {group_photo}", file=sys.stderr)
+else:
+    print("No group photo argument given (pass a path to generate lab-photo.jpg & og-image.jpg).")
+
+if os.path.isdir(raw_headshots) and any(os.path.isfile(os.path.join(raw_headshots, f)) for f in os.listdir(raw_headshots)):
+    print(f"Processing headshots in {raw_headshots} ...")
+    for fname in sorted(os.listdir(raw_headshots)):
+        fpath = os.path.join(raw_headshots, fname)
+        if not os.path.isfile(fpath) or fname.startswith("."):
+            continue
+        slug = slugify(os.path.splitext(fname)[0])
+        out = os.path.join(people_dir, f"{slug}.jpg")
+        with Image.open(fpath) as src:
+            src = ImageOps.exif_transpose(src)
+            sq = ImageOps.fit(src, (600, 600), method=Image.LANCZOS)
+            save_jpg(sq, out, 85)
+        print(f"  → {out}   (add  photo: /assets/img/people/{slug}.jpg)")
+else:
+    print(f"No headshots to process (drop originals in {raw_headshots}/ and re-run).")
+
+if os.path.isdir(raw_lab) and any(os.path.isfile(os.path.join(raw_lab, f)) for f in os.listdir(raw_lab)):
+    print(f"Processing lab scenes in {raw_lab} ...")
+    for fname in sorted(os.listdir(raw_lab)):
+        fpath = os.path.join(raw_lab, fname)
+        if not os.path.isfile(fpath) or fname.startswith("."):
+            continue
+        slug = slugify(os.path.splitext(fname)[0])
+        out = os.path.join(lab_dir, f"{slug}.jpg")
+        with Image.open(fpath) as src:
+            src = ImageOps.exif_transpose(src)
+            if src.width > 1600:
+                src = src.resize((1600, round(src.height * 1600 / src.width)), Image.LANCZOS)
+            save_jpg(src, out, 82)
+        print(f"  → {out}   (set ready: true for it in _data/gallery.yml)")
+else:
+    print(f"No lab scenes to process (drop originals in {raw_lab}/ and re-run).")
+PY
+  echo "Done. Preview with ./serve.sh"
+  exit 0
 fi
+
+command -v sips >/dev/null 2>&1 || { echo "ERROR: install Pillow (`pip install Pillow`) or run on macOS with `sips`."; exit 1; }
 
 if [ -n "$GROUP_PHOTO" ] && [ -f "$GROUP_PHOTO" ]; then
   echo "Group photo: $GROUP_PHOTO"
   sips -s format jpeg -s formatOptions 82 "$GROUP_PHOTO" \
        --resampleWidth 1600 --out "$IMG_DIR/lab-photo.jpg" >/dev/null
   echo "  → $IMG_DIR/lab-photo.jpg"
-  # OG: center-crop to 1200×630 (sips -c is height width)
-  cp "$IMG_DIR/lab-photo.jpg" /tmp/bird-og-src.jpg
-  sips -s format jpeg -s formatOptions 82 -c 630 1200 /tmp/bird-og-src.jpg \
+  cp "$IMG_DIR/lab-photo.jpg" /tmp/ylab-og-src.jpg
+  sips -s format jpeg -s formatOptions 82 -c 630 1200 /tmp/ylab-og-src.jpg \
        --out "$IMG_DIR/og-image.jpg" >/dev/null
   echo "  → $IMG_DIR/og-image.jpg"
   echo "  NEXT: set  lab_photo: /assets/img/lab-photo.jpg  under assets: in _config.yml"
 else
-  echo "No group photo found automatically."
-  echo "  Re-run with an explicit path:  bash scripts/apply-images.sh \"/path/to/group-photo.jpg\""
-  if [ ! -f "$IMG_DIR/og-image.jpg" ] && [ -f "$IMG_DIR/facilities/cali.jpg" ]; then
-    sips -s format jpeg -s formatOptions 82 -c 630 1200 "$IMG_DIR/facilities/cali.jpg" \
-         --out "$IMG_DIR/og-image.jpg" >/dev/null
-    echo "  → wrote a temporary $IMG_DIR/og-image.jpg from facilities/cali.jpg (replace later)"
-  fi
+  echo "No group photo argument given."
 fi
 
-# ── 2. Headshots ─────────────────────────────────────────────────────────
 if [ -d "$RAW_HEADSHOTS" ] && [ -n "$(ls -A "$RAW_HEADSHOTS" 2>/dev/null || true)" ]; then
   echo "Processing headshots in $RAW_HEADSHOTS ..."
   for f in "$RAW_HEADSHOTS"/*; do
@@ -86,13 +138,6 @@ else
   echo "No headshots to process (drop originals in $RAW_HEADSHOTS/ and re-run)."
 fi
 
-# ── 3. "Scenes from the lab" storytelling photos ─────────────────────────
-#   Drop originals in assets/img/lab/_raw/ named raptor-hall.* / outreach.* /
-#   wind-tunnel.* (any extension). They are resized to ~1600px wide, then flip
-#   ready: true for each in _data/gallery.yml to show it on the site.
-LAB_DIR="$IMG_DIR/lab"
-RAW_LAB="$LAB_DIR/_raw"
-mkdir -p "$LAB_DIR"
 if [ -d "$RAW_LAB" ] && [ -n "$(ls -A "$RAW_LAB" 2>/dev/null || true)" ]; then
   echo "Processing lab scenes in $RAW_LAB ..."
   for f in "$RAW_LAB"/*; do

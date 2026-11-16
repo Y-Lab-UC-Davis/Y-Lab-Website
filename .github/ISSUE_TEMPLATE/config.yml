@@ -3,5 +3,5 @@
 blank_issues_enabled: true
 contact_links:
   - name: Prefer to edit the files yourself?
-    url: https://github.com/UC-BIRD-Lab
+    url: https://github.com/Y-Lab-UC-Davis/Y-Lab-Website
     about: "If you're comfortable with GitHub, edit the _data/*.yml files and open a pull request, see CONTENT-GUIDE.md."

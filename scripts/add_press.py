@@ -29,8 +29,8 @@ merge that, then run this on the new DOI.
 
   * Lab authors are matched against _data/people.yml and written with their full
     People-page names, so they AUTO-LINK in the timeline (same as any updates entry).
-  * The lead lab author becomes the subject ("Paper led by …"); a Harvey-first paper
-    reads "Paper by Dr. Harvey". Pass --topic "…" for the plain-language hook (else
+  * The lead lab author becomes the subject ("Paper led by …"); a Yan-first paper
+    reads "Paper by Dr. Yan". Pass --topic "…" for the plain-language hook (else
     the title is used as a placeholder to tighten).
   * --append inserts the updates.yml entry under the right year (newest first),
     targeted-insert so your comments/formatting stay intact. Captions print to the
@@ -366,14 +366,14 @@ def surname_key(author):
 
 def load_people_map():
     """Map surname → the name to print (preferring the short alias the timeline uses,
-    e.g. 'Dr. Alfonso Martínez', 'Adam Zhu'), plus the set of Harvey surnames.
+    e.g. 'Dr. Yan', 'Shawn Deng'), plus the set of PI surnames.
     Covers current members, affiliates, and alumni so any co-author can link."""
     yaml = _yaml()
     try:
         with open(PEOPLE_YML, encoding="utf-8") as fh:
             data = yaml.safe_load(fh) or {}
     except FileNotFoundError:
-        return {}, {"harvey"}
+        return {}, {"yan"}
 
     people = {}
     def add(member):
@@ -393,15 +393,15 @@ def load_people_map():
     for bucket in ("affiliates", "alumni"):
         for m in ((data.get(bucket) or {}).get("members") or []):
             add(m)
-    return people, {"harvey"}
+    return people, {"yan"}
 
 
 def openalex_by_doi(doi):
     """Resolve one work from OpenAlex by DOI. Returns a paper dict or None."""
     url = "https://api.openalex.org/works/https://doi.org/" + urllib.parse.quote(doi)
-    url += "?mailto=harvey@ucdavis.edu"
+    url += "?mailto=wyan@ucdavis.edu"
     try:
-        req = urllib.request.Request(url, headers={"User-Agent": "BIRDLab-site (harvey@ucdavis.edu)"})
+        req = urllib.request.Request(url, headers={"User-Agent": "YLab-site (wyan@ucdavis.edu)"})
         with urllib.request.urlopen(req, timeout=25) as r:
             w = json.load(r)
     except Exception as e:
@@ -469,7 +469,7 @@ def month_year(paper):
     return str(paper.get("year") or datetime.date.today().year)
 
 
-def build_update_text(paper, people, harvey_keys, topic=None):
+def build_update_text(paper, people, yan_keys, topic=None):
     """Draft the timeline sentence, linking the lead lab author automatically."""
     authors = paper.get("authors") or ""
     first = authors.split(",")[0] if authors else ""
@@ -477,8 +477,8 @@ def build_update_text(paper, people, harvey_keys, topic=None):
     venue = (paper.get("venue") or "").strip()
     title = (paper.get("title") or "").strip().rstrip(".")
 
-    if lead_key in harvey_keys:
-        subject = "Paper by Dr. Harvey"
+    if lead_key in yan_keys:
+        subject = "Paper by Dr. Yan"
     elif lead_key in people:
         subject = "Paper led by %s" % people[lead_key]
     else:
@@ -541,21 +541,21 @@ def build_social(paper, doi):
     venue_line = ("%s (%s)" % (venue, year)) if venue else str(year)
 
     linkedin = (
-        "\U0001F426 New from the BIRD Lab — our latest paper is out"
+        "New from Y-Lab — our latest paper is out"
         + ((" in %s" % venue) if venue else "") + ".\n\n"
         "“" + title + "”\n\n"
         "[One plain-language sentence on what we found and why it matters.]\n\n"
         + (("Authors: %s\n" % authors) if authors else "")
         + "Read it: " + link + "\n\n"
-        "#BioinspiredDesign #BirdFlight #AerospaceEngineering #Biomechanics #UCDavis #BIRDLab"
+        "#SoftRobotics #MechanicalIntelligence #OrigamiRobotics #BioinspiredRobotics #UCDavis #YLab"
     )
     instagram = (
-        "New paper out \U0001F985\U0001F4C4\n\n"
+        "New paper out!\n\n"
         "“" + title + "”\n"
         + venue_line + "\n\n"
         "[One friendly line on the finding + why it's cool.]\n"
-        "\U0001F517 Full paper linked in our bio.\n\n"
-        "#birdflight #bioinspired #aerospace #biomechanics #engineering #UCDavis #science #research"
+        "Full paper linked in our bio.\n\n"
+        "#SoftRobotics #MechanicalIntelligence #OrigamiRobotics #BioinspiredRobotics #UCDavis #YLab"
     )
     return linkedin, instagram
 
@@ -579,8 +579,8 @@ def run_paper(args):
     if args.year:
         paper["year"] = args.year
 
-    people, harvey_keys = load_people_map()
-    text = build_update_text(paper, people, harvey_keys, topic=args.topic)
+    people, yan_keys = load_people_map()
+    text = build_update_text(paper, people, yan_keys, topic=args.topic)
     date_label = month_year(paper)
     year = int(re.search(r"\d{4}", date_label).group())
     entry = build_update_entry(date_label, text)
@@ -594,7 +594,7 @@ def run_paper(args):
     print("  authors  : %s" % (paper.get("authors") or "(none)"), file=sys.stderr)
     print("  date     : %s  (year %d)" % (date_label, year), file=sys.stderr)
     lead_key = surname_key((paper.get("authors") or "").split(",")[0])
-    who = people.get(lead_key) or ("Dr. Harvey" if lead_key in harvey_keys else "(external lead)")
+    who = people.get(lead_key) or ("Dr. Yan" if lead_key in yan_keys else "(external lead)")
     print("  lead link: %s" % who, file=sys.stderr)
     if not args.topic:
         print("  ! no --topic given: the title is used as a placeholder — tighten it.",
