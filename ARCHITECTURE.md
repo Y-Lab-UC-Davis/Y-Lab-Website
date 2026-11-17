@@ -7,8 +7,6 @@ the exact menu) is not repeated here, because the site itself is the source of
 truth. For the live structure, read `_config.yml` (`guide_order`),
 `_data/navigation.yml`, and the `_data/*.yml` files.
 
----
-
 ## The decision
 
 A static [Jekyll](https://jekyllrb.com/) site: content as Markdown and YAML,
@@ -62,8 +60,6 @@ any convenience a CMS would add.
   search/filter, hero video pause); everything works without it.
 - **Python standard library plus PyYAML** for the publications script.
 
----
-
 ## Public vs. internal
 
 Lab-guide content is public unless deliberately kept private. Protective,
@@ -73,8 +69,6 @@ and prominent. Step-by-step internal workflows and anything genuinely private
 private Notion **Member Portal**, which the site links to but does not host. No
 authentication is implemented on the site itself, so nothing added to `_data/` or
 `_guide/` should assume privacy.
-
----
 
 ## Content structure (where it lives, not what it says)
 
@@ -90,8 +84,6 @@ authentication is implemented on the site itself, so nothing added to `_data/` o
   templates in `_layouts/` and `_includes/`. To see the current site structure,
   read those files; they are the source of truth, which is why no page list or
   count is duplicated here.
-
----
 
 ## Rendering and data flow
 

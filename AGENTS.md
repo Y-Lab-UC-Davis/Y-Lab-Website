@@ -8,6 +8,7 @@
 ## Documentation & Issue Style
 - **Uncluttered & Academic:** Keep documentation and GitHub issues concise, readable, and professional.
 - **No Decorative Emojis:** Avoid emojis in issue titles, headers, bullet points, and tables.
+- **No Redundant Horizontal Rules (`---`):** Do not add `---` line dividers before Markdown headings (`#`, `##`, etc.); GitHub already renders divider lines under level 1 and 2 headings.
 - **Explicit AI-Drafted Notice on Generated Issues:** Any GitHub issue drafted for the PI or lab review must begin with a clear note stating it was drafted by an AI assistant, so Dr. Yan knows it was not written directly by a lab member.
 - **Direct GitHub File Links:** When referencing repository files in GitHub issues, link directly to `https://github.com/Y-Lab-UC-Davis/Y-Lab-Website/blob/main/<path>` (with `#L<start>-L<end>` when relevant), and include `edit/main/<path>` links on PI-review issues.
 - **Approve / Modify / Disapprove Format for PI Issues:** Do not use multiple-choice checkboxes (`- [ ] Option A / Option B`) on `pi-input` issues. State what is needed, present a single proposed default/draft, and ask Dr. Yan to reply with **Approve**, **Modify**, or **Disapprove**. Split multi-topic requests into small, single-topic issues.

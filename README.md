@@ -9,8 +9,6 @@ The public website for **Y-Lab** at UC Davis (directed by Dr. Wenzhong Yan): bui
 > - [AUTOMATION.md](AUTOMATION.md) (the robots, in plain English: what they do & how to change them)
 > - [ARCHITECTURE.md](ARCHITECTURE.md) (why it's built this way)
 
----
-
 ## Quick start (run it on your computer)
 
 You only need this to preview changes locally. Editing through GitHub's website (see [CONTENT-GUIDE.md](CONTENT-GUIDE.md)) needs no setup at all.
@@ -24,8 +22,6 @@ This avoids compiling Ruby gems on your Mac.
 **Native Ruby** (if you prefer): `bundle install`, then `bundle exec jekyll serve`.
 On recent macOS this can fail on the `eventmachine` gem: see the fix in
 [MAINTENANCE.md](MAINTENANCE.md#preview-locally-before-publishing-optional).
-
----
 
 ## What's where
 
@@ -65,8 +61,6 @@ On recent macOS this can fail on the `eventmachine` gem: see the fix in
 - Design lives in `assets/` and `_layouts/`. You can do almost all
 day-to-day updates without touching the design.
 
----
-
 ## How it's built (in brief)
 
 - Static **Jekyll** site on **GitHub Pages**: content in Markdown + YAML, no runtime services, three GitHub Actions (deploy · publications sync · link + accessibility check) plus Dependabot. 
@@ -75,8 +69,6 @@ day-to-day updates without touching the design.
 
 The decisions and trade-offs behind all of this are in
 [ARCHITECTURE.md](ARCHITECTURE.md).
-
----
 
 ## License / credit
 Content © Y-Lab, UC Davis. Adapted with permission from the BIRD Lab website template (UC Davis). Built with Jekyll; hosted on GitHub Pages.

@@ -11,8 +11,6 @@ edit, then **Commit changes**. The site rebuilds itself.
 news item, or press link through the site's **GitHub issue forms** (no YAML):
 see [CONTRIBUTING.md](CONTRIBUTING.md).
 
----
-
 ## Add or update a team member: `_data/people.yml`
 
 If your profile is already in `../lab-admin/members/`, run
@@ -71,8 +69,6 @@ Add a block under the right group's `members:` list. Only `name` and `role` are 
   original in `assets/img/people/_raw/` then run `bash scripts/apply-images.sh`),
   and add the `photo:` line above. No photo = a clean initials avatar.
 
----
-
 ## Add a publication
 
 **Journal article**: usually automatic. If you need to add one by hand, put it
@@ -100,8 +96,6 @@ Each entry shows a colored type pill at the front of the title: **journal
 article** (green), **conference paper** (amber, shown when you omit `note`), and
 **presentation / poster** (muted gray, shown when `note` is set). So leaving
 `note` off is what marks something as a full conference paper.
-
----
 
 ## Add data / code / a figure to a paper: `_data/pub_links.yml`
 
@@ -139,8 +133,6 @@ its **bare DOI**. The auto-sync never touches it, so your extras are safe.
 - **Press/news is not listed here**: tag a story with the paper's `doi:` in
   `_data/press.yml` and it's counted automatically as the "In the news" badge.
 
----
-
 ## Add a news milestone: `_data/updates.yml`
 
 Add an item to the top of the current year's `events:` list. `type` picks the
@@ -163,8 +155,6 @@ your own `<a>` tag (that would double-link). For a nickname or short form, add a
 `aliases:` line to that person in `people.yml`. To link to an outside page (a
 paper, an event), you can paste plain HTML: use single quotes so the YAML stays
 valid: `text: "We spoke at <a href='https://example.com'>the workshop</a>."`
-
----
 
 ## Add press coverage: `_data/press.yml`
 
@@ -239,8 +229,6 @@ It reads the title/outlet/year from the page and inserts the entry at the top of
 `media.yml` (newest first). Drop `--append` to just preview the block. Without `--media`
 the same command targets `press.yml`, exactly as before.
 
----
-
 ## Fellowships & scholarships list: `_data/funding.yml`
 
 The funding table on the Lab Guide **"Applying for funding"** page (linked from Join)
@@ -254,8 +242,6 @@ when there isn't one.
   # `eligibility:` is an optional field describing a program's own published
   # rules (e.g. citizenship). Leave it off when a program is open to all.
 ```
-
----
 
 ## Edit a research project: `_data/research.yml`
 
@@ -284,8 +270,6 @@ ends, just delete its block (or move the lead to `alumni:` and remove the card).
   `papers:` out and no paper line shows. (The paper must already be listed on the
   Publications page: journal articles arrive automatically; add conference papers
   in `_data/publications_manual.yml`.)
-
----
 
 ## Edit a facility: `_data/facilities.yml`
 
@@ -343,8 +327,6 @@ long paragraphs.
 - **`photo_note:`**: a small italic caption under the image (used to mark the wind-tunnel/specimen renderings as AI-based). Leave it off for real photos.
 - **`funding:`**: shows a small "thanks to…" logo badge in the top corner of the flagship photo. Logos live in `assets/img/partners/`.
 
----
-
 ## Open or close a position: `_data/openings.yml`
 
 The three status pills on the **Join** page (undergrad, graduate, postdoc) are
@@ -353,8 +335,6 @@ update themselves. `open: true` shows the green pill with `open_note`,
 `open: false` the amber pill with `closed_note`. The file's header comment has
 the details, including the shared `email_body` draft that pre-fills the
 "Email me" buttons.
-
----
 
 ## Edit a Lab Guide page: `_guide/`
 
@@ -412,8 +392,6 @@ at-a-glance table and the role cards update. Leave `_includes/lab-roles.html`
 (the template) alone. Each role's detailed routine, what it avoids, and its
 handoff live in the private Notion member portal, not on the public page.
 
----
-
 ## Change the menu: `_data/navigation.yml`
 Reorder, rename, or add items. `cta: true` makes an item the pill button.
 
@@ -431,8 +409,6 @@ anonymous page counts: no cookies, no personal data: so no consent banner is
 needed (the [Privacy]({{ '/privacy/' | relative_url }}) page explains this to
 visitors). Leave it blank to collect nothing.
 
----
-
 ## Add a research figure: `assets/img/research/`
 
 Each project card on the Research page can show one figure. To add or change one:
@@ -448,15 +424,11 @@ Each project card on the Research page can show one figure. To add or change one
 the card. Each theme also has a `why:` line ("why it matters") shown on the Home
 and Research pages: keep it to one plain-language sentence.
 
----
-
 ## Recognition & media strips: `_data/recognition.yml`
 
 The Home page shows an **Honors & awards** grid and a **Featured in** row from
 this file. Add an award under `awards:` (`name`, `who`, `org`, `year`) or an
 outlet under `media:` (`name`, `url`). Keep awards accurate and specific.
-
----
 
 ## People photos & the lab group photo
 
@@ -482,8 +454,6 @@ outlet under `media:` (`name`, `url`). Keep awards accurate and specific.
 Every one of these is optional and only appears once its file/flag is set, so the
 site never shows a broken image.
 
----
-
 ## Home page components (where the copy lives)
 
 These live directly in `index.html` (edit the text in place):
@@ -506,8 +476,6 @@ These live directly in `index.html` (edit the text in place):
   collaborators stay in `people.yml` under `affiliates`.
 
 Drop all logos in `assets/img/partners/`.
-
----
 
 ## Image size budget (keep the site fast & accessible)
 

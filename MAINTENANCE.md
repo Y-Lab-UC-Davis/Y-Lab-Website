@@ -11,8 +11,6 @@ rebuilds the site automatically in a minute or two.
 - **Editing locally, previewing, and Git fixes:** [Editing on your computer with RStudio](#editing-on-your-computer-with-rstudio) (below)
 - **Letting members submit changes without editing files:** [CONTRIBUTING.md](CONTRIBUTING.md)
 
----
-
 ## The monthly check (about 10 minutes)
 
 Do these once a month. None of them require the command line.
@@ -48,8 +46,6 @@ Do these once a month. None of them require the command line.
 7. **(Optional) enrich a new paper.** When a paper's data/code/figure are ready,
    add them in `_data/pub_links.yml` (see *Publications* below).
 
----
-
 ## How to publish a change
 
 If you edit on **github.com** (the ✏️ pencil on any file): just click **Commit
@@ -65,8 +61,6 @@ files → Commit (with a message) → Push**. Full setup and troubleshooting is 
 > your edits, push **once**, and wait for the green ✓ on the **deploy** step
 > before pushing again. If a deploy ever sits on "queued" and times out, that's
 > the cause: wait about an hour and run it once.
-
----
 
 ## Editing on your computer with RStudio
 
@@ -123,8 +117,6 @@ Build artifacts (`_site/`, `.jekyll-cache/`, …) are in `.gitignore`, so RStudi
 won't offer to commit them. For a friendly Git + RStudio reference, see
 [Happy Git and GitHub for the useR](https://happygitwithr.com/).
 
----
-
 ## Preview locally before publishing (optional)
 
 - **Easiest (no Ruby):** `./serve.sh` (needs Docker Desktop); serves
@@ -139,15 +131,11 @@ old gem and Apple's newest headers, not your setup. Easiest fix: use `./serve.sh
 make sure Conda is off (`conda deactivate`) and refresh the Command Line Tools
 (`sudo rm -rf /Library/Developer/CommandLineTools && xcode-select --install`).
 
----
-
 ## Undo a change (rollback)
 
 Every change is a commit. To undo one: open the repo's **commit history**, find
 the last good commit, and click **Revert** (or `git revert <sha>`). The site
 rebuilds from the reverted state automatically.
-
----
 
 ## The updates you'll do most
 
@@ -181,8 +169,6 @@ values into the right file in seconds. Full workflow in
 Put a roughly square image (≈ 600×600 px, ≤ 80 KB) in `assets/img/people/` and
 add `photo: /assets/img/people/firstname-lastname.jpg` to that person in
 `people.yml`. No photo = a clean initials avatar, so nothing ever looks broken.
-
----
 
 ## Publications: how the automation works
 
@@ -226,8 +212,6 @@ small figure:
 Nothing shows until the paper itself is on the Publications page, so you can add
 this the moment a paper is accepted.
 
----
-
 ## Occasional / yearly
 
 - **When openings change:** flip the matching `open:` line in
@@ -240,8 +224,6 @@ this the moment a paper is accepted.
   deprecation warnings). Because `main` is protected, merge them yourself; you're
   on the bypass list. Do them one at a time.
 
----
-
 ## Keeping it accessible (when you edit)
 
 - **Don't skip heading levels**: use `##` then `###`, never jump `##` → `####`.
@@ -253,8 +235,6 @@ this the moment a paper is accepted.
   with the [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/)
   (aim for 4.5:1 for body text). The **Site checks** Action re-tests links,
   images, and accessibility on every push.
-
----
 
 ## If something breaks
 
@@ -282,8 +262,6 @@ tick "Merge without waiting for requirements to be met."
 **A submitted issue form needs applying.** Open the issue, copy its values into the
 matching `_data/*.yml` file using the cheat-sheet in
 [CONTRIBUTING.md](CONTRIBUTING.md), commit, and close the issue.
-
----
 
 ## Moving to a custom domain later (optional)
 

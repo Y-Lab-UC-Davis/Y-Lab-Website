@@ -5,8 +5,6 @@ hard to break the live site (every change is reviewed and auto-checked first).
 
 There are **three ways** to get an update in, from least to most technical.
 
----
-
 ## 1. The easy way: submit a form (no coding, anyone in the lab)
 
 Go to the repo's **Issues → New issue**, pick the matching form, fill it in, submit:
@@ -39,8 +37,6 @@ maintainer reviews and merges. The site rebuilds itself.
 If you're a **web steward** (see below), you turn an issue into a commit. This
 takes ~30 seconds with the cheat-sheet below: open the file, paste the block at
 the **top** of the list, fill in the submitted values, commit.
-
----
 
 ## Maintainer cheat-sheet (issue → file)
 
@@ -86,8 +82,6 @@ tag (`Center` / `Award` / `Funding` / `Profile` / `Feature`). Add whichever the 
 provides — a story has **either** a `doi:` **or** a `tag:`, not both.
 
 After committing, close the issue with a note like "Live on the next build 👍".
-
----
 
 ## Web stewards: who merges
 
